@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Choobio",
+    "url": "/projects/choobio",
+    "summary": "A progressive web app that gives you live arrivals boards for London Underground stations.",
+    "image": "choobio.png",
+    "paragraphs": [
+      {
+        "title": "A web app for live tube arrivals",
+        "image": "choobio.png",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+      },
+      {
+        "title": "React",
+        "image": "react.svg",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+      },
+      {
+        "title": "A Progressive Web App",
+        "image": "javascript.png",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+      }
+    ]
+  },
+  {
+    "name": "Football Rumours",
+    "url": "/projects/football_rumours",
+    "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team.",
+    "image": "football_rumours.png",
+    "paragraphs": [
+      {
+        "title": "An echo skill to get football transfer rumours.",
+        "image": "football_rumours.png",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+      },
+      {
+        "title": "Hosted on AWS Lambda",
+        "image": "lambda.png",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  "
+      }
+    ]
+  },
+  {
+    "name": "TRX",
+    "url": "/projects/trx",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
+    "image": "choobio.png"
+  }
+]
