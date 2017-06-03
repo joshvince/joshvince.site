@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Paragraph from 'components/Projects/ProjectOutline/Paragraph.jsx';
 import './styles.css';
 
 class ProjectOutline extends Component {
@@ -10,18 +11,16 @@ class ProjectOutline extends Component {
             <h1>{this.props.project.name}</h1>
           </div>
         </div>
+        {/* render the paragraphs */}
         {this.props.project.paragraphs.map((para, i) => {
-          return <div className="row" key={i}>
-                  <div className="column">
-                    <div className="paragraph">
-                      <div className="image">
-                        <img src={para.image} alt={this.props.project.name}/>
-                      </div>
-                      <h2>{para.title}</h2>
-                      <p>{para.text}</p>
-                    </div>                    
-                  </div>
-                </div>
+          return (
+            <Paragraph 
+              para={para} 
+              projectName={this.props.project.name} 
+              imgLib={this.props.imgLib}
+              key={i} 
+            />
+          );
         })}
         <div className="row">
           <div className="button-wrapper">
@@ -29,7 +28,6 @@ class ProjectOutline extends Component {
           </div>
         </div>
       </div>
-      
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 class ProjectSummary extends Component {
@@ -6,15 +7,17 @@ class ProjectSummary extends Component {
     var classes = this.props.solo ? "column solo card" : "column card"
     return (
       <div className={classes}>
-        <div className="iconsCol">
-          <div className="icon">
-            <img src={this.props.image} alt={this.props.name}/>
+          <div className="iconsCol">
+            <div className="icon">
+              {/*<img src={this.props.project.image} alt={this.props.project.name}/>*/}
+            </div>
           </div>
-        </div>
-        <div className="textCol">
-          <h2 className="title">{this.props.name}</h2>
-          <p className="summary">{this.props.summary}</p>
-        </div>
+          <div className="textCol">
+            <Link to={this.props.project.url}>
+              <h2 className="title">{this.props.project.name}</h2>
+            </Link>
+            <p className="summary">{this.props.project.summary}</p>
+          </div>
       </div>
     );
   }

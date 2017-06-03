@@ -8,9 +8,7 @@ class SummaryRow extends Component {
       <div className="row">
         {this.props.projects.map((proj,i,arr) => {
           return <ProjectSummary 
-            name={proj.name} 
-            summary={proj.summary} 
-            image={proj.image} 
+            project={proj}
             key={i}
             solo={arr.length == 1}
           />

@@ -9,7 +9,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const combineLoaders = require('webpack-combine-loaders');
 
 module.exports = {
-  entry: './client/index.js',
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'client'),
+      'node_modules'
+    ]
+  },
+  entry: 'index.js',
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'

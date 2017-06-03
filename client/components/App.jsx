@@ -1,57 +1,53 @@
+/* import dependencies */
 import React, { Component } from 'react';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import 'milligram';
-import ProjectsPage from './Projects/ProjectsPage.jsx';
 
-import ChoobioLogo from '../assets/img/choobio_logo.png';
-import footballRumoursLogo from '../assets/img/football_rumours_logo.png';
-import reactLogo from '../assets/img/logos/react.svg';
-import jsLogo from '../assets/img/logos/js.png';
+/* styles for this component */
+import './styles.css';
 
-var longLorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. `
-var shortLorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.`
+/* import other components */
+import ScrollToTop from 'components/Helpers/ScrollToTop.jsx';
+import ProjectsPage from 'components/Projects/ProjectsPage.jsx';
+import Home from 'components/Home/Home.jsx';
+import ProjectOutline from 'components/Projects/ProjectOutline/ProjectOutline.jsx';
 
-// FIXME: draw the projects data from somewhere that is not the top of this file!!!
-var TEST_PROJECTS = [
-  {
-    name: "Choobio",
-    summary: "A progressive web app that gives you live arrivals boards for London Underground stations.",
-    image: ChoobioLogo,
-    paragraphs: [
-      {
-        title: "A web app for live tube arrivals",
-        image: ChoobioLogo,
-        text: longLorem
-      },
-      {
-        title: "React",
-        image: reactLogo,
-        text: longLorem
-      },
-      {
-        title: "A Progressive Web App",
-        image: jsLogo,
-        text: longLorem
-      },
-    ]
-  },
-  {
-    name: "Football Rumours",
-    summary: "An Amazon Echo skill to tell you the latest football transfer stories about your team.",
-    image: footballRumoursLogo
-  },
-  {
-    name: "TRX",
-    summary: shortLorem,
-    image: ChoobioLogo
-  }
-]
+/* import the JSON containing the projects */
+import projectList from 'assets/projects.json';
+
+/* Dynamically import all images inside the assets folder and then store them in a var */
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const imgLib = importAll(require.context('assets/img', false, /\.(png|jpe?g|svg)$/));
+
+/* Dynamically render a Route, adding the project JSON as props to the component */
+const renderProjectRoute = (project, i) => {
+  return (
+    <Route
+      path={project.url}
+      render={(props) => { return <ProjectOutline {...props} project={project} imgLib={imgLib} /> }}
+      key={i}
+    />
+  )
+}
 
 class App extends Component {
   render() {
+    console.log("rendered App component")
     return (
-      <div className="container">
-        <ProjectsPage projects={TEST_PROJECTS}/>
-      </div>
+      <Router>
+        <ScrollToTop>
+          <div className="container">
+            <Route exact path="/" component={Home} />
+              {/* render a route and project page for each project in the projectList*/}
+              {projectList.map(renderProjectRoute)}
+          </div>
+        </ScrollToTop>
+      </Router>
     );
   }
 }

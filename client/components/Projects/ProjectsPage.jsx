@@ -2,27 +2,23 @@ import React, { Component } from 'react';
 import SummaryRow from './ProjectSummary/SummaryRow.jsx';
 import './styles.css';
 
-//FIXME: REMOVE THIS WHEN ROUTING IS SORTED
-import ProjectOutline from './ProjectOutline/ProjectOutline.jsx';
-
 class ProjectsPage extends Component {
-  render() {
-    function chunkArray(myArray, chunk_size){
-      var results = [];
-      while (myArray.length) {
-        results.push(myArray.splice(0, chunk_size));
-      }
-      return results;
+  chunkArray(propArray, chunkSize){
+    var newArray = Array.from(propArray);
+    var results = [];
+    while (newArray.length) {
+      results.push(newArray.splice(0, chunkSize));
     }
-
-    var rows = chunkArray(this.props.projects, 2)
+    return results;
+  }
+  render() {
+    var rows = this.chunkArray(this.props.projectList, 2)
     return (
       <div>
         <h1>Projects</h1>
+        <h4>Some things I made or helped to make</h4>
         { rows.map((arr,i) => { return <SummaryRow projects={arr} key={i} /> }) }
-        <ProjectOutline project={rows[0][0]} />
       </div>
-      
     );
   }
 }
