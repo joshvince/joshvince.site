@@ -1,0 +1,26 @@
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem; 
+  text-align: center;
+  background: linear-gradient(#3993DD, rgba(57,147,221,0.9),
+  rgba(255,255,255,0));
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navItem {
+  background-color: transparent;
+}
+
+a {
+  transition: color 0.5s ease;
+  color: #EAEBED;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #B4C5E4;
+}
