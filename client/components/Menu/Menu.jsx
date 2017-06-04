@@ -6,7 +6,8 @@ class Menu extends Component {
   render() {
     return (
       <div id="nav">
-          <Link to="/" className="navItem">About</Link>
+          <Link to="/" className="navItem">Josh</Link>
+          <Link to="/about" className="navItem">About</Link>
           <Link to="/projects" className="navItem">Projects</Link>
           <Link to="/contact" className="navItem">Contact</Link>
       </div>

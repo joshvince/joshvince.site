@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import ProjectsPage from 'components/Projects/ProjectsPage.jsx';
-import { CSSTransitionGroup } from 'react-transition-group'
-
-import './styles.css';
-
+import { CSSTransitionGroup } from 'react-transition-group';
 import Menu from 'components/Menu/Menu.jsx';
+import About from 'components/About/About.jsx';
+import './styles.css';
 
 class Home extends Component {
   render() {
@@ -28,6 +26,7 @@ class Home extends Component {
             <p>I like to <span className="highlight">make stuff</span></p> 
           </CSSTransitionGroup>
         </div>
+        <About />
       </div>
     );
   }

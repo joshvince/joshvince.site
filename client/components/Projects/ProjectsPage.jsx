@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import SummaryRow from './ProjectSummary/SummaryRow.jsx';
+
 import './styles.css';
+
+/* import the JSON containing the project details */
+import projectList from 'assets/projects.json';
 
 class ProjectsPage extends Component {
   chunkArray(propArray, chunkSize){
@@ -12,7 +16,7 @@ class ProjectsPage extends Component {
     return results;
   }
   render() {
-    var rows = this.chunkArray(this.props.projectList, 2)
+    var rows = this.chunkArray(projectList, 2)
     return (
       <div>
         <h1>Projects</h1>

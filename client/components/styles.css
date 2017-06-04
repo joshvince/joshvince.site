@@ -2,17 +2,43 @@
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #3993DD;
   color: #EAEBED;
+  text-align: center;
 }
 
-a > h2 {
+a, a > h2, a > h4 {
   transition: color 0.5s ease;
-  color: #EAEBED;
+  color: #BBE5ED;
 }
 
-a > h2:hover {
+a:hover, a:focus, a:active, a > h2:hover, a > h4:hover {
   color: #B4C5E4;
 }
 
 #main{
   margin-top: 7rem;
+}
+
+.highlight {
+  color: #EFCB68;
+}
+
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* 
+DESKTOP 
+=================*/
+
+@media only screen and (min-width: 40rem) {
+  .paragraph > p {
+    width: 90%;
+    max-width: 59rem;
+  }
 }

@@ -14,13 +14,3 @@
 .navItem {
   background-color: transparent;
 }
-
-a {
-  transition: color 0.5s ease;
-  color: #EAEBED;
-  text-decoration: none;
-}
-
-a:hover, a:active, a:focus {
-  color: #B4C5E4;
-}
