@@ -3,12 +3,14 @@ import './styles.css';
 
 class Paragraph extends Component {
   render() {
+    var imgSrc = this.props.imgLib[this.props.para.image] || null
+    var img = imgSrc ? <img src={imgSrc} alt={this.props.projectName}/> : null
     return (
       <div className="row">
         <div className="column">
           <div className="paragraph">
             <div className="image">
-              <img src={this.props.imgLib[this.props.para.image]} alt={this.props.projectName}/>
+              {img}
             </div>
             <h3>{this.props.para.title}</h3>
             <p>{this.props.para.text}</p>

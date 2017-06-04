@@ -43,6 +43,14 @@ MOBILE
   margin: 0;
 }
 
+.title{
+  margin-top: 1rem;
+}
+
+.subheader{
+  margin-bottom: 0;
+}
+
 /* 
 DESKTOP 
 =================*/

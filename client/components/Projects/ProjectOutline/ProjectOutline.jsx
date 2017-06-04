@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Paragraph from 'components/Projects/ProjectOutline/Paragraph.jsx';
 import './styles.css';
 
@@ -22,10 +23,17 @@ class ProjectOutline extends Component {
             />
           );
         })}
+        <h3>Check it out</h3>
         <div className="row">
-          <div className="button-wrapper">
-            <button className="button button-large">Check it out</button>
-          </div>
+          {this.props.project.links.map((link, i) => {
+            return (
+              <div className="column" key={i}>
+                <a href={link.url}>
+                  <h4>{link.label}</h4>
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
