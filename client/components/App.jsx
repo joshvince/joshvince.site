@@ -11,6 +11,7 @@ import Menu from 'components/Menu/Menu.jsx';
 import ScrollToTop from 'components/Helpers/ScrollToTop.jsx';
 import ProjectsPage from 'components/Projects/ProjectsPage.jsx';
 import Home from 'components/Home/Home.jsx';
+import About from 'components/About/About.jsx';
 import ProjectOutline from 'components/Projects/ProjectOutline/ProjectOutline.jsx';
 
 /* import the JSON containing the projects */
@@ -46,6 +47,7 @@ class App extends Component {
             <Route component={Menu} />
             <div id="main">
               <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
               <Route exact path="/projects" component={ProjectsPage} />
               {/* render a route and project page for each project in the projectList*/}
               {projectList.map(renderProjectRoute)}
