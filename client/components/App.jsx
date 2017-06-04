@@ -7,6 +7,7 @@ import 'milligram';
 import './styles.css';
 
 /* import other components */
+import Menu from 'components/Menu/Menu.jsx';
 import ScrollToTop from 'components/Helpers/ScrollToTop.jsx';
 import ProjectsPage from 'components/Projects/ProjectsPage.jsx';
 import Home from 'components/Home/Home.jsx';
@@ -42,9 +43,13 @@ class App extends Component {
       <Router>
         <ScrollToTop>
           <div className="container">
-            <Route exact path="/" component={Home} />
+            <Route component={Menu} />
+            <div id="main">
+              <Route exact path="/" component={Home} />
+              <Route exact path="/projects" component={ProjectsPage} />
               {/* render a route and project page for each project in the projectList*/}
               {projectList.map(renderProjectRoute)}
+            </div>
           </div>
         </ScrollToTop>
       </Router>

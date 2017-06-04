@@ -1,0 +1,40 @@
+#sectionHeader {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.headerContainer {
+  height: 90vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.highlight {
+  color: #EFCB68;
+}
+
+.pageTitle-appear {
+  opacity: 0.01;
+}
+
+.pageTitle-appear.pageTitle-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.pageSubheader-appear {
+  opacity: 0.01;
+}
+
+.pageSubheader-appear.pageSubheader-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.5s;
+}
+
+@media only screen and (min-width: 40rem) {
+  #sectionHeader {
+    font-size: 8rem;
+  }
+}

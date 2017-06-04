@@ -1,7 +1,18 @@
 * {
-  font-family: 'Hind', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #3993DD;
+  color: #EAEBED;
 }
 
-a {
-  color: #0a4aaf;
+a > h2 {
+  transition: color 0.5s ease;
+  color: #EAEBED;
+}
+
+a > h2:hover {
+  color: #B4C5E4;
+}
+
+#main{
+  margin-top: 7rem;
 }
