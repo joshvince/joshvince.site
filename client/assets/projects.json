@@ -8,42 +8,95 @@
       {
         "title": "A web app for live tube arrivals",
         "image": "choobio.png",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "text": "Unlike the physical boards on the platform, Choobio gives you arrivals far ahead of the next few minutes and it also helps you find a quiet train by calculating the interval between two tube trains."
+      },
+      {
+        "title": "Elixir",
+        "image": "elixir.png",
+        "text": "Choobio's backend service written in Elixir. It's an OTP app that uses lots of the baked-in advantages that Elixir/Erlang provides. The app is highly fault tolerant, with each station & line handled in its own supervised process that can fall over and be restarted elegantly."
       },
       {
         "title": "React",
         "image": "react.svg",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "text": "The frontend of Choobio is a React app hosted on Amazon S3. The React app uses the material-ui library and follows Google's Material Design principles."
       },
       {
         "title": "A Progressive Web App",
         "image": "javascript.png",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "text": "Choobio is a Progressive Web App that has offline functionality using IndexedDB, Service Workers, App Manifests and more. On Android, it can be installed and used as if it were a native application."
+      }
+    ],
+    "links": [
+      {
+        "label": "Elixir Repo",
+        "url": "https://github.com/joshvince/choob_service" 
+      },
+      {
+        "label": "React Repo",
+        "url": "https://github.com/joshvince/choobio-web"
+      },
+      {
+        "label": "View App",
+        "url": "https://www.choob.io"
       }
     ]
   },
   {
     "name": "Football Rumours",
     "url": "/projects/football_rumours",
-    "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team.",
+    "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team",
     "image": "football_rumours.png",
     "paragraphs": [
       {
-        "title": "An echo skill to get football transfer rumours.",
+        "title": "An echo skill to get football transfer rumours",
         "image": "football_rumours.png",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "text": "You can ask this skill for rumours about your favourite football team, and it will find you stories from today's papers that match the team name you gave."
+      },
+      {
+        "title": "Written with modern Javascript",
+        "image": "javascript.png",
+        "text": "The skill is written in modern, modular, vanilla JS, making heavy use of async features like Promises. I used Test-Driven-Development and employ Mocha and Chai to test the code."
       },
       {
         "title": "Hosted on AWS Lambda",
         "image": "lambda.png",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  "
+        "text": "The code is hosted as an AWS Lambda function. Under the covers it uses AWS DynamoDB as a store for the days' stories to ensure it only scrapes the web once per day."
+      }
+    ],
+    "links": [
+      {
+        "label": "Repo",
+        "url": "https://github.com/joshvince/papertalk"
       }
     ]
   },
   {
     "name": "TRX",
     "url": "/projects/trx",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ",
-    "image": "choobio.png"
+    "summary": "An innovative app for the buying and selling of TV rights around the world.",
+    "image": "trx.svg",
+    "paragraphs": [
+      {
+        "title": "A B2B app for the TV industry",
+        "image": null,
+        "text": "TRX was conceived by experienced TV execs who wanted to bring efficiency and simplicity to the world of TV licensing. Distributors and Broadcasters around the world can use TRX to negotiate and complete TV rights deals. Channel 4 and Sky in the UK are amongst the investors in TRX."
+      },
+      {
+        "title": "Designed to make deals easier",
+        "image": null,
+        "text": "I was lucky enough to join TRX at the very beginning. During the initial phase of the project I assisted with research and scoping tasks. In 2016, I was made Product Manager and worked with the team to put together the initial beta release in late 2016."
+      },
+      {
+        "title": "User Experience",
+        "image": null,
+        "text": "I see my main role as ensuring we deliver the right product for our users. TRX is a disruptive application aiming to change existing behaviours, and in order to succeed we have to ensure our User Experience is top notch."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://www.trx.tv"
+      }
+    ]
   }
 ]
