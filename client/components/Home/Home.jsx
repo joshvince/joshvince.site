@@ -4,8 +4,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 import './styles.css';
 
-import Menu from 'components/Home/Menu/Menu.jsx';
-import projectList from 'assets/projects.json';
+import Menu from 'components/Menu/Menu.jsx';
 
 class Home extends Component {
   render() {
@@ -29,7 +28,6 @@ class Home extends Component {
             <p>I like to <span className="highlight">make stuff</span></p> 
           </CSSTransitionGroup>
         </div>
-        <ProjectsPage projectList={projectList}/>
       </div>
     );
   }
