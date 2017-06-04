@@ -12,6 +12,7 @@ import ScrollToTop from 'components/Helpers/ScrollToTop.jsx';
 import ProjectsPage from 'components/Projects/ProjectsPage.jsx';
 import Home from 'components/Home/Home.jsx';
 import About from 'components/About/About.jsx';
+import Contact from 'components/Contact/Contact.jsx';
 import ProjectOutline from 'components/Projects/ProjectOutline/ProjectOutline.jsx';
 
 /* import the JSON containing the projects */
@@ -26,7 +27,7 @@ function importAll(r) {
 
 const imgLib = importAll(require.context('assets/img', false, /\.(png|jpe?g|svg)$/));
 
-/* Dynamically render a Route, adding the project JSON as props to the component */
+/* Dynamically render a Route for each project, adding the project JSON as props to the component */
 const renderProjectRoute = (project, i) => {
   return (
     <Route
@@ -48,6 +49,7 @@ class App extends Component {
             <div id="main">
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
               <Route exact path="/projects" component={ProjectsPage} />
               {/* render a route and project page for each project in the projectList*/}
               {projectList.map(renderProjectRoute)}

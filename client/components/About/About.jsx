@@ -14,7 +14,7 @@ class About extends Component {
                 In the last couple of years, I've taught myself to make things with code.<br/><br/>
                 
                 I currently live in London and work as a <span className="highlight"> Product Manager </span> 
-                at <a href="trx.tv">trx.tv</a> which is brilliant because I get to make stuff, big and small, 
+                at <a href="https://www.trx.tv">trx.tv</a> which is brilliant because I get to make stuff, big and small, 
                 every day.<br/><br/>
 
                 I know all this page proves is that I know the hexcode for an awesome blue background, 
