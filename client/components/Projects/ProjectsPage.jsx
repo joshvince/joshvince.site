@@ -20,7 +20,7 @@ class ProjectsPage extends Component {
     return (
       <div>
         <h1>Projects</h1>
-        <h4 className="subheader">Some things I made or helped to make</h4>
+        <h4 className="subheader">Some things I made</h4>
         { rows.map((arr,i) => { return <SummaryRow projects={arr} key={i} /> }) }
       </div>
     );

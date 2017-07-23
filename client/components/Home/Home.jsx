@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 import Menu from 'components/Menu/Menu.jsx';
 import About from 'components/About/About.jsx';
@@ -26,7 +27,23 @@ class Home extends Component {
             <p>I like to <span className="highlight">make stuff</span></p> 
           </CSSTransitionGroup>
         </div>
-        <About />
+        <div className="row">
+          <div className="column">
+            <h1>About me</h1>
+            <div className="paragraph">
+              <p>
+                I live in London and work as a <span className="highlight"> Product Manager </span> 
+                at <a href="https://www.trx.tv">trx.tv</a> which is brilliant because I get to make stuff, big and small, 
+                every day.<br/><br/>
+
+                You can see examples of things I've made over at the <Link to="/projects"> projects page </Link>
+                or you can learn more about me at the appropriately titled <Link to="/about"> about page</Link>.
+              </p>
+            </div>
+            <br/><br/><br/>
+          </div>  
+        </div>
+        {/* <About /> */}
       </div>
     );
   }

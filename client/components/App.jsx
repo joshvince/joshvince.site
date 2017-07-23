@@ -40,7 +40,6 @@ const renderProjectRoute = (project, i) => {
 
 class App extends Component {
   render() {
-    console.log("rendered App component")
     return (
       <Router>
         <ScrollToTop>
