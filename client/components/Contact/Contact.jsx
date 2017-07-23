@@ -6,11 +6,11 @@ class Contact extends Component {
     return (
       <div className="row" id="contactContainer">
         <h1>Get in touch</h1>
-        <a href="mailto:joshmvince@gmail.com">
-          <h4>Email</h4>
+        <a>
+          <h4>Email me at joshmvince at gmail dot com</h4>
         </a>
         <a href="https://github.com/joshvince">
-          <h4>Github</h4>         
+          <h4>View my Github</h4>         
         </a>
       </div>
     );
