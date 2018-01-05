@@ -1,25 +1,26 @@
 * {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #3993DD;
-  color: #EAEBED;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  background-color: #EFFCF6;
+  color: #010400;
   text-align: center;
 }
 
 a, a > h2, a > h4 {
   transition: color 0.5s ease;
-  color: #BBE5ED;
+  color: #3993DD;
+  text-decoration: underline;
 }
 
-a:hover, a:focus, a:active, a > h2:hover, a > h4:hover {
-  color: #B4C5E4;
+a:hover, a:focus, a:active {
+  color: #A3CEF1;
 }
 
 #main{
-  margin-top: 7rem;
+  margin-top: 12rem;
 }
 
 .highlight {
-  color: #EFCB68;
+  /* color: #3993DD; */
 }
 
 
@@ -30,6 +31,20 @@ a:hover, a:focus, a:active, a > h2:hover, a > h4:hover {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  margin: 2em 0;
+}
+
+p {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
 }
 
 /* 
@@ -39,6 +54,6 @@ DESKTOP
 @media only screen and (min-width: 40rem) {
   .paragraph > p {
     width: 90%;
-    max-width: 55rem;
+    max-width: 60rem;
   }
 }
