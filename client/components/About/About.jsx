@@ -59,8 +59,8 @@ class About extends Component {
             <div className="paragraph">
               <p>
                 One of my biggest passions is <span className="highlight"> music</span>. If we meet I can tell you 
-                about how, as a teenager, I was legitimately once in a band called "The Defects" and how I am pretty 
-                sure there was an A&R man at a gig I played above a bar once.<br/><br/>
+                about how, as a teenager, I played in a bunch of (criminally unsuccessful) bands and we were pretty 
+                sure there was an A&R man at a gig we played above a bar once.<br/><br/>
                 
                 I am also keenly interested in <span className="highlight"> history </span> both ancient and modern, 
                 and I love football, especially the mighty <span className="highlight"> Brighton. </span>

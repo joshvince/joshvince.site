@@ -3,14 +3,26 @@
   top: 0;
   left: 0;
   padding: 2rem; 
-  text-align: center;
-  background: linear-gradient(#3993DD, rgba(57,147,221,0.9),
-  rgba(255,255,255,0));
+  text-align: center;  
+  background-color: #3993DD;
   width: 100%;
   display: flex;
   justify-content: space-around;
+  font-size: 1.2em;
 }
 
 .navItem {
   background-color: transparent;
+  color: #E7ECEF;
+  text-decoration: none;
+}
+
+/* 
+DESKTOP 
+=================*/
+
+@media only screen and (min-width: 40rem) {
+  #nav {
+    font-size: 1.5em;
+  }
 }
