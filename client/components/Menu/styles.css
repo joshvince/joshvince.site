@@ -4,7 +4,7 @@
   left: 0;
   padding: 2rem; 
   text-align: center;  
-  background-color: #3993DD;
+  background-color: #006494;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -13,7 +13,8 @@
 
 .navItem {
   background-color: transparent;
-  color: #E7ECEF;
+  font-size: 1.3em;
+  color: white;
   text-decoration: none;
 }
 
