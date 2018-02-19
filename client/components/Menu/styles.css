@@ -13,9 +13,14 @@
 
 .navItem {
   background-color: transparent;
-  font-size: 1.3em;
+  font-size: 1em;
   color: white;
   text-decoration: none;
+}
+
+/* Don't display the home nav item if you are on mobile */
+#homeItem {
+  display: none;
 }
 
 /* 
@@ -25,5 +30,9 @@ DESKTOP
 @media only screen and (min-width: 40rem) {
   #nav {
     font-size: 1.5em;
+  }
+  
+  #homeItem {
+    display: inline;
   }
 }
