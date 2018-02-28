@@ -8,7 +8,7 @@ import './styles.css';
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div id="homepageContainer">
         <div className="headerContainer">
           <CSSTransitionGroup
             transitionName="pageTitle"
@@ -33,7 +33,7 @@ class Home extends Component {
             <div className="paragraph">
               <p>
                 I live in London and work as a <span className="highlight"> Product Manager </span> 
-                at <a href="https://www.trx.tv">trx.tv</a> which is brilliant because I get to make stuff, big and small, 
+                at <a href="https://www.zencargo.com">Zencargo</a> which is brilliant because I get to make stuff, big and small, 
                 every day.<br/><br/>
 
                 You can see examples of things I've made over at the <Link to="/projects"> projects page </Link>
@@ -43,7 +43,6 @@ class Home extends Component {
             <br/><br/><br/>
           </div>  
         </div>
-        {/* <About /> */}
       </div>
     );
   }
