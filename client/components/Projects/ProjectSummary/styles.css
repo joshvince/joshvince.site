@@ -51,6 +51,13 @@ MOBILE
   margin-bottom: 0;
 }
 
+.subheader {
+  color: #006494;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+
+}
+
 /* 
 DESKTOP 
 =================*/

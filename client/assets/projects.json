@@ -1,8 +1,29 @@
 [
   {
+    "name": "Zencargo",
+    "url": "/projects/zencargo",
+    "summary": "The digital Freight Forwarder, solving problems in Supply Chain and Logistics with technology.",
+    "dates": "Worked here from 2018 to now",
+    "image": null,
+    "paragraphs": [
+      {
+        "title": "A new challenege",
+        "image": null,
+        "text": "I started at Zencargo in March 2018 as Product Manager. They are a growing start up solving really interesting problems in the world of freight and logistics."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://www.zencargo.com"
+      }
+    ]
+  },
+  {
     "name": "Choobio",
     "url": "/projects/choobio",
     "summary": "A progressive web app that gives you live arrivals boards for London Underground stations.",
+    "dates": "Project in 2017",
     "image": "choobio.png",
     "paragraphs": [
       {
@@ -45,6 +66,7 @@
     "name": "Football Rumours",
     "url": "/projects/football_rumours",
     "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team",
+    "dates": "Project in 2017",
     "image": "football_rumours.png",
     "paragraphs": [
       {
@@ -74,6 +96,7 @@
     "name": "TRX",
     "url": "/projects/trx",
     "summary": "An innovative app for the buying and selling of TV rights around the world.",
+    "dates": "Worked here from 2016 to 2018",
     "image": "trx.svg",
     "paragraphs": [
       {
@@ -84,12 +107,12 @@
       {
         "title": "Designed to make deals easier",
         "image": null,
-        "text": "I was lucky enough to join TRX at the very beginning. During the initial phase of the project I assisted with research and scoping tasks. In 2016, I was made Product Manager and have since overseen the roadmap to put together the initial beta release in late 2016."
+        "text": "I was lucky enough to join TRX at the very beginning. During the initial phase of the project I assisted with research and scoping tasks. In January 2016, I was made Product Manager and I worked with the team for the following two years overseeing the initial release and adoption by some of the biggest companies in the world of TV."
       },
       {
         "title": "User Experience",
         "image": null,
-        "text": "I see my main role as ensuring we deliver the right product for our users. TRX is a disruptive application aiming to change existing behaviours, and in order to succeed we have to ensure our User Experience is top notch."
+        "text": "During my time at TRX my main role was to find out the right product we had to build for our users. I'm proud of the User Experience I had a hand in creating, and I think TRX is going to change the industry. I moved on in February 2018."
       }
     ],
     "links": [

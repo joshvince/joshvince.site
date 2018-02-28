@@ -22,10 +22,8 @@ class About extends Component {
             <h3>Making things with code</h3>
             <div className="paragraph">
               <p>
-                I work as a <span className="highlight">Product Manager</span> at trx.tv, 
-                where we are making something really cool: a way for broadcasters and TV rights 
-                holders to negotiate and close licensing deals. I oversee the roadmap for the
-                product and get to work with talented designers and engineers.
+                I work as a <span className="highlight">Product Manager</span> at Zencargo, 
+                I joined in March 2018 and am really pleased to be starting a new exciting challenge.
               </p>
               <p>
                 Over the last couple of years I've also taught myself to code. 

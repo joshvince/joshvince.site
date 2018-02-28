@@ -16,7 +16,11 @@ a:hover, a:focus, a:active {
 }
 
 #main{
-  margin-top: 12rem;
+  margin-top: 8rem;
+}
+
+#main > div:not(#homepageContainer) {
+  padding-top: 3rem;
 }
 
 .highlight {
