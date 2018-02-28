@@ -16,9 +16,13 @@ class ProjectsPage extends Component {
     return results;
   }
   render() {
+    let imgSrc = this.props.imgLib['projects.png'];
     var rows = this.chunkArray(projectList, 2)
     return (
       <div>
+        <div className="column">
+          <img src={imgSrc} id="headerImage"/>
+        </div>
         <h1>Projects</h1>
         <h4>Some places I worked and some things I made</h4>
         { rows.map((arr,i) => { return <SummaryRow projects={arr} key={i} /> }) }

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
 
 class About extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
+    let imgSrc = this.props.imgLib['about.png'];
     return (
       <div>
 
         <div className="row">
           <div className="column">
-
+            <img src={imgSrc} id="headerImage"/>
             <h1>About me</h1>
             <div className="paragraph">
               <p>

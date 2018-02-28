@@ -47,9 +47,9 @@ class App extends Component {
             <Route component={Menu} />
             <div id="main">
               <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/projects" component={ProjectsPage} />
+              <Route exact path="/about" render={() => <About imgLib={imgLib}/>}/>
+              <Route exact path="/contact" render={() => <Contact imgLib={imgLib}/>}/>
+              <Route exact path="/projects" render={() => <ProjectsPage imgLib={imgLib}/>} />
               {/* render a route and project page for each project in the projectList*/}
               {projectList.map(renderProjectRoute)}
             </div>

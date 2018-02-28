@@ -23,6 +23,16 @@ a:hover, a:focus, a:active {
   padding-top: 3rem;
 }
 
+#headerImage {
+  max-height: 20vh;
+  margin: 0;
+}
+
+.caption {
+  font-size: 1.6rem;
+  color: #006494;
+}
+
 .highlight {
   /* color: #3993DD; */
 }
