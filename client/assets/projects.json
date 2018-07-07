@@ -1,5 +1,35 @@
 [
   {
+    "name": "Bowie Ipsum",
+    "url": "/projects/bowie-ipsum",
+    "summary": "A simple SPA to generate David Bowie themed lorem ipsum.",
+    "dates": "Project in 2018",
+    "image": "bowieipsumlogo.png",
+    "paragraphs": [
+      {
+        "title": "Better Lorem Ipsum",
+        "image": "bowieipsum.svg",
+        "text": "I created this simple site so designers could use David Bowie themed Lorem Ipsum in designs. It generates random Bowie lyrics, lets you choose the era and the length and allows copying to clipboard."
+      },
+      {
+        "title": "Modern CSS",
+        "image": "css.svg",
+        "text": "I wanted to use modern CSS, and this was my first experiment with CSS grid, particularly combining it with flexbox and responsive design. It was also my first real look at transitions and how to add finishing touches with CSS."
+      },
+      {
+        "title": "React Context API",
+        "image": "react.svg",
+        "text": "I had a perfect use case for the new React Context API, updating the theme based on the user's choice. I handled this with the context API to update the colors, and CSS CSS for transitions."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://joshvince.github.io/bowie-ipsum"
+      }
+    ]
+  },
+  {
     "name": "Zencargo",
     "url": "/projects/zencargo",
     "summary": "The digital Freight Forwarder, solving problems in Supply Chain and Logistics with technology.",
@@ -50,7 +80,7 @@
     "links": [
       {
         "label": "Elixir Repo",
-        "url": "https://github.com/joshvince/choob_service" 
+        "url": "https://github.com/joshvince/choob_service"
       },
       {
         "label": "React Repo",
