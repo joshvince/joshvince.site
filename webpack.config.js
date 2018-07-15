@@ -5,10 +5,22 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const combineLoaders = require('webpack-combine-loaders');
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
   resolve: {
     modules: [
       path.resolve(__dirname, 'client'),
@@ -21,30 +33,21 @@ module.exports = {
     filename: 'index_bundle.js'
   },
   module: {
-    loaders: [
-      { 
-        test: /\.js$/, 
-        loader: 'babel-loader', 
-        exclude: /node_modules/ 
-      },
-      { 
-        test: /\.jsx$/, 
-        loader: 'babel-loader', 
-        exclude: /node_modules/ 
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use:
-            combineLoaders([{
-              loader: 'css-loader',
-              query: {
-                // modules: true,
-                // localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }])
-        })
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+
+          },
+          'css-loader'
+        ]
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -54,6 +57,10 @@ module.exports = {
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    new ExtractTextPlugin('styles.css')
-    ]
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "styles.css"
+    })
+  ]
 }
