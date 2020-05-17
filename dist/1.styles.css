@@ -599,8 +599,8 @@ img {
   float: right;
 }
 * {
-  font-family: 'Lato', 'Helvetica', sans-serif;
-  background-color: #F7F7FF;
+  font-family: 'Inter', 'Lato', 'Helvetica', sans-serif;
+  /* background-color: #F7F7FF; */
   color: #262626;
   text-align: center;
 }
@@ -634,7 +634,8 @@ a:hover, a:focus, a:active {
 }
 
 .highlight {
-  /* color: #3993DD; */
+  color: #3993DD;
+  font-weight: 700;
 }
 
 
@@ -649,17 +650,19 @@ a:hover, a:focus, a:active {
 }
 
 p {
-  font-size: 1.3em;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
 h1 {
   font-size: 3em;
+  font-weight: 700;
   color: #006494;
 }
 
 h3 {
   font-size: 2em;
+  font-weight: 700;
   color: #006494;
 }
 
@@ -798,6 +801,7 @@ h1, h4{
 }
 #sectionHeader {
   font-size: 6rem;
+  font-weight: 700; 
   text-align: center;
   color: #006494;
 }
