@@ -1,45 +1,25 @@
 [
   {
-    "name": "Bowie Ipsum",
-    "url": "/projects/bowie-ipsum",
-    "summary": "A simple SPA to generate David Bowie themed lorem ipsum.",
-    "dates": "Project in 2018",
-    "image": "bowieipsumlogo.png",
-    "paragraphs": [
-      {
-        "title": "Better Lorem Ipsum",
-        "image": "bowieipsum.svg",
-        "text": "I created this simple site so designers could use David Bowie themed Lorem Ipsum in designs. It generates random Bowie lyrics, lets you choose the era and the length and allows copying to clipboard."
-      },
-      {
-        "title": "Modern CSS",
-        "image": "css.svg",
-        "text": "I wanted to use modern CSS, and this was my first experiment with CSS grid, particularly combining it with flexbox and responsive design. It was also my first real look at transitions and how to add finishing touches with CSS."
-      },
-      {
-        "title": "React Context API",
-        "image": "react.svg",
-        "text": "I had a perfect use case for the new React Context API, updating the theme based on the user's choice. I handled this with the context API to update the colors, and CSS CSS for transitions."
-      }
-    ],
-    "links": [
-      {
-        "label": "View the site",
-        "url": "https://joshvince.github.io/bowie-ipsum"
-      }
-    ]
-  },
-  {
     "name": "Zencargo",
     "url": "/projects/zencargo",
-    "summary": "The digital Freight Forwarder, solving problems in Supply Chain and Logistics with technology.",
+    "summary": "Supply chain optimisation for modern businesses.",
     "dates": "Worked here from 2018 to now",
-    "image": null,
+    "image": "zencargo.png",
     "paragraphs": [
       {
-        "title": "A new challenege",
+        "title": "Scaling a business",
         "image": null,
-        "text": "I started at Zencargo in March 2018 as Product Manager. They are a growing start up solving really interesting problems in the world of freight and logistics."
+        "text": "I started at Zencargo in March 2018 as the first Product Manager. Since then, the business has grown to over 100 people and I work in a Product Engineering team of 30."
+      },
+      {
+        "title": "Solving real world problems",
+        "image": null,
+        "text": "We move goods around the world for some of the fastest growing companies in retail. My work helps customers get the right product to the right place for the right cost."
+      },
+      {
+        "title": "Making an impact",
+        "image": null,
+        "text": "Throughout my time at Zencargo I've taken active roles in hiring, setting up our process and leading squads to make sure that we do great work, and have fun while we're at it."
       }
     ],
     "links": [
@@ -50,10 +30,74 @@
     ]
   },
   {
+    "name": "Wedding Site",
+    "url": "/projects/wedding-site",
+    "summary": "Handling the guest list for my wedding.",
+    "dates": "Side project in 2019",
+    "image": "wedding.png",
+    "paragraphs": [
+      {
+        "title": "A paperless wedding",
+        "image": "wedding.png",
+        "text": "We didn't want to send out traditional paper invitations, so I made an RSVP system for all our guests. Talk about a big bang release."
+      },
+      {
+        "title": "Phoenix API backend",
+        "image": "elixir.png",
+        "text": "I used a Phoenix app to handle the logic around RSVPs and invitations. It serves the frontend via a JSON API. I really enjoy Phoenix as a framework, especially for serving APIs."
+      },
+      {
+        "title": "React and Tailwind",
+        "image": "react.svg",
+        "text": "It was really important that I got this right first time, and I enjoyed using functional react (combined with tailwind.css) to handle richer user interactions."
+      }
+    ],
+    "links": [
+      {
+        "label": "Repo",
+        "url": "https://github.com/joshvince/weddingsite"
+      },
+      {
+        "label": "View the site",
+        "url": "http://boshwedding.com.s3-website-eu-west-1.amazonaws.com"
+      }
+    ]
+  },
+  {
+    "name": "Bowie Ipsum",
+    "url": "/projects/bowie-ipsum",
+    "summary": "A simple SPA to generate David Bowie themed lorem ipsum.",
+    "dates": "Side project in 2018",
+    "image": "bowieipsumlogo.png",
+    "paragraphs": [
+      {
+        "title": "Better Lorem Ipsum",
+        "image": "bowieipsum.svg",
+        "text": "I created this simple site so designers could use David Bowie themed Lorem Ipsum in designs. Select an era and generate random lyrics to fill the blanks."
+      },
+      {
+        "title": "Leveraging modern CSS",
+        "image": "css.svg",
+        "text": "This was my first experiment with CSS grid combined with flexbox. It was also my first real look at transitions and how to add finishing touches with CSS."
+      },
+      {
+        "title": "React Context API",
+        "image": "react.svg",
+        "text": "I worked on this as React released the Context API, updating the theme based on the user's choice seemed a good use case."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://joshvince.github.io/bowie-ipsum"
+      }
+    ]
+  },
+  {
     "name": "Choobio",
     "url": "/projects/choobio",
     "summary": "A progressive web app that gives you live arrivals boards for London Underground stations.",
-    "dates": "Project in 2017",
+    "dates": "Side project in 2018",
     "image": "choobio.png",
     "paragraphs": [
       {
@@ -64,7 +108,7 @@
       {
         "title": "Elixir",
         "image": "elixir.png",
-        "text": "Choobio's backend service written in Elixir. It's an OTP app that uses lots of the baked-in advantages that Elixir/Erlang provides. The app is highly fault tolerant, with each station & line handled in its own supervised process that can fall over and be restarted elegantly."
+        "text": "Choobio's backend service is written in Elixir. It's an OTP app that is fault tolerant, with each station & line handled in its own supervised process that can fall over and be restarted elegantly."
       },
       {
         "title": "React",
@@ -79,16 +123,12 @@
     ],
     "links": [
       {
-        "label": "Elixir Repo",
+        "label": "Backend Repo",
         "url": "https://github.com/joshvince/choob_service"
       },
       {
-        "label": "React Repo",
+        "label": "PWA Repo",
         "url": "https://github.com/joshvince/choobio-web"
-      },
-      {
-        "label": "View App",
-        "url": "https://www.choob.io"
       }
     ]
   },
@@ -96,7 +136,7 @@
     "name": "Football Rumours",
     "url": "/projects/football_rumours",
     "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team",
-    "dates": "Project in 2017",
+    "dates": "Side project in 2017",
     "image": "football_rumours.png",
     "paragraphs": [
       {
@@ -105,9 +145,9 @@
         "text": "You can ask this skill for rumours about your favourite football team, and it will find you stories from today's papers that match the team name you gave."
       },
       {
-        "title": "Written with modern Javascript",
+        "title": "Test-driven JS backend",
         "image": "javascript.png",
-        "text": "The skill is written in modern, modular, vanilla JS, making heavy use of async features like Promises. I used Test-Driven-Development and employ Mocha and Chai to test the code."
+        "text": "The skill is written in modular, vanilla JS, making heavy use of async features like Promises. I used Test-Driven-Development and employ Mocha and Chai to test the code."
       },
       {
         "title": "Hosted on AWS Lambda",
