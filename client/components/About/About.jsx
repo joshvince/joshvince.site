@@ -16,9 +16,9 @@ class About extends Component {
             <h1>About me</h1>
             <div className="paragraph">
               <p>
-                I love to make all kinds of things: scripts, songs, films, plays,
-                and when I was 15 some friends and I made a flash cartoon site which
-                has since deservedly been lost to the annals of internet oblivion.
+                I love to make all kinds of things. Mostly I make software, music, films and food.
+                I've done this since I was very young with varying degrees of success (RIP the flash cartoon site we made as 15
+                year olds, deservedly lost to the annals of oblivion.)
               </p>
             </div>
 
@@ -26,28 +26,28 @@ class About extends Component {
             <div className="paragraph">
               <p>
                 I work as a <span className="highlight">Product Manager</span> at Zencargo,
-                I joined in March 2018 and am really pleased to be starting a new exciting challenge.
+                as part of a team making an ambitious piece of software that helps global supply chains.
               </p>
               <p>
-                Over the last couple of years I've also taught myself to code.
-                I enjoy working with <span className="highlight">Javascript</span>, both in the browser and
-                on the server with <span className="highlight">Node.js</span>. My favourite framework is
-                <span className="highlight"> React</span> because I love the component-led style of building UI.
+                In 2016 I fell into product development and, with the help of <a href="https://twitter.com/cameronp">Cameron Price</a> I 
+                learned to code. Since then I've loved making software both in my job as a Product Manager and directly
+                on the side. 
               </p>
               <p>
-                I also really enjoy working in <span className="highlight">Elixir</span>,
-                a <span className="highlight"> Functional Programming </span> language, and I've also
-                started looking to the future of the web, exploring concepts like
-                <span className="highlight"> Progressive Web Apps and AR. </span>
+                I learned to code via <span className="highlight">Elixir </span> and <span className="highlight">Functional Programming</span>. 
+                Throughout my career I've mostly worked <span className="highlight">Ruby </span> and I'm particularly
+                fond of <span className="highlight"> React</span> in the frontend, especially as it allows me to flex those FP muscles.
               </p>
             </div>
 
             <h3>Making things with words</h3>
             <div className="paragraph">
               <p>
-                After university, before I moved into technology I worked in the TV industry, working in
-                <span className="highlight"> scriptwriting</span>. I've also written and directed a few
-                short films and a play that ran at the Edinburgh Fringe.<br/><br/>
+                Before I moved into product development I worked in the TV industry working with
+                <span className="highlight"> scriptwriters</span> and, weirdly, on a spin-off of Eastenders. 
+                I directed a play at the Edinburgh Fringe Festival and somehow I've got a   
+                surreal <a href="https://www.imdb.com/name/nm4531408/">IMDB page</a> that shows the lengths 
+                my friends and I would go to to avoid doing real work.<br/><br/>
 
                 Working with writing and writers has given me a good understanding of how to <span className="highlight">
                 communicate effectively. </span> I am also a firm believer in the idea that narrative is the

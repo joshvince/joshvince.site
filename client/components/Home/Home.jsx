@@ -16,7 +16,7 @@ class Home extends Component {
             transitionAppearTimeout={500}
             transitionEnter={false}
             transitionLeave={false}>
-            <header id="sectionHeader">Josh Vince </header>
+            <header id="sectionHeader">JOSH VINCE </header>
           </CSSTransitionGroup>
           <CSSTransitionGroup
             transitionName="pageSubheader"
@@ -32,9 +32,8 @@ class Home extends Component {
             <h1>About me</h1>
             <div className="paragraph">
               <p>
-                I live in London and work as a <span className="highlight"> Product Manager </span> 
-                at <a href="https://www.zencargo.com">Zencargo</a> which is brilliant because I get to make stuff, big and small, 
-                every day.<br/><br/>
+                I live on the south coast of the UK and work as a <span className="highlight"> Product Manager </span> 
+                at <a href="https://www.zencargo.com">Zencargo</a> making stuff, big and small, every day.<br/><br/>
 
                 You can see examples of things I've made over at the <Link to="/projects"> projects page </Link>
                 or you can learn more about me at the appropriately titled <Link to="/about"> about page</Link>.
