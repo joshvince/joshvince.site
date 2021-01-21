@@ -1,9 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
-import "milligram";
 
-import "./styles.css";
-
+import Sidebar from "./components/Sidebar/Sidebar";
 import Menu from "./components/Menu/Menu";
 import ScrollToTop from "./components/Helpers/ScrollToTop";
 import ProjectsPage from "./components/Projects/ProjectsPage";
@@ -32,10 +30,11 @@ const renderProjectRoute = (project: Project, i: number): ReactNode => {
 const App: FC = () => {
   return (
     <Router>
-      <div className="container">
+      <div className="container mx-auto max-w-5xl py-12 px-6 flex font-body text-gray-600 font-light text-lg">
         <ScrollToTop />
-        <Route component={Menu} />
-        <div id="main">
+        <Route component={Sidebar} />
+        {/* <Route component={Menu} /> */}
+        <div className="px-6 w-9/12 ml-64">
           <Route exact path="/" component={Home} />
           <Route exact path="/about" render={() => <About />} />
           <Route exact path="/contact" render={() => <Contact />} />

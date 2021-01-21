@@ -1,38 +1,18 @@
-import React, { FC } from "react";
-import SummaryRow from "./ProjectSummary/SummaryRow";
-
-import image from "../../assets/img/projects.png";
+import { FC } from "react";
+import ProjectSummary from "./ProjectSummary/ProjectSummary";
 
 import type { Project } from "./types";
-
-import "./styles.css";
 
 interface Props {
   projects: Project[];
 }
 
-const chunkArray = (propArray: any[], chunkSize: number): any[] => {
-  var newArray = Array.from(propArray);
-  var results = [];
-  while (newArray.length) {
-    results.push(newArray.splice(0, chunkSize));
-  }
-  return results;
-};
-
 const ProjectsPage: FC<Props> = ({ projects }) => {
-  const rows = chunkArray(projects, 2);
-
   return (
-    <div>
-      <div className="column">
-        <img src={image} id="headerImage" alt="my face" />
-      </div>
-      <h1>Projects</h1>
-      <h4>Some places I worked and some things I made</h4>
-      {rows.map((row, i) => (
-        <SummaryRow projects={row} key={i} />
-      ))}
+    <div className="flex flex-col justify-start text-left">
+      <h1 className="font-black text-7xl mb-10 text-left text-gray-800">Things.</h1>
+      <p className="mb-12">Some things I've made or places I've worked.</p>
+      {projects.map(project => <ProjectSummary project={project} />)}
     </div>
   );
 };

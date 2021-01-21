@@ -1,99 +1,75 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
-import about from "../../assets/img/about.png";
-
 const About: FC = () => {
   return (
-    <div>
-      <div className="row">
-        <div className="column">
-          <img src={about} id="headerImage" alt="My face"/>
-          <h1>About me</h1>
-          <div className="paragraph">
-            <p>
-              I love to make all kinds of things. Mostly I make software, music,
-              films and food. I've done this since I was very young with varying
-              degrees of success (RIP the flash cartoon site we made as 15 year
-              olds, deservedly lost to the annals of oblivion.)
-            </p>
-          </div>
-
-          <h3>Making things with code</h3>
-          <div className="paragraph">
-            <p>
-              I work as a <span className="highlight">Product Manager</span> at
-              Zencargo, as part of a team making an ambitious piece of software
-              that helps global supply chains.
-            </p>
-            <p>
-              In 2016 I fell into product development and, with the help of{" "}
-              <a href="https://twitter.com/cameronp">Cameron Price</a> I learned
-              to code. Since then I've loved making software both in my job as a
-              Product Manager and directly on the side.
-            </p>
-            <p>
-              I learned to code via <span className="highlight">Elixir </span>{" "}
-              and <span className="highlight">Functional Programming</span>.
-              Throughout my career I've mostly worked{" "}
-              <span className="highlight">Ruby </span> and I'm particularly fond
-              of <span className="highlight"> React</span> in the frontend,
-              especially as it allows me to flex those FP muscles.
-            </p>
-          </div>
-
-          <h3>Making things with words</h3>
-          <div className="paragraph">
-            <p>
-              Before I moved into product development I worked in the TV
-              industry working with
-              <span className="highlight"> scriptwriters</span> and, weirdly, on
-              a spin-off of Eastenders. I directed a play at the Edinburgh
-              Fringe Festival and somehow I've got a surreal{" "}
-              <a href="https://www.imdb.com/name/nm4531408/">IMDB page</a> that
-              shows the lengths my friends and I would go to to avoid doing real
-              work.
-              <br />
-              <br />
-              Working with writing and writers has given me a good understanding
-              of how to{" "}
-              <span className="highlight">communicate effectively. </span> I am
-              also a firm believer in the idea that narrative is the primary way
-              we see the world and ourselves within it, which is a mindset I
-              apply to my work in
-              <span className="highlight"> UX and Interaction Design. </span>
-            </p>
-          </div>
-
-          <h3>Everything else</h3>
-          <div className="paragraph">
-            <p>
-              One of my biggest passions is{" "}
-              <span className="highlight"> music</span>. If we meet I can tell
-              you about how, as a teenager, I played in a bunch of (criminally
-              unsuccessful) bands and we were pretty sure there was an A&R man
-              at a gig we played above a bar once.
-              <br />
-              <br />I am also keenly interested in{" "}
-              <span className="highlight"> history </span> both ancient and
-              modern, and I love football, especially the mighty{" "}
-              <span className="highlight"> Brighton. </span>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="column">
-          <Link to="/projects">
-            <h4>See my projects</h4>
-          </Link>
-        </div>
-        <div className="column">
-          <Link to="/contact">
-            <h4>Contact me</h4>
-          </Link>
-        </div>
+    <div className="flex flex-col justify-start text-left">
+      <h1 className="font-black text-7xl mb-8 text-left text-gray-800">Me.</h1>
+      <div className="max-w-prose text-left">
+        <p className="mb-6">
+          I live on the south coast of the UK and work as a Product Manager at{" "}
+          <a className="underline" href="https://zencargo.com">
+            Zencargo
+          </a>
+          . I make things like software, music, films and food. I've done this
+          with varying degrees of success (RIP{" "}
+          <a
+            className="underline"
+            href="https://web.archive.org/web/20050210033700/http://www.mediamirror.co.uk:80/"
+          >
+            the flash cartoon site
+          </a>{" "}
+          we made as 15 year olds, deservedly lost to the annals of oblivion.)
+        </p>
+        <h2 className="font-black text-5xl text-left text-gray-800 mt-10 mb-8">Code.</h2>
+        <p>
+          I've been a Product Manager at early stage businesses for about five
+          years. Twice now I've been the first PM as the team grew. I'm a
+          hands-on PM and the thrill and terror of a start up motivates me. I
+          love collaborating with engineers and designers to uncover the problem
+          and test solutions as rapidly as possible.
+        </p>
+        <br />
+        <p>
+          After a few years as a PM, I made the slightly unusual decision to
+          transition to become an engineer. I call myself a Product Engineer
+          because that reflects the way I work: start with Product thinking, and
+          find ways to engineer it.
+        </p>
+        <h2 className="font-black text-5xl text-left text-gray-800 mt-10 mb-8">Words.</h2>
+        <p>
+          Before I moved into product development I worked in the TV industry
+          working with scriptwriters and, weirdly, on a spin-off of Eastenders.
+          I directed a play at the Edinburgh Fringe Festival and somehow I've
+          got a surreal{" "}
+          <a className="underline" href="https://www.imdb.com/name/nm4531408/">
+            IMDb
+          </a>{" "}
+          page that shows the lengths my friends and I would go to to avoid
+          doing real work.
+        </p>
+        <h2 className="font-black text-5xl text-left text-gray-800 mt-10 mb-8">Music.</h2>
+        <p>
+          As a teenager, I played in a bunch of (criminally unsuccessful) bands
+          and we were pretty sure there was an A&R man at a gig we played above
+          a bar once. It was easy to tell because there were only 6 people there
+          and we didn't recognise one of them. Nowadays, I play music just for
+          myself. The world is largely unconcerned by this development.
+        </p>
+        <h2 className="font-black text-5xl text-left text-gray-800 mt-10 mb-8">And.</h2>
+        <p>
+          You've made it this far, so lets talk about the important stuff: I am
+          passionate about history, especially Republican Rome. I also love
+          football and have a season ticket at Brighton. As you might expect,
+          these two interests rarely intersect. If they do for you too, let's chat.
+        </p>
+        <br />
+        <p>
+          <Link className="underline" to="/contact">
+            Find my contact details here.
+          </Link>{" "}
+          No Crystal Palace fans or Carthaginians.
+        </p>
       </div>
     </div>
   );

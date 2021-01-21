@@ -1,25 +1,18 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import "./styles.css";
 
 import type { Project } from "../types";
 
 interface Props {
   project: Project;
-  solo: boolean;
 }
 
-const ProjectSummary: FC<Props> = ({ project, solo }) => {
-  const classes = solo ? "column solo card" : "column card";
+const ProjectSummary: FC<Props> = ({ project }) => {
   return (
-    <div className={classes}>
-      <div className="textCol">
-        <Link to={project.url}>
-          <h2 className="title">{project.name}</h2>
-        </Link>
-        <p className="subheader">{project.dates}</p>
-        <p className="summary">{project.summary}</p>
-      </div>
+    <div className="mb-20">
+      <Link to={project.url}><h2 className="text-gray-800 font-black text-4xl hover:underline">{project.name}</h2></Link>
+      <p className="uppercase text-gray-500 mt-1">{project.dates}</p>
+      <p className="mt-2">{project.summary}</p>
     </div>
   );
 };
