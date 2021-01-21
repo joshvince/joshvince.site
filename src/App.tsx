@@ -29,10 +29,9 @@ const renderProjectRoute = (project: Project, i: number): ReactNode => {
 const App: FC = () => {
   return (
     <Router>
-      <div className="container mx-auto max-w-5xl py-12 px-6 flex font-body text-gray-600 font-light text-lg">
+      <div className="container mx-auto max-w-5xl py-12 px-6 flex font-body bg-gray-50 text-gray-600 font-light text-lg">
         <ScrollToTop />
         <Route component={Sidebar} />
-        {/* <Route component={Menu} /> */}
         <div className="px-6 w-9/12 ml-64">
           <Route exact path="/" component={Home} />
           <Route exact path="/about" render={() => <About />} />
