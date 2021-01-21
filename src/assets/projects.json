@@ -1,0 +1,224 @@
+[
+  {
+    "name": "Zencargo",
+    "url": "/projects/zencargo",
+    "summary": "Supply chain optimisation for modern businesses.",
+    "dates": "Worked here from 2018 to now",
+    "image": "zencargo.png",
+    "paragraphs": [
+      {
+        "title": "Scaling a business",
+        "image": null,
+        "text": "I started at Zencargo in March 2018 as the first Product Manager in a company of ten people. Since then, the business has grown to over 140 people and I work in a Product Engineering team of 45."
+      },
+      {
+        "title": "Solving real world problems",
+        "image": null,
+        "text": "We move goods around the world for some of the fastest growing companies in retail. My work helps customers get the right product to the right place for the right cost."
+      },
+      {
+        "title": "Making an impact",
+        "image": null,
+        "text": "Throughout my time at Zencargo I've taken active roles in hiring, setting up our process and leading squads to make sure that we do great work, and have fun while we're at it."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://www.zencargo.com"
+      }
+    ]
+  },
+  {
+    "name": "2020 in meetings",
+    "url": "/projects/howmanymeetingswereyouin",
+    "summary": "Analyse how much time you spent in meetings in 2020",
+    "dates": "Side project in 2021",
+    "paragraphs": [
+      {
+        "title": "Analysing meetings",
+        "image": null,
+        "text": "This site takes in your calendar data and tells you the percentage of time you spent in meetings, as well as how the pandemic affected your meeting habits."
+      },
+      {
+        "title": "Integrating with Google",
+        "image": null,
+        "text": "To get the data, I use the Google Calendar API. I integrate through the browser client and handle oAuth correctly."
+      },
+      {
+        "title": "A Rails backend",
+        "image": null,
+        "text": "The actual analysis is served by a rails backend hosted on Heroku. I was able to spin up the entire backend in a couple of days using Rails. The frontend is in React."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://howmanymeetingswereyou.in"
+      }
+    ]
+  },
+  {
+    "name": "Wedding Site",
+    "url": "/projects/wedding-site",
+    "summary": "Handling the guest list for my wedding.",
+    "dates": "Side project in 2019",
+    "image": "wedding.png",
+    "paragraphs": [
+      {
+        "title": "A paperless wedding",
+        "image": "wedding.png",
+        "text": "We didn't want to send out traditional paper invitations, so I made an RSVP system for all our guests. Talk about a big bang release."
+      },
+      {
+        "title": "Phoenix API backend",
+        "image": "elixir.png",
+        "text": "I used a Phoenix app to handle the logic around RSVPs and invitations. It serves the frontend via a JSON API. I really enjoy Phoenix as a framework, especially for serving APIs."
+      },
+      {
+        "title": "React and Tailwind",
+        "image": "react.svg",
+        "text": "It was really important that I got this right first time, and I enjoyed using functional react (combined with tailwind.css) to handle richer user interactions."
+      }
+    ],
+    "links": [
+      {
+        "label": "Repo",
+        "url": "https://github.com/joshvince/weddingsite"
+      },
+      {
+        "label": "View the site",
+        "url": "http://boshwedding.com.s3-website-eu-west-1.amazonaws.com"
+      }
+    ]
+  },
+  {
+    "name": "Bowie Ipsum",
+    "url": "/projects/bowie-ipsum",
+    "summary": "A simple SPA to generate David Bowie themed lorem ipsum.",
+    "dates": "Side project in 2018",
+    "image": "bowieipsumlogo.png",
+    "paragraphs": [
+      {
+        "title": "Better Lorem Ipsum",
+        "image": "bowieipsum.svg",
+        "text": "I created this simple site so designers could use David Bowie themed Lorem Ipsum in designs. Select an era and generate random lyrics to fill the blanks."
+      },
+      {
+        "title": "Leveraging modern CSS",
+        "image": "css.svg",
+        "text": "This was my first experiment with CSS grid combined with flexbox. It was also my first real look at transitions and how to add finishing touches with CSS."
+      },
+      {
+        "title": "React Context API",
+        "image": "react.svg",
+        "text": "I worked on this as React released the Context API, updating the theme based on the user's choice seemed a good use case."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://joshvince.github.io/bowie-ipsum"
+      }
+    ]
+  },
+  {
+    "name": "Choobio",
+    "url": "/projects/choobio",
+    "summary": "A progressive web app that gives you live arrivals boards for London Underground stations.",
+    "dates": "Side project in 2018",
+    "image": "choobio.png",
+    "paragraphs": [
+      {
+        "title": "A web app for live tube arrivals",
+        "image": "choobio.png",
+        "text": "Unlike the physical boards on the platform, Choobio gives you arrivals far ahead of the next few minutes and it also helps you find a quiet train by calculating the interval between two tube trains."
+      },
+      {
+        "title": "Elixir",
+        "image": "elixir.png",
+        "text": "Choobio's backend service is written in Elixir. It's an OTP app that is fault tolerant, with each station & line handled in its own supervised process that can fall over and be restarted elegantly."
+      },
+      {
+        "title": "React",
+        "image": "react.svg",
+        "text": "The frontend of Choobio is a React app hosted on Amazon S3. The React app uses the material-ui library and follows Google's Material Design principles."
+      },
+      {
+        "title": "A Progressive Web App",
+        "image": "javascript.png",
+        "text": "Choobio is a Progressive Web App that has offline functionality using IndexedDB, Service Workers, App Manifests and more. On Android, it can be installed and used as if it were a native application."
+      }
+    ],
+    "links": [
+      {
+        "label": "Backend Repo",
+        "url": "https://github.com/joshvince/choob_service"
+      },
+      {
+        "label": "PWA Repo",
+        "url": "https://github.com/joshvince/choobio-web"
+      }
+    ]
+  },
+  {
+    "name": "Football Rumours",
+    "url": "/projects/football_rumours",
+    "summary": "An Amazon Echo skill to tell you the latest football transfer stories about your team",
+    "dates": "Side project in 2017",
+    "image": "football_rumours.png",
+    "paragraphs": [
+      {
+        "title": "An echo skill to get football transfer rumours",
+        "image": "football_rumours.png",
+        "text": "You can ask this skill for rumours about your favourite football team, and it will find you stories from today's papers that match the team name you gave."
+      },
+      {
+        "title": "Test-driven JS backend",
+        "image": "javascript.png",
+        "text": "The skill is written in modular, vanilla JS, making heavy use of async features like Promises. I used Test-Driven-Development and employ Mocha and Chai to test the code."
+      },
+      {
+        "title": "Hosted on AWS Lambda",
+        "image": "lambda.png",
+        "text": "The code is hosted as an AWS Lambda function. Under the covers it uses AWS DynamoDB as a store for the days' stories to ensure it only scrapes the web once per day."
+      }
+    ],
+    "links": [
+      {
+        "label": "Repo",
+        "url": "https://github.com/joshvince/papertalk"
+      }
+    ]
+  },
+  {
+    "name": "TRX",
+    "url": "/projects/trx",
+    "summary": "An innovative app for the buying and selling of TV rights around the world.",
+    "dates": "Worked here from 2016 to 2018",
+    "image": "trx.svg",
+    "paragraphs": [
+      {
+        "title": "A B2B app for the TV industry",
+        "image": null,
+        "text": "TRX was conceived by experienced TV execs who wanted to bring efficiency and simplicity to the world of TV licensing. Distributors and Broadcasters around the world can use TRX to negotiate and complete TV rights deals. Channel 4 and Sky in the UK are amongst the investors in TRX."
+      },
+      {
+        "title": "Designed to make deals easier",
+        "image": null,
+        "text": "I was lucky enough to join TRX at the very beginning. During the initial phase of the project I assisted with research and scoping tasks. In January 2016, I was made Product Manager and I worked with the team for the following two years overseeing the initial release and adoption by some of the biggest companies in the world of TV."
+      },
+      {
+        "title": "User Experience",
+        "image": null,
+        "text": "During my time at TRX my main role was to find out the right product we had to build for our users. I'm proud of the User Experience I had a hand in creating, and I think TRX is going to change the industry. I moved on in February 2018."
+      }
+    ],
+    "links": [
+      {
+        "label": "View the site",
+        "url": "https://www.trx.tv"
+      }
+    ]
+  }
+]
