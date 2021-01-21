@@ -9,12 +9,28 @@ const Sidebar: FC = () => {
         <div>SH</div>
       </Link>
       <div className="text-gray-900 mb-2">Josh Vince</div>
-      <Link to="/about"><div className="mb-1 hover:underline">About</div></Link>
-      <Link to="/blog"><div className="mb-1 hover:underline">Blog</div></Link>
-      <Link to="/projects"><div className="mb-1 hover:underline">Things</div></Link>
-      <Link to="/contact"><div className="mb-1 hover:underline">Contact</div></Link>
-      <a href="https://github.com/joshvince"><div className="mb-1 hover:underline">Github</div></a>
-      <a href="https://www.linkedin.com/in/joshvince/"><div className="mb-1 hover:underline">LinkedIn</div></a>
+      <Link to="/about">
+        <div className="mb-1 hover:underline">About</div>
+      </Link>
+      <Link to="/blog">
+        <div className="mb-1 hover:underline">Blog</div>
+      </Link>
+      <Link to="/projects">
+        <div className="mb-1 hover:underline">Things</div>
+      </Link>
+      <Link to="/contact">
+        <div className="mb-1 hover:underline">Contact</div>
+      </Link>
+      <a href="https://github.com/joshvince" target="_blank" rel="noreferrer">
+        <div className="mb-1 hover:underline">Github</div>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/joshvince/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="mb-1 hover:underline">LinkedIn</div>
+      </a>
     </div>
   );
 };

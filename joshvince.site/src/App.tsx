@@ -2,7 +2,6 @@ import React, { FC, ReactNode } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar/Sidebar";
-import Menu from "./components/Menu/Menu";
 import ScrollToTop from "./components/Helpers/ScrollToTop";
 import ProjectsPage from "./components/Projects/ProjectsPage";
 import Home from "./components/Home/Home";
