@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar: FC = () => {
   return (
-    <div className="w-64 max-w-sm flex flex-col object-top fixed">
+    <div className="hidden md:flex flex-col object-top fixed w-64 max-w-sm ml-12">
       <Link to="/" className="text-8xl font-black text-gray-800 pb-8">
         <div>JO</div>
         <div>SH</div>
