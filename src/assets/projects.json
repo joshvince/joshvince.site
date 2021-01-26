@@ -56,7 +56,8 @@
         "label": "View the site",
         "url": "https://howmanymeetingswereyou.in"
       }
-    ]
+    ],
+    "highlight": true
   },
   {
     "name": "Wedding Site",

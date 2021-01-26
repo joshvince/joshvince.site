@@ -4,19 +4,17 @@ import contact from "../../assets/img/contact.png";
 
 const Contact: FC = () => {
   return (
-    <div className="flex flex-col justify-start text-left text-xl">
-      <h1 className="font-black text-7xl mb-8 text-left text-gray-800">
+    <div className="flex flex-col justify-start text-left">
+      <h1 className="font-black text-7xl mb-10 text-left text-gray-800">
         Contact.
       </h1>
       <div>Email me at joshmvince at gmail dot com</div>
-      <br />
       <div>
         Check out my{" "} 
         <a href="https://github.com/joshvince">
           <span className="mb-1 underline">Github profile</span>
         </a>
       </div>
-      <br />
       <div>
         And here is my{" "} 
         <a href="https://www.linkedin.com/in/joshvince/">

@@ -10,7 +10,7 @@ interface Props {
 const ProjectOutline: FC<Props> = ({ project }) => {
   return (
     <div>
-      <h2 className="text-gray-800 font-black text-7xl mb-6">
+      <h2 className="text-gray-800 font-black text-6xl mb-6">
         {project.name}
       </h2>
       <p className="uppercase text-gray-500 mt-1">{project.dates}</p>

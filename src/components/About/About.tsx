@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const About: FC = () => {
   return (
     <div className="flex flex-col justify-start text-left">
-      <h1 className="font-black text-7xl mb-8 text-left text-gray-800">Me.</h1>
+      <h1 className="font-black text-7xl mb-10 text-left text-gray-800">Me.</h1>
       <div className="max-w-prose text-left">
         <p className="mb-6">
           I live on the south coast of the UK and work as a Product Manager at{" "}

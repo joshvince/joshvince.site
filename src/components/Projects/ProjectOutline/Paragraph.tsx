@@ -9,7 +9,7 @@ interface Props {
 const Paragraph: FC<Props> = ({ para }) => {
   return (
     <div>
-      <h3 className="font-black text-4xl text-left text-gray-800 mt-12 mb-6">{para.title}</h3>
+      <h3 className="font-black text-4xl text-left text-gray-800 mt-12 mb-2">{para.title}</h3>
       <p>{para.text}</p>
     </div>
   );
