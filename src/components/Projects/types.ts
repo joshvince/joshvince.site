@@ -4,8 +4,9 @@ export interface Project {
   summary: string;
   dates: string;
   image?: string;
-  paragraphs:  ProjectParagraph[]
-  links: LinkObject[]
+  paragraphs:  ProjectParagraph[];
+  links: LinkObject[];
+  highlight?: boolean;
 }
 
 export interface ProjectParagraph {
