@@ -1,0 +1,10 @@
+<% content_for :content do %>
+  <div
+    class="container mx-auto max-w-5xl md:pt-12 pb-12 flex flex-col md:flex-row font-body bg-gray-50 text-gray-600 font-light text-lg"
+    id="info-container"
+  >
+    <%= content_for?(:body_content) ? yield(:body_content) : yield %>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
