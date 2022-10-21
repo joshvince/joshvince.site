@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   root 'info#me'
   get '/contact', to: 'info#contact'
-  get '/projects', to: 'info#project_list'
   get 'blog', to: 'blog#index'
+  resources :projects, only: [:index]
 end
