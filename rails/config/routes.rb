@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'info#me'
+  get '/info/contact', 'info#contact'
 end

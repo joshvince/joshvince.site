@@ -1,0 +1,18 @@
+<% content_for :body_content do %>
+  <div class="flex flex-col justify-start text-left">
+    <h1 class="font-black text-7xl mb-10 text-left text-gray-800">Contact.</h1>
+    <div>Email me at joshmvince at gmail dot com</div>
+    <div>
+      Check out my <%= underlined_external_link "Github profile", "https://github.com/joshvince" %>
+    </div>
+    <div>
+      And here is my <%= underlined_external_link "LinkedIn", "https://www.linkedin.com/in/joshvince/" %>
+    </div>
+    <div class="flex flex-col justify-start mb-12 mt-24">
+      <%= image_tag "contact.png", alt: "Me, with existential dread", class: "object-contain h-64 mb-2" %>
+      <div class="text-sm text-gray-500 text-center">
+        I don't usually look this miserable.
+      </div>
+    </div>
+  </div>
+<% end %>
