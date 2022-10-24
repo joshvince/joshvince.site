@@ -10,8 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_131946) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "projects", force: :cascade do |t|
+    t.string "slug"
+    t.string "name"
+    t.string "subtitle"
+    t.jsonb "description"
+    t.string "link_1_name"
+    t.string "link_1"
+    t.string "link_2_name"
+    t.string "link_2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "unique_slugs", unique: true
+  end
 
 end

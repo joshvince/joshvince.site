@@ -1,0 +1,12 @@
+<% content_for :body_content do %>
+  <div>
+    <h2 class="text-gray-800 font-black text-6xl mb-6"><%= @project.name %></h2>
+    <p class="uppercase text-gray-500 mt-1"><%= @project.subtitle %></p>
+    <% @project.description_paragraphs.map do |description| %>
+      <div>
+        <h3 class="font-black text-4xl text-left text-gray-800 mt-12 mb-2"><%= description.heading%></h3>
+        <p><%= description.text%></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
