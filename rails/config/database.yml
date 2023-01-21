@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: josh_production
-  username: josh
-  password: <%= ENV["JOSH_DATABASE_PASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
