@@ -13,6 +13,8 @@
 #  link_2      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tagline     :string
+#  index       :integer
 #
 require "test_helper"
 

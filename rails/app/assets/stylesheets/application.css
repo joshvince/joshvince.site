@@ -14,8 +14,8 @@
  *= require_self
  */
 
-.logo {
-  background: -webkit-linear-gradient(60deg, #0c4a6e, #0369a1);
+.gradient {
+  background: -webkit-linear-gradient(60deg, #0a405e, #059ef0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

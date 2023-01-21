@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.sort_by { |p| p.index }
 
     render "index", projects: @projects
   end

@@ -13,6 +13,8 @@
 #  link_2      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tagline     :string
+#  index       :integer
 #
 class Project < ApplicationRecord
   class Paragraph

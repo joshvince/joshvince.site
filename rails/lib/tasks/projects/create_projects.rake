@@ -5,6 +5,7 @@ namespace :projects do
       slug: "carwow",
       name: "Carwow",
       subtitle: "worked here from 2022 to now",
+      tagline: "The easy way to change cars online",
       description: [
         {
           heading: "Bigger and better",
@@ -23,6 +24,7 @@ namespace :projects do
       slug: "zencargo",
       name: "Zencargo",
       subtitle: "worked here from 2018 to 2022",
+      tagline: "Supply chain optimisation for modern businesses",
       description: [
         {
           heading: "Scaling a business",
@@ -45,6 +47,7 @@ namespace :projects do
       slug: "howmanymeetingswereyouin",
       name: "2020 in meetings",
       subtitle: "side project in 2021",
+      tagline: "Analyse how much time you spent in meetings in 2020",
       description: [
         {
           heading: "Analysing meetings",
@@ -67,6 +70,7 @@ namespace :projects do
       slug: "wedding-site",
       name: "Wedding site",
       subtitle: "side project in 2019",
+      tagline: "The guest list and invitations for my wedding",
       description: [
         {
           heading: "A paperless wedding",
@@ -91,6 +95,7 @@ namespace :projects do
       slug: "bowie-ipsum",
       name: "Bowie Ipsum",
       subtitle: "side project in 2018",
+      tagline: "David Bowie themed lorem ipsum",
       description: [
         {
           heading: "Better Lorem Ipsum",
@@ -113,6 +118,7 @@ namespace :projects do
       slug: "choobio",
       name: "Choobio",
       subtitle: "side project in 2018",
+      tagline: "Progressive Web App showing live arrivals boards for the Tube",
       description: [
         {
           heading: "A web app for live tube arrivals",
@@ -141,6 +147,7 @@ namespace :projects do
       slug: "trx",
       name: "TRX",
       subtitle: "worked here from 2015 to 2018",
+      tagline: "An innovative app for the buying and selling of TV rights around the world",
       description: [
         {
           heading: "A B2B app for the TV industry",
@@ -163,6 +170,7 @@ namespace :projects do
       slug: "peacock",
       name: "Peacock",
       subtitle: "created this short film in 2009",
+      tagline: "Short film about a egomaniacal film director",
       description: [
         {
           heading: "A short film at uni",
@@ -181,6 +189,7 @@ namespace :projects do
       slug: "killing-bill-gates",
       name: "Killing Bill Gates",
       subtitle: "directed this play in 2011",
+      tagline: "Play about well-intentioned idiots trying to unlock Gates' fortune",
       description: [
         {
           heading: "A play at the Edinburgh Fringe",
@@ -198,8 +207,8 @@ namespace :projects do
     projects = [carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
 
     ActiveRecord::Base.transaction do
-      projects.each do |project|
-        obj = Project.find_or_initialize_by(slug: project[:slug]).update!(**project)
+      projects.each_with_index do |project, index|
+        obj = Project.find_or_initialize_by(slug: project[:slug]).update!(**project.merge(index: index))
         puts "Adding #{project[:name]}"
       end
     end
