@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   root 'info#me'
   get '/contact', to: 'info#contact'
   get 'blog', to: 'blog#index'
+  resources :blog, only: [:show]
   resources :projects, only: [:index, :show]
 end
