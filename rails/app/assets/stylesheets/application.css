@@ -19,3 +19,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.gradient-inverted {
+  background: -webkit-linear-gradient(60deg, #0a405e, #0f6491);
+}
