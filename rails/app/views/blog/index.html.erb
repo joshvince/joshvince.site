@@ -3,12 +3,15 @@
     <h1 class="font-black text-7xl mb-10 text-left text-gray-800">
       Blog
     </h1>
+    <% if @posts.empty? %>
+      <p>Coming soon... probably </p>
+    <% end %>
     <% @posts.map do |post| %>
         <%= link_to "/blog/#{post.slug}" do %>
-          <div class="flex flex-col rounded shadow-lg hover:shadow-xl bg-white p-8">
-            <h2 class="text-gray-800 font-black text-4xl"><%= post.title %></h2>
-            <p class="uppercase text-gray-500 mt-1"><%= post.published_on.to_s %></p>
-            <p class="text-gray-800 mt-2 italic"><%= post.subtitle %></p>
+          <div class="flex flex-col rounded shadow-lg hover:shadow-xl bg-white p-6">
+            <h2 class="text-gray-800 font-black text-4xl mb-1"><%= post.title %></h2>
+            <p class="uppercase text-gray-500 mb-4"><%= post.published_on.to_s %></p>
+            <p class="text-gray-800 italic"><%= post.subtitle %></p>
           </div>
         <% end %>
     <% end %>

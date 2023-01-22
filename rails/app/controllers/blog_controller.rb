@@ -8,6 +8,6 @@ class BlogController < ApplicationController
   def show
     @blog_post = BlogPost.find_by(slug: params[:slug]) or not_found
 
-    @markdown_content = @blog_post.html_content(Redcarpet::Render::HTML)
+    @markdown_content = @blog_post.html_content(BlogPostTailwindRenderer)
   end
 end

@@ -3,13 +3,13 @@
     <h1 class="font-black text-7xl mb-10 text-left text-gray-800">Things</h1>
     <p class="mb-12">Some things I've made or places I've worked.</p>
     <% @projects.map do |project| %>
-      <div class="mb-20">
-        <%= link_to project_path(project.slug) do %>
-          <h2 class="text-gray-800 font-black text-4xl hover:underline"><%= project.name %></h2>
-        <% end %>
-        <p class="uppercase text-gray-500 mt-1"><%= project.subtitle %></p>
-        <p class="text-gray-800 mt-2"><%= project.tagline %></p>
-      </div>
+      <%= link_to project_path(project.slug) do %>
+        <div class="mb-14 rounded shadow-lg hover:shadow-xl bg-white p-6">
+            <h2 class="text-gray-800 font-black text-4xl mb-1"><%= project.name %></h2>
+          <p class="uppercase text-gray-500 mb-4"><%= project.subtitle %></p>
+          <p class="text-gray-800"><%= project.tagline %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
