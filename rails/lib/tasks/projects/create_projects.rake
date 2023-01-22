@@ -87,7 +87,7 @@ namespace :projects do
       ].to_json,
       link_1_name: "Repo",
       link_1: "https://github.com/joshvince/weddingsite",
-      link_2_name: "Site",
+      link_2_name: "Site (but the login won't work)",
       link_2: "http://boshwedding.com.s3-website-eu-west-1.amazonaws.com/"
     }
 

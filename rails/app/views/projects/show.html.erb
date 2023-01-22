@@ -8,5 +8,12 @@
         <p><%= description.text%></p>
       </div>
     <% end %>
+    <h3 class="font-black text-4xl text-left text-gray-800 mt-12 mb-4">Links</h3>
+    <%= link_to(@project.link_1) do %>
+      <p class="hover:underline mb-4"><%= @project.link_1_name %></p>
+    <% end %>
+    <%= link_to(@project.link_2) do %>
+      <p class="hover:underline"><%= @project.link_2_name %></p>
+    <% end %>
   </div>
 <% end %>
