@@ -20,11 +20,11 @@ namespace :blog_posts do
 
     # Check it looks OK
     puts "\n\n===========================\n\n#{markdown_content}\n\n===========================\n\n"
-    puts 'Does the contents look OK? [y/n]'
+    puts 'Does the contents look OK? Only raw markdown will be stored [y/n]'
     user_confirmation = STDIN.gets.chomp.downcase
     return unless user_confirmation === 'y'
 
-    blog_post.markdown_content = markdown_content
+    blog_post.markdown_content = file_contents
 
     # Grab the title
     puts "\nEnter the post's title"

@@ -1,4 +1,3 @@
-# Welcome
 Hi there. I'm going to start to write some things down and publish them.
 
 That's about it for this post. _What a start_.

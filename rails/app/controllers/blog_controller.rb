@@ -2,12 +2,12 @@
 
 class BlogController < ApplicationController
   def index
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-
-    @content = markdown.render("This is *bongos*, indeed.").html_safe
+    @posts = BlogPost.all
   end
 
   def show
+    @blog_post = BlogPost.find_by(slug: params[:slug]) or not_found
 
+    @markdown_content = @blog_post.html_content(Redcarpet::Render::HTML)
   end
 end
