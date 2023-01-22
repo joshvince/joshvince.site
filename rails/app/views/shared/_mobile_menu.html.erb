@@ -1,0 +1,15 @@
+<div class="md:hidden flex flex-col object-top fixed w-full bg-gray-50 shadow-lg px-6" data-controller="menu">
+  <div class="py-4" data-action="click->menu#toggle">
+    <span class="text-4xl font-black gradient w-min ">JOSH</span>
+  </div>
+  <div class="hidden" data-menu-target="items">
+    <div class="flex flex-col pb-2">
+      <%= sidebar_link "About", root_path %>
+      <%= sidebar_link "Blog", blog_path %>
+      <%= sidebar_link "Things", projects_path %>
+      <%= sidebar_link "Contact", contact_path %>
+      <%= sidebar_link "Github", "https://github.com/joshvince", target: :_blank %>
+      <%= sidebar_link "LinkedIn", "https://www.linkedin.com/in/joshvince/", target: :_blank %>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,8 @@
           id="info-container"
         >
           <%= render "shared/sidebar" %>
-          <div class="px-6 md:px-12 mt-24 md:mt-0 md:w-9/12 md:ml-64">
+          <%= render "shared/mobile_menu" %>
+          <div class="px-6 md:px-12 mt-28 md:w-9/12 md:ml-64">
             <%= content_for?(:content) ? yield(:content) : yield %>
           </div>
         </div>
