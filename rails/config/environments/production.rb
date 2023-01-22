@@ -94,4 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.hosts << "joshvincesite-production.up.railway.app"
+  config.hosts << "joshvince.site"
 end
