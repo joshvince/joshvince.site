@@ -95,4 +95,5 @@ Rails.application.configure do
 
   config.hosts << "joshvincesite-production.up.railway.app"
   config.hosts << "joshvince.site"
+  config.hosts << "www.joshvince.site"
 end
