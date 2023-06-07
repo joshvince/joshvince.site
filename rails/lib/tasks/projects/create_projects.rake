@@ -4,6 +4,7 @@ namespace :projects do
     carwow = {
       slug: "carwow",
       name: "Carwow",
+      job: true,
       subtitle: "worked here from 2022 to now",
       tagline: "The easy way to change cars online",
       description: [
@@ -23,6 +24,7 @@ namespace :projects do
     zencargo = {
       slug: "zencargo",
       name: "Zencargo",
+      job: true,
       subtitle: "worked here from 2018 to 2022",
       tagline: "Supply chain optimisation for modern businesses",
       description: [
@@ -46,6 +48,7 @@ namespace :projects do
     howmanymeetings = {
       slug: "howmanymeetingswereyouin",
       name: "2020 in meetings",
+      job: false,
       subtitle: "side project in 2021",
       tagline: "Analyse how much time you spent in meetings in 2020",
       description: [
@@ -69,6 +72,7 @@ namespace :projects do
     wedding = {
       slug: "wedding-site",
       name: "Wedding site",
+      job: false,
       subtitle: "side project in 2019",
       tagline: "The guest list and invitations for my wedding",
       description: [
@@ -94,6 +98,7 @@ namespace :projects do
     bowie = {
       slug: "bowie-ipsum",
       name: "Bowie Ipsum",
+      job: false,
       subtitle: "side project in 2018",
       tagline: "David Bowie themed lorem ipsum",
       description: [
@@ -117,6 +122,7 @@ namespace :projects do
     choobio = {
       slug: "choobio",
       name: "Choobio",
+      job: false,
       subtitle: "side project in 2018",
       tagline: "Progressive Web App showing live arrivals boards for the Tube",
       description: [
@@ -146,6 +152,7 @@ namespace :projects do
     trx = {
       slug: "trx",
       name: "TRX",
+      job: true,
       subtitle: "worked here from 2015 to 2018",
       tagline: "An innovative app for the buying and selling of TV rights around the world",
       description: [
@@ -169,6 +176,7 @@ namespace :projects do
     peacock = {
       slug: "peacock",
       name: "Peacock",
+      job: false,
       subtitle: "created this short film in 2009",
       tagline: "Short film about a egomaniacal film director",
       description: [
@@ -188,6 +196,7 @@ namespace :projects do
     killing_bill_gates = {
       slug: "killing-bill-gates",
       name: "Killing Bill Gates",
+      job: false,
       subtitle: "directed this play in 2011",
       tagline: "Play about well-intentioned idiots trying to unlock Gates' fortune",
       description: [

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_22_190631) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_083652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_190631) do
     t.datetime "updated_at", null: false
     t.string "tagline"
     t.integer "index"
+    t.boolean "job"
     t.index ["slug"], name: "unique_slugs", unique: true
   end
 

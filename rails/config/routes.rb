@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get '/contact', to: 'info#contact'
   get '/blog/:slug', to: 'blog#show'
   get '/blog', to: 'blog#index'
-  resources :projects, only: [:index, :show]
+  get '/projects', to: 'projects#index', as: 'projects'
+  get '/projects/:slug', to: 'projects#show', as: 'project'
+  get '/jobs', to: 'projects#jobs', as: 'jobs'
+  get '/side-projects', to: 'projects#side_projects', as: 'side_projects'
+  # resources :projects, only: [:index, :show]
 end

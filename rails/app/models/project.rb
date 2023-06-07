@@ -15,6 +15,7 @@
 #  updated_at  :datetime         not null
 #  tagline     :string
 #  index       :integer
+#  job         :boolean
 #
 class Project < ApplicationRecord
   class Paragraph
@@ -24,6 +25,10 @@ class Project < ApplicationRecord
     end
 
     attr_reader :text, :heading
+  end
+
+  def job?
+    !!job
   end
 
   def description_paragraphs
