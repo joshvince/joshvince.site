@@ -2,7 +2,8 @@
 
 class BlogController < ApplicationController
   def index
-    @page_title = "Blog"
+    @page_title = "Writing"
+    @page_subtitle = "Blog posts and maybe some fiction if I ever finish anything"
     @posts = BlogPost.order(published_on: :desc).all
   end
 
