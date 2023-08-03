@@ -1,6 +1,32 @@
 namespace :projects do
   desc 'Create projects'
   task :create => :environment do |_args|
+    dog_days = {
+      slug: "dog-days",
+      name: "Dog Days",
+      job: false,
+      subtitle: "side project in 2023",
+      tagline: "Tracking how often my dog scratched his face",
+      description: [
+        {
+          heading: "Small software",
+          text: "This was just for me and my wife to try and figure out what my dog was allergic to. It wasn't the most innovative software, but it was good fun and genuinely useful."
+        },
+        {
+          heading: "Hotwire",
+          text: "I used it as an excuse to learn the new Hotwire tech that is powering Rails 7's frontend. I really enjoyed writing SPA-like experiences using minimal Javascript."
+        },
+        {
+          heading: "Hey Siri",
+          text: "I wanted to be able to update the app using voice commands, and so I played around with Apple shortcuts to hit an endpoint using a siri command."
+        }
+      ].to_json,
+      link_1_name: "I wrote about this project on this site",
+      link_1: "https://joshvince.site/blog/20230803_dog_days",
+      link_2_name: "Check out the repo",
+      link_2: "https://github.com/joshvince/dog_days",
+    }
+
     carwow = {
       slug: "carwow",
       name: "Carwow",
@@ -213,7 +239,7 @@ namespace :projects do
       link_1: "https://threeweeksedinburgh.com/article/ed2011-theatre-review-killing-bill-gates-free-mechanical-tiger-productions/"
     }
 
-    projects = [carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
+    projects = [dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
 
     ActiveRecord::Base.transaction do
       projects.each_with_index do |project, index|
