@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       response.content_type,
       response.content_type.start_with?("text/html"),
       !request.is_crawler?,
-      request.host.match?(/localhost/)
+      request.host.match?(/joshvince.site/)
     ]
 
     return unless valid_request_checks.all?
