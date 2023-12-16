@@ -46,6 +46,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_analytics (0.3.0)
+      rails (>= 5.2.0)
     activejob (7.0.4)
       activesupport (= 7.0.4)
       globalid (>= 0.3.6)
@@ -89,6 +91,8 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    crawler_detect (1.2.2)
+      qonfig (~> 0.24)
     debug (1.6.2)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
@@ -139,6 +143,7 @@ GEM
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
+    qonfig (0.28.0)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -240,9 +245,11 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  active_analytics
   annotate
   bootsnap
   capybara
+  crawler_detect
   debug
   importmap-rails
   jbuilder
