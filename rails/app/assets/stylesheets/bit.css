@@ -1,0 +1,150 @@
+:root {
+    --dusk: rgb(6, 0, 61);
+    --midnight: rgba(2, 0, 20, 1);
+    --dawn: rgb(18, 74, 113);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+.bit-container {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  font-family: 'Crete Round', serif;
+  font-size: 20px;
+  line-height: 28px;
+  overflow-y: scroll;
+}
+
+.bit-container * {
+  transition: background-color 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+.night-sky {
+  background: linear-gradient(180deg, var(--dusk), var(--midnight));
+  color: aliceblue;
+  /* transition: background-color 2s ease, opacity 2s ease; */
+}
+
+.part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
+  padding: 20px;
+}
+
+/* Clock */
+
+.clock-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  width: 6rem;
+  height: 6rem;
+  border: 6px solid aliceblue;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock-hand {
+  width: 6px;
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  animation-timing-function: ease-in-out;
+  border-radius: 5rem 5rem 5rem 5rem;
+}
+
+.hour-hand {
+  height: 1.25rem;
+  transform: translateX(-50%);
+  animation: RotateHand 10s linear infinite;
+}
+
+.minute-hand {
+  height: 2.3rem;
+  transform: translateX(-50%);
+  animation: RotateHand 6s linear infinite;
+}
+
+
+@keyframes RotateHand {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(20deg); }
+  20% { transform: rotate(30deg); }
+  30% { transform: rotate(50deg); }
+  40% { transform: rotate(90deg); }
+  50% { transform: rotate(120deg); }
+  60% { transform: rotate(180deg); }
+  80% { transform: rotate(200deg); }
+  90% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Aurora */
+
+.aurora-background {
+  background-color: var(--midnight);
+}
+
+.aurora {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(6, 0, 61, 0.8) 0%, rgba(2, 0, 20, 1) 100%), linear-gradient(135deg, rgba(0, 255, 0, 0.8), rgba(255, 0, 255, 0.8) 10%, rgba(0, 255, 255, 0.8) 50%, rgba(255, 255, 0, 0.8) 70%, rgba(0, 255, 0, 0.8) 90%);
+  background-size: 300% 300%;
+  animation: MoveGradient 3s ease-in-out infinite;
+  opacity: 0; /* start with the aurora hidden */
+  color: aliceblue;
+  /* transition: background-color 2s ease, opacity 2s ease; */
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  position: relative;
+}
+
+.aurora::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem; /* Control the height of the fading effect */
+  background: linear-gradient(to bottom, var(--midnight), transparent);
+  z-index: 1;
+}
+
+.aurora::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem; /* Control the height of the fading effect */
+  background: linear-gradient(to top, var(--midnight), transparent);
+  z-index: 1;
+}
+
+@keyframes MoveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dawn sky */
+
+.dawn-sky {
+  background: var(--midnight); /* starts as solid, will fade to gradient from the JS */
+  color: aliceblue;
+  padding-top: 5rem;
+}
