@@ -27,13 +27,20 @@
 }
 
 .part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
-  padding: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container {
+  max-width: 640px;
 }
 
 /* Clock */
 
 .clock-container {
-  height: 50vh;
+  height: 30vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -145,4 +152,23 @@
   background: var(--midnight); /* starts as solid, will fade to gradient from the JS */
   color: aliceblue;
   padding-top: 5rem;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.image {
+  max-height: 15rem;
+  border-radius: 36px;
+  -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 70%);
+  mask-image: radial-gradient(circle at center, black 10%, transparent 70%);
+}
+
+.mouth-image {
+  margin-bottom: 60px;
 }
