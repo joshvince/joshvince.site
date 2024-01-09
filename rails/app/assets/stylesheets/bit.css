@@ -24,7 +24,6 @@
 .night-sky {
   background: linear-gradient(180deg, var(--dusk), var(--midnight));
   color: aliceblue;
-  /* transition: background-color 2s ease, opacity 2s ease; */
 }
 
 .part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
@@ -101,7 +100,6 @@
   animation: MoveGradient 3s ease-in-out infinite;
   opacity: 0; /* start with the aurora hidden */
   color: aliceblue;
-  /* transition: background-color 2s ease, opacity 2s ease; */
   padding-top: 10rem;
   padding-bottom: 10rem;
   position: relative;
