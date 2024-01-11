@@ -1,10 +1,15 @@
 window.hasSeenDawn = false;
+window.prevScrollPosition = window.scrollY;
 
 document.addEventListener("DOMContentLoaded", function() {
   handleAuroraTransitions();
   handleDawnTransitions();
   animateClocks();
 });
+
+window.addEventListener("scrollend", function() {
+  handleMenuDisplay();
+})
 
 function handleAuroraTransitions() {
   let nightSkyParts = document.querySelectorAll(".night-sky div");
@@ -76,5 +81,23 @@ function animateClocks() {
     }, { threshold: 0.1 }); // 1.0 means fully in the viewport
 
     observer.observe(clock);
+  })
+}
+
+function handleMenuDisplay() {
+  let currentScrollPos = window.scrollY;
+  const menu = document.getElementById('bit-menu');
+  let opacity;
+
+  if (window.prevScrollPosition <= currentScrollPos) {
+    opacity = 0;
+  }
+  else {
+    opacity = 1;
+  }
+
+  window.requestAnimationFrame(() => {
+    menu.style.opacity = opacity;
+    window.prevScrollPosition = currentScrollPos;
   })
 }
