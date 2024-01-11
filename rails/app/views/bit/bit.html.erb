@@ -7,16 +7,18 @@
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path("favicon-32x32.png") %>
 
-    <%= stylesheet_link_tag "tailwind-preflight" %>
-    <%= stylesheet_link_tag "bit", "data-turbo-track": "reload" %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "bit", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind-preflight" %>
     <%= javascript_include_tag "bit" %>
   </head>
   <body>
     <div class="bit-container">
       <div class="night-sky">
+        <%= render partial: 'bit/title' %>
         <%= render partial: 'bit/part_1' %>
         <%= render partial: 'bit/part_2' %>
         <%= render partial: 'bit/part_3' %>
