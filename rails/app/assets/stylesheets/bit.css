@@ -69,16 +69,23 @@
 
 .hour-hand {
   height: 1.25rem;
+  will-change: transform;
   transform: translateX(-50%);
-  animation: RotateHand 10s linear infinite;
 }
 
 .minute-hand {
   height: 2.3rem;
+  will-change: transform;
   transform: translateX(-50%);
-  animation: RotateHand 6s linear infinite;
 }
 
+.animate-hour {
+  animation: RotateHand 20s linear infinite;
+}
+
+.animate-minute {
+  animation: RotateHand 10s linear infinite;
+}
 
 @keyframes RotateHand {
   0% { transform: rotate(0deg); }
@@ -102,14 +109,15 @@
 .aurora {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(6, 0, 61, 0.8) 0%, rgba(2, 0, 20, 1) 100%), linear-gradient(135deg, rgba(0, 255, 0, 0.8), rgba(255, 0, 255, 0.8) 10%, rgba(0, 255, 255, 0.8) 50%, rgba(255, 255, 0, 0.8) 70%, rgba(0, 255, 0, 0.8) 90%);
+  background: linear-gradient(135deg, var(--midnight) 20%, var(--dusk) 30%, var(--dawn) 50%, rgba(163, 0, 255, 0.8) 65%, rgba(255, 0, 191, 0.8) 75%);
   background-size: 300% 300%;
-  animation: MoveGradient 3s ease-in-out infinite;
-  opacity: 0; /* start with the aurora hidden */
+  will-change: background-color;
+  opacity: 0; /* -- made visible by the JS intersection observer. */
   color: aliceblue;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 30rem;
+  padding-bottom: 20rem;
   position: relative;
+  transition: all 2s ease-in-out;
 }
 
 .aurora::before {
@@ -118,7 +126,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 10rem; /* Control the height of the fading effect */
+  height: 30rem; /* Control the height of the fading effect */
   background: linear-gradient(to bottom, var(--midnight), transparent);
   z-index: 1;
 }
@@ -129,9 +137,19 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10rem; /* Control the height of the fading effect */
+  height: 20rem; /* Control the height of the fading effect */
   background: linear-gradient(to top, var(--midnight), transparent);
   z-index: 1;
+}
+
+.animate-aurora {
+  animation: MoveGradient 4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-aurora {
+    animation: MoveGradient 10s ease-in-out infinite;
+  }
 }
 
 @keyframes MoveGradient {
@@ -165,8 +183,8 @@
 .image {
   max-height: 15rem;
   border-radius: 36px;
-  -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 70%);
-  mask-image: radial-gradient(circle at center, black 10%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
+  mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
 }
 
 .mouth-image {
