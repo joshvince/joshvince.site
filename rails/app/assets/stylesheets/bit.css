@@ -3,6 +3,9 @@
     --midnight: rgba(2, 0, 20, 1);
     --dawn: rgb(18, 74, 113);
     --white: #eff6ff;
+    --notes-yellow: #EDBB00;
+    --notes-black: rgba(0,0,0,.88);
+    --notes-white: #fafafa;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
@@ -190,6 +193,42 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Notes */
+
+.notes-app {
+  margin: 32px 0;
+  background-color: var(--notes-white);
+  color: var(--notes-black);
+  border-radius: 12px;
+  font-family: system-ui;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.notes-headline {
+  border-radius: 12px 12px 0 0;
+  background-color: var(--notes-yellow);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  height: 36px;
+  width: 100%;
+}
+
+.notes-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-item {
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(0,0,0,.15);
+  text-decoration-style: dotted;
+	text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  margin-bottom: 12px;
 }
 
 /* Dawn sky */
