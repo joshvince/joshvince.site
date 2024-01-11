@@ -2,6 +2,7 @@
     --dusk: rgb(6, 0, 61);
     --midnight: rgba(2, 0, 20, 1);
     --dawn: rgb(18, 74, 113);
+    --white: #eff6ff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
@@ -23,11 +24,11 @@
 
 .night-sky {
   background: linear-gradient(180deg, var(--dusk), var(--midnight));
-  color: aliceblue;
+  color: var(--white);
 }
 
 .part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
-  padding: 24px;
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,19 +47,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 }
 
 .clock {
   width: 6rem;
   height: 6rem;
-  border: 6px solid aliceblue;
+  border: 6px solid var(--white);
   border-radius: 50%;
   position: relative;
 }
 
 .clock-hand {
   width: 6px;
-  background-color: aliceblue;
+  background-color: var(--white);
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -113,7 +115,7 @@
   background-size: 300% 300%;
   will-change: background-color;
   opacity: 0; /* -- made visible by the JS intersection observer. */
-  color: aliceblue;
+  color: var(--white);
   padding-top: 30rem;
   padding-bottom: 20rem;
   position: relative;
@@ -168,7 +170,7 @@
 
 .dawn-sky {
   background: var(--midnight); /* starts as solid, will fade to gradient from the JS */
-  color: aliceblue;
+  color: var(--white);
   padding-top: 5rem;
 }
 
@@ -177,7 +179,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 36px;
+  margin: 6rem 0;
 }
 
 .image {
@@ -185,8 +187,4 @@
   border-radius: 36px;
   -webkit-mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
   mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
-}
-
-.mouth-image {
-  margin-bottom: 60px;
 }
