@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Bit</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "bit", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind-preflight" %>
+    <%= javascript_include_tag "bit" %>
+  </head>
+  <body>
+    <%= render partial: 'bit/menu' %>
+    <div class="bit-container">
+      <div class="night-sky">
+        <%= render partial: 'bit/title' %>
+        <%= render partial: 'bit/part_1' %>
+        <%= render partial: 'bit/part_2' %>
+        <%= render partial: 'bit/part_3' %>
+        <%= render partial: 'bit/part_4' %>
+      </div>
+      <div class="aurora-background">
+        <div class="aurora">
+          <%= render partial: 'bit/part_5' %>
+          <%= render partial: 'bit/part_6' %>
+        </div>
+      </div>
+      <div class="dawn-sky">
+        <%= render partial: 'bit/part_7' %>
+      </div>
+    </div>
+  </body>
+</html>

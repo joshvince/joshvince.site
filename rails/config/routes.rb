@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/projects/:slug', to: 'projects#show', as: 'project'
   get '/jobs', to: 'projects#jobs', as: 'jobs'
   get '/side-projects', to: 'projects#side_projects', as: 'side_projects'
+  get '/the-bit', to: 'projects#bit', as: 'bit'
 
   mount ActiveAnalytics::Engine, at: "analytics"
 end
