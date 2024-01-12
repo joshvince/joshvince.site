@@ -44,12 +44,16 @@
   width: 100vw;
   font-family: 'Crete Round', serif;
   font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .bit-container * {
   transition: background-color 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+.bit-container p {
+  margin-top: 28px;
 }
 
 .title-screen {
@@ -282,4 +286,17 @@
   border-radius: 36px;
   -webkit-mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
   mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
+}
+
+.the-end-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.the-end {
+  width: 20%;
+  height: 2px;
+  background-color: var(--white)
 }
