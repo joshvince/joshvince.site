@@ -31,7 +31,7 @@ function handleAuroraTransitions() {
           }
 
       });
-  }, { threshold: 0.1 }); // 1.0 means fully in the viewport
+  }, { threshold: 0.2 }); // 1.0 means fully in the viewport
 
   observer.observe(auroraContainer);
 }

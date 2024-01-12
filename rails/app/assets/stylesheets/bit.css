@@ -3,9 +3,9 @@
     --midnight: rgba(2, 0, 20, 1);
     --dawn: rgb(18, 74, 113);
     --white: #eff6ff;
-    --notes-yellow: #EDBB00;
+    --notes-yellow: #d1a401;
     --notes-black: rgba(0,0,0,.88);
-    --notes-white: #fafafa;
+    --notes-white: #fafafae5;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
@@ -179,8 +179,8 @@
   will-change: background-color;
   opacity: 0; /* -- made visible by the JS intersection observer. */
   color: var(--white);
-  padding-top: 30rem;
-  padding-bottom: 20rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   position: relative;
   transition: all 2s ease-in-out;
 }
@@ -191,7 +191,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 30rem; /* Control the height of the fading effect */
+  height: 15rem; /* Control the height of the fading effect */
   background: linear-gradient(to bottom, var(--midnight), transparent);
   z-index: 1;
 }
@@ -202,7 +202,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 20rem; /* Control the height of the fading effect */
+  height: 15rem; /* Control the height of the fading effect */
   background: linear-gradient(to top, var(--midnight), transparent);
   z-index: 1;
 }
