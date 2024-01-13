@@ -10,6 +10,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
 
+/* Menu */
+
 #bit-menu {
   width: 100vw;
   height: 48px;
@@ -27,17 +29,19 @@
   opacity: 0; /* Set in the JS */
   z-index: 5;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-
-  a {
-    text-decoration: underline;
-  }
-
-  .menu-items {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
 }
+
+#bit-menu a {
+  text-decoration: underline;
+}
+
+#bit-menu .menu-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Containers */
 
 .bit-container {
   height: 100vh;
@@ -49,41 +53,11 @@
 }
 
 .bit-container * {
-  transition: background-color 2s ease-in-out, opacity 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .bit-container p {
   margin-top: 28px;
-}
-
-.title-screen {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title-screen {
-  h1 {
-    font-size: 8rem;
-    line-height: 8rem;
-    text-align: center;
-    font-weight: 900;
-  }
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-}
-
-.night-sky {
-  background: linear-gradient(180deg, var(--dusk), var(--midnight));
-  color: var(--white);
 }
 
 .part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
@@ -100,6 +74,45 @@
 .text-container {
   max-width: 640px;
 }
+
+.hidden {
+  opacity: 0;
+}
+
+/* Title screen */
+
+.title-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-screen h1 {
+  font-size: 8rem;
+  line-height: 8rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+.title-screen h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+
+/* Night sky */
+
+.night-sky {
+  background: linear-gradient(180deg, var(--dusk), var(--midnight));
+  color: var(--white);
+}
+
 
 /* Clock */
 
@@ -136,19 +149,13 @@
   height: 1.25rem;
   will-change: transform;
   transform: translateX(-50%);
+  animation: RotateHand 20s linear infinite;
 }
 
 .minute-hand {
   height: 2.3rem;
   will-change: transform;
   transform: translateX(-50%);
-}
-
-.animate-hour {
-  animation: RotateHand 20s linear infinite;
-}
-
-.animate-minute {
   animation: RotateHand 10s linear infinite;
 }
 
@@ -177,12 +184,10 @@
   background: linear-gradient(135deg, var(--midnight) 20%, var(--dusk) 30%, var(--dawn) 50%, rgba(163, 0, 255, 0.8) 65%, rgba(255, 0, 191, 0.8) 75%);
   background-size: 300% 300%;
   will-change: background-color;
-  opacity: 0; /* -- made visible by the JS intersection observer. */
   color: var(--white);
   padding-top: 10rem;
   padding-bottom: 10rem;
   position: relative;
-  transition: all 2s ease-in-out;
 }
 
 .aurora::before {
@@ -273,6 +278,8 @@
   padding-top: 5rem;
 }
 
+/* Images */
+
 .image-container {
   width: 100%;
   display: flex;
@@ -287,6 +294,8 @@
   -webkit-mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
   mask-image: radial-gradient(circle at center, var(--midnight) 5%, transparent 70%);
 }
+
+/* End screen */
 
 .the-end-container {
   width: 100%;

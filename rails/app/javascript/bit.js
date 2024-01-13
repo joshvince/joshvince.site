@@ -2,38 +2,55 @@ window.hasSeenDawn = false;
 window.prevScrollPosition = window.scrollY;
 
 document.addEventListener("DOMContentLoaded", function() {
-  handleAuroraTransitions();
-  handleDawnTransitions();
-  animateClocks();
+  //  Got this from here https://stackoverflow.com/questions/60432805/intersectionobserver-api-erratic-in-safari
+  window.setTimeout(() => {
+    handleAuroraTransitions();
+    handleDawnTransitions();
+    animateClocks();
+  }, 500)
 });
 
-window.addEventListener("scrollend", function() {
-  handleMenuDisplay();
+document.addEventListener("scroll", function() {
+  window.requestAnimationFrame(() => {
+    handleMenuDisplay();
+  })
 })
 
 function handleAuroraTransitions() {
-  let nightSkyParts = document.querySelectorAll(".night-sky div");
+  let nightSkyParts = document.querySelectorAll(".night-sky .part-container");
   let auroraContainer = document.querySelector(".aurora");
 
   let observer = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-            auroraContainer.style.opacity = 1;
-            auroraContainer.classList.add('animate-aurora')
-            nightSkyParts.forEach(part => { part.style.opacity = 0; })
+            console.log("intersecting")
+            showHiddenElement(auroraContainer)
+            auroraContainer.style.animationPlayState = 'running';
+            nightSkyParts.forEach(part => { hideVisibleElement(part) })
           }
           else {
-            auroraContainer.style.opacity = 0;
-            setTimeout(() => {
-              auroraContainer.classList.remove('animate-aurora')
-            }, 2000);
-            nightSkyParts.forEach(part => { part.style.opacity = 1; })
+            console.log("not intersecting")
+            hideVisibleElement(auroraContainer)
+            auroraContainer.style.animationPlayState = 'paused';
+            nightSkyParts.forEach(part => { showHiddenElement(part) })
           }
 
       });
-  }, { threshold: 0.2 }); // 1.0 means fully in the viewport
+  }, { threshold: 0.2, root: null }); // 1.0 means fully in the viewport
 
   observer.observe(auroraContainer);
+}
+
+function hideVisibleElement(element) {
+  window.requestAnimationFrame(() => {
+    element.classList.add('hidden')
+  })
+}
+
+function showHiddenElement(element) {
+  window.requestAnimationFrame(() => {
+    element.classList.remove('hidden')
+  })
 }
 
 function handleDawnTransitions() {
@@ -44,20 +61,18 @@ function handleDawnTransitions() {
   let observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-          auroraContainer.style.opacity = 0;
+          hideVisibleElement(auroraContainer)
           dawnSkyContainer.style.background = `linear-gradient(180deg, var(--midnight), var(--dawn))`;
-          dawnSkyParts.forEach(part => {
-            part.style.opacity = 1;
-          })
+          dawnSkyParts.forEach(part => showHiddenElement(part))
           window.hasSeenDawn = true;
         }
         else {
-          auroraContainer.style.opacity = 1;
-          dawnSkyParts.forEach(part => { part.style.opacity = 0; })
+          showHiddenElement(auroraContainer)
+          dawnSkyParts.forEach(part => hideVisibleElement(part))
         }
 
     });
-  }, { threshold: 0.3 }); // 1.0 means fully in the viewport
+  }, { threshold: 0.3, root: null }); // 1.0 means fully in the viewport
 
   observer.observe(dawnSkyContainer);
 }
@@ -69,16 +84,16 @@ function animateClocks() {
     let observer = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-            clock.querySelector('.minute-hand').classList.add('animate-minute')
-            clock.querySelector('.hour-hand').classList.add('animate-hour')
+            clock.querySelector('.minute-hand').style.animationPlayState = 'running';
+            clock.querySelector('.hour-hand').style.animationPlayState = 'running';
           }
           else {
-            clock.querySelector('.minute-hand').classList.remove('animate-minute')
-            clock.querySelector('.hour-hand').classList.remove('animate-hour')
+            clock.querySelector('.minute-hand').style.animationPlayState = 'paused';
+            clock.querySelector('.hour-hand').style.animationPlayState = 'paused';
           }
 
       });
-    }, { threshold: 0.1 }); // 1.0 means fully in the viewport
+    }, { threshold: 0.1, root: null }); // 1.0 means fully in the viewport
 
     observer.observe(clock);
   })
