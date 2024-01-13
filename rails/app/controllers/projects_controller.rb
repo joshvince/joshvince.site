@@ -47,9 +47,4 @@ class ProjectsController < ApplicationController
 
     render "show", locals: { project: @project }
   end
-
-  def bit
-    @page_title = "The Bit"
-    render "bit/bit", layout: false
-  end
 end

@@ -8,13 +8,14 @@ Rails.application.routes.draw do
 
   root 'info#me'
   get '/contact', to: 'info#contact'
-  get '/blog/:slug', to: 'blog#show'
-  get '/blog', to: 'blog#index'
+  get '/blog/:slug', to: 'writing#blog_post'
+  get '/blog', to: redirect('/writing')
+  get '/writing', to: 'writing#index'
+  get '/the-bit', to: 'writing#the_bit', as: 'the_bit'
   get '/projects', to: 'projects#index', as: 'projects'
   get '/projects/:slug', to: 'projects#show', as: 'project'
   get '/jobs', to: 'projects#jobs', as: 'jobs'
   get '/side-projects', to: 'projects#side_projects', as: 'side_projects'
-  get '/the-bit', to: 'projects#bit', as: 'bit'
 
   mount ActiveAnalytics::Engine, at: "analytics"
 end
