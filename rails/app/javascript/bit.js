@@ -23,13 +23,11 @@ function handleAuroraTransitions() {
   let observer = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log("intersecting")
             showHiddenElement(auroraContainer)
             auroraContainer.style.animationPlayState = 'running';
             nightSkyParts.forEach(part => { hideVisibleElement(part) })
           }
           else {
-            console.log("not intersecting")
             hideVisibleElement(auroraContainer)
             auroraContainer.style.animationPlayState = 'paused';
             nightSkyParts.forEach(part => { showHiddenElement(part) })
