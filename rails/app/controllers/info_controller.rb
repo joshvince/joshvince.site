@@ -7,10 +7,10 @@ class InfoController < ApplicationController
   end
 
   def me
-    @page_title = "About me"
+    @page_title = "About me | Josh Vince"
   end
 
   def contact
-    @page_title = "Contact me"
+    @page_title = "Contact me | Josh Vince"
   end
 end

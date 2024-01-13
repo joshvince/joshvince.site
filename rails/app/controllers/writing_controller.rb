@@ -2,7 +2,7 @@
 
 class WritingController < ApplicationController
   def index
-    @page_title = "Writing"
+    @page_title = "Writing | Josh Vince"
     @page_subtitle = "All of this is true except the parts I made up"
     @posts = BlogPost.order(published_on: :desc).all
   end
@@ -15,7 +15,7 @@ class WritingController < ApplicationController
   end
 
   def the_bit
-    @page_title = "The Bit"
+    @page_title = "The Bit | Josh Vince"
     render "the_bit/the_bit", layout: false
   end
 end
