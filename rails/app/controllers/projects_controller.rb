@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all.order(index: :asc)
-    @page_title = "Projects"
+    @page_title = "Projects | Josh Vince"
 
     render(
       "index",
@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
 
   def jobs
     @projects = Project.where(job: true).order(index: :asc)
-    @page_title = "Jobs"
+    @page_title = "Jobs | Josh Vince"
 
     render(
       "index",
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 
   def side_projects
     @projects = Project.where(job: false).order(index: :asc)
-    @page_title = "Side projects"
+    @page_title = "Side projects | Josh Vince"
 
     render(
       "index",
