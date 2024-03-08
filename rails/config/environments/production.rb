@@ -55,7 +55,7 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [:request_id, :remote_ip]
+  config.log_tags = [:request_id, :remote_ip, lambda { |req| req.headers['X-Forwarded-For'] }]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
