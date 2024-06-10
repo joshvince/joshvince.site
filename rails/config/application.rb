@@ -19,7 +19,7 @@ module Josh
     config.middleware.use Rack::CrawlerDetect
 
     config.after_initialize do
-      require "patches/active_analytics"
+      require "active_analytics"
     end
 
     config.add_autoload_paths_to_load_path = false
