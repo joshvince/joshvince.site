@@ -16,7 +16,7 @@ class BlogPost < ApplicationRecord
     Redcarpet::Markdown.new(renderer_class).render(markdown_content).html_safe
   end
 
-  def published_date
-    published_on.strftime("%d %B %Y")
+  def slug_path
+    "/blog/#{slug}"
   end
 end

@@ -5,7 +5,8 @@ class WritingController < ApplicationController
     @page_title = "Writing | Josh Vince"
     @heading = "Writing"
     @page_subtitle = "All of this is true except the parts I made up"
-    @posts = BlogPost.order(published_on: :desc).all
+
+    @posts = Writing.all.sort_by(&:published_on)
   end
 
   def blog_post
