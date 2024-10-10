@@ -5,7 +5,11 @@ class TheBit
     'The Bit'
   end
 
-  def slug_path
+  def url
+    the_bit_url
+  end
+
+  def path
     the_bit_path
   end
 

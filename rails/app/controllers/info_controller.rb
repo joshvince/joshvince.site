@@ -3,7 +3,7 @@
 class InfoController < ApplicationController
   def home
     @page_title = "Josh Vince"
-    @highlighted_blog_posts = BlogPost.order(published_on: :desc).limit(5)
+    @highlighted_blog_posts = Writing.all.take(5).sort_by(&:published_on)
   end
 
   def me

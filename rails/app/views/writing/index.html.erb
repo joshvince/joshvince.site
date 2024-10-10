@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= auto_discovery_link_tag(:rss, writing_url(format: "rss")) %>
+  <%= auto_discovery_link_tag(:rss, writing_index_url(format: "rss")) %>
 <% end %>
 
 <% content_for :body_content do %>
@@ -10,16 +10,10 @@
       <p>Coming soon... probably </p>
     <% end %>
     <% @posts.map do |post| %>
-      <% if post.slug_path == the_bit_path %>
-        <%= link_to post.slug_path do %>
-          <div class="flex flex-col rounded-md shadow-lg hover:shadow-xl transition-all p-6 mb-14 the-bit-color-palette">
-            <h2 class="font-bold text-3xl mb-3"><%= post.title  %></h2>
-            <p class="text-sm mb-4"><%= format_published_date(post.published_on) %></p>
-            <p><%= post.subtitle %></p>
-          </div>
-        <% end %>
+      <% if post.path == the_bit_path %>
+        <%= render partial: 'writing/the_bit_preview', locals: { the_bit: post }  %>
       <% else %>
-        <%= render partial: 'writing/regular_post', locals: { post: }  %>
+        <%= render partial: 'writing/regular_post_preview', locals: { post: }  %>
       <% end %>
     <% end %>
   </div>

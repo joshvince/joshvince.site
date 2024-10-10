@@ -10,7 +10,7 @@ class WritingController < ApplicationController
   end
 
   def blog_post
-    @blog_post = BlogPost.find_by(slug: params[:slug]) or not_found
+    @blog_post = BlogPost.find_by(slug: params[:id]) or not_found
     @page_title = @blog_post.title
 
     @markdown_content = @blog_post.html_content(BlogPostTailwindRenderer)
