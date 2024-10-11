@@ -33,6 +33,12 @@
       </div>
       <div class="dawn-sky">
         <%= render partial: 'the_bit/part_7' %>
+        <div class="part-container bit-footer">
+          <div class="text-container">
+            If you enjoyed this, you can <%= link_to 'read some more of my writing here.', writing_index_path %>
+            or <%= link_to 'subscribe via RSS', writing_index_url(format: :xml) %>
+          </div>
+        </div>
       </div>
     </div>
   </body>

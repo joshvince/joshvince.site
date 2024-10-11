@@ -60,7 +60,7 @@
   margin-top: 28px;
 }
 
-.part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven {
+.part-one, .part-two, .part-three, .part-four, .part-five, .part-six, .part-seven, .bit-footer {
   padding: 0 24px;
   display: flex;
   flex-direction: column;
@@ -308,4 +308,13 @@
   width: 20%;
   height: 2px;
   background-color: var(--white)
+}
+
+.bit-footer {
+  padding: 3rem;
+  font-size: 1rem;
+}
+
+.bit-footer a {
+  text-decoration: underline;
 }

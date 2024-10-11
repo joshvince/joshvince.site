@@ -1,7 +1,10 @@
 <% content_for :body_content do %>
   <div class="flex flex-col justify-start text-left">
-    <h1 class="font-black text-7xl mb-10 text-left text-gray-800"><%= @heading %></h1>
-    <p class="mb-12"><%= @page_subtitle %></p>
+    <h1 class="font-black text-7xl mb-8 text-left text-gray-800"><%= @heading %></h1>
+    <p class="mb-4">
+      <%= @page_subtitle %>
+    </p>
+    <div class="text-sm mb-12">Want to subscribe to updates? <%= link_to 'This site has an RSS feed', writing_index_url(format: :xml), class: 'underline' %></div>
     <% if @posts.empty? %>
       <p>Coming soon... probably </p>
     <% end %>
