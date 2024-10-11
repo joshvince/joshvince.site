@@ -6,7 +6,7 @@ class WritingController < ApplicationController
     @heading = "Writing"
     @page_subtitle = "All of this is true except the parts I made up"
 
-    @posts = Writing.all.sort_by(&:published_on)
+    @posts = Writing.all.sort_by(&:published_on).reverse
   end
 
   def blog_post

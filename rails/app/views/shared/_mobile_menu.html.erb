@@ -11,6 +11,10 @@
       <%= sidebar_link "Jobs", jobs_path %>
       <%= sidebar_link "Me", about_path %>
       <%= sidebar_link "Contact", contact_path %>
+      <%= link_to writing_index_url(format: :xml), class: 'mb-1 hover:underline flex' do %>
+        <div class="mr-2">RSS Feed </div>
+        <%= image_tag 'rss.svg', class: 'max-h-6' %>
+      <% end %>
       <%= sidebar_link "Github 🖇️", "https://github.com/joshvince", target: :_blank %>
       <%= sidebar_link "LinkedIn 🖇️", "https://www.linkedin.com/in/joshvince/", target: :_blank %>
     </div>

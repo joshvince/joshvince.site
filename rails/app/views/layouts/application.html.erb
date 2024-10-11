@@ -13,7 +13,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= content_for?(:head) ? yield(:head) : nil %>
+    <%= auto_discovery_link_tag(:rss, writing_index_url(format: :xml)) %>
   </head>
   <%= content_for?(:body) ? yield(:body) : yield %>
 </html>
