@@ -56,7 +56,7 @@ namespace :projects do
       description: [
         {
           heading: "Scaling a business",
-          text: "I started at Zencargo in March 2018 as the first Product Manager in a company of ten people. By the time I left, the business had grown to over 300 people with a software team of 55."
+          text: "I started at Zencargo in March 2018 as the first Product hire in a company of ten people. I worked in a variety of product and engineer roles and by the time I left, the business had grown to over 300 people with a software team of 55."
         },
         {
           heading: "Solving real world problems",
