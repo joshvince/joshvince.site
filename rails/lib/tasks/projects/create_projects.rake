@@ -1,6 +1,31 @@
 namespace :projects do
   desc 'Create projects'
   task :create => :environment do |_args|
+    vincetagram = {
+      slug: "vincetagram",
+      name: "Vincetagram",
+      job: false,
+      subtitle: "side project in 2023",
+      tagline: "A private social media site for sharing pictures.",
+      description: [
+        {
+          heading: "Saving and sharing memories",
+          text: "I wanted a way to share pictures and videos of my new son with family without having to use commercial social networks. This site is a sort of instagram-lite, where only me and my wife can post."
+        },
+        {
+          heading: "Served by my own server",
+          text: "The site is a simple Rails application that is hosted on a micro PC that sits in my house. I really enjoyed setting that up, and learned a ton having to start from bare-metal. The server also hosts our family archive of photos and videos and Vincetagram syncs media between the two for backups."
+        },
+        {
+          heading: "A social network of people I actually know",
+          text: "You can read a lot more about the principles behind this in the writing section of my site. It's a favourite topic of mine. "
+        }
+      ].to_json,
+      link_1_name: "Read my thoughts about owning your own memories",
+      link_1: "https://joshvince.site/writing/20230903_little_metal_boxes",
+      link_2_name: "Check out the repo",
+      link_2: "https://github.com/joshvince/vincetagram",
+    }
     dog_days = {
       slug: "dog-days",
       name: "Dog Days",
@@ -239,7 +264,7 @@ namespace :projects do
       link_1: "https://threeweeksedinburgh.com/article/ed2011-theatre-review-killing-bill-gates-free-mechanical-tiger-productions/"
     }
 
-    projects = [dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
+    projects = [vincetagram, dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
 
     ActiveRecord::Base.transaction do
       projects.each_with_index do |project, index|
