@@ -6,13 +6,13 @@ class BlogPostTailwindRenderer < Redcarpet::Render::HTML
   def header(text, header_level)
     case header_level
     when 1
-      %(<h1 class="font-black text-6xl my-8">#{text}</h1>)
+      %(<h1 class="font-black text-3xl my-8">#{text}</h1>)
     when 2
-      %(<h2 class="font-black text-4xl text-gray-800 my-8">#{text}</h2>)
+      %(<h2 class="font-black text-2xl text-gray-800 my-8">#{text}</h2>)
     when 3
-      %(<h3 class="font-black text-3xl text-gray-800 my-6">#{text}</h3>)
+      %(<h3 class="font-black text-xl text-gray-800 my-6">#{text}</h3>)
     else
-      %(<h4 class="font-black text-2xl text-gray-800 my-4">#{text}</h4>)
+      %(<h4 class="font-black text-lg text-gray-800 my-4">#{text}</h4>)
     end
   end
 
