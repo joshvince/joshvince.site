@@ -1,6 +1,27 @@
 namespace :projects do
   desc 'Create projects'
   task :create => :environment do |_args|
+    isocra = {
+      slug: "isocra",
+      name: "ISOCRA",
+      job: false,
+      subtitle: "side project in 2025",
+      tagline: "Website for the International Society of Carb Rankers.",
+      description: [
+        {
+          heading: "Answering deeply important questions",
+          text: "Since the dawn of time, people have been ranking carbs (or, at least, me and my friends have)."
+        },
+        {
+          heading: "Dumb and Quick",
+          text: "I had fun building this over a couple of evenings. It's not fantastic code but I think it's funny."
+        }
+      ].to_json,
+      link_1_name: "You can rate the carbs here",
+      link_1: "https://isocra.org",
+      link_2_name: "Check out the repo",
+      link_2: "https://github.com/joshvince/carb",
+    }
     vincetagram = {
       slug: "vincetagram",
       name: "Vincetagram",
@@ -264,7 +285,7 @@ namespace :projects do
       link_1: "https://threeweeksedinburgh.com/article/ed2011-theatre-review-killing-bill-gates-free-mechanical-tiger-productions/"
     }
 
-    projects = [vincetagram, dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
+    projects = [isocra, vincetagram, dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
 
     ActiveRecord::Base.transaction do
       projects.each_with_index do |project, index|
