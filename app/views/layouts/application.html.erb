@@ -20,15 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
 
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%# Include only global stylesheets, excluding the_bit directory %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "project-color-palettes", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-     <%= auto_discovery_link_tag(:rss, writing_index_url(format: :xml)) %>
+    <%= auto_discovery_link_tag(:rss, writing_index_url(format: :xml)) %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
-  </body>
+  <%= content_for?(:body) ? yield(:body) : yield %>
 </html>

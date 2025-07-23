@@ -38,7 +38,7 @@ class BlogPostTailwindRenderer < Redcarpet::Render::HTML
     alt = "An image: #{alt_text}"
     %(
       <div class="my-12 w-full flex flex-col justify-center items-center">
-        <img class="h-90 md:w-3/5 rounded-md shadow-lg" src="#{link}" alt="#{alt}"/>
+        <img class="h-96 w-auto rounded-md shadow-lg" src="#{link}" alt="#{alt}"/>
         <p class="mt-3 text-sm text-gray-500">#{alt_text}</p>
       </div>
     )
@@ -48,7 +48,7 @@ class BlogPostTailwindRenderer < Redcarpet::Render::HTML
     alt = "A video: #{alt_text}"
     %(
       <div class="my-12 w-full flex flex-col justify-center justify-center items-center">
-        <video class="h-90 md:w-3/5 rounded-md shadow-lg" alt="#{alt}" controls>
+        <video class="h-96 w-auto rounded-md shadow-lg" alt="#{alt}" controls>
           <source src="#{link}" type="video/mp4">
         </video>
         <p class="mt-3 text-sm text-gray-500">#{alt_text}</p>
