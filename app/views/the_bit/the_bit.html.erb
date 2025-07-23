@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Bit</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "the_bit", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind-preflight" %>
+    <%= javascript_include_tag "bit" %>
+  </head>
+  <body>
+    <%= render partial: 'the_bit/menu' %>
+    <div class="bit-container">
+      <div class="night-sky">
+        <%= render partial: 'the_bit/title' %>
+        <%= render partial: 'the_bit/part_1' %>
+        <%= render partial: 'the_bit/part_2' %>
+        <%= render partial: 'the_bit/part_3' %>
+        <%= render partial: 'the_bit/part_4' %>
+      </div>
+      <div class="aurora-background">
+        <div class="aurora animate-aurora hidden">
+          <%= render partial: 'the_bit/part_5' %>
+          <%= render partial: 'the_bit/part_6' %>
+        </div>
+      </div>
+      <div class="dawn-sky">
+        <%= render partial: 'the_bit/part_7' %>
+        <div class="part-container bit-footer">
+          <div class="text-container">
+            If you enjoyed this, you can <%= link_to 'read some more of my writing here.', writing_index_path %>
+            or <%= link_to 'subscribe via RSS', writing_index_url(format: :xml) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

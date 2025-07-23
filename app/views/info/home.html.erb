@@ -1,0 +1,26 @@
+<% content_for :body_content do %>
+  <div class="flex flex-col justify-start text-left">
+    <h1 class="font-black text-5xl mb-4 text-left text-gray-800">Hi</h1>
+    <p class="mb-12">Welcome. I'm a software developer who likes to write.
+      This is sort of like my GeoCities page (ask your parents.)
+      Take a look around to see things I've made and more about me.
+      Below are a few recent highlights.</p>
+
+    <!-- ISOCRA Project Highlight -->
+    <%= link_to 'https://isocra.org' do %>
+      <div class="flex flex-col rounded-md shadow-lg hover:shadow-xl transition-all bg-white p-6 mb-14">
+        <h2 class="text-gray-800 font-black text-2xl mb-3">ISOCRA</h2>
+        <p class="uppercase text-sm text-gray-500 mb-4">18 July 2025</p>
+        <p class="text-gray-800">A website for the International Society of Carb Rankers.</p>
+      </div>
+    <% end %>
+
+    <% @highlighted_blog_posts.map do |post| %>
+        <% if post.path == the_bit_path %>
+          <%= render partial: 'writing/the_bit_preview', locals: { the_bit: post }  %>
+        <% else %>
+          <%= render partial: 'writing/regular_post_preview', locals: { post: }  %>
+        <% end %>
+    <% end %>
+  </div>
+<% end %>

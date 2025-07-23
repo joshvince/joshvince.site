@@ -1,0 +1,19 @@
+<% content_for :body_content do %>
+  <div class="flex flex-col justify-start text-left">
+    <h1 class="font-black text-4xl mb-3 text-left text-gray-800"><%= @heading %></h1>
+    <p class="mb-4">
+      <%= @page_subtitle %>
+    </p>
+    <div class="text-sm mb-8">Want to subscribe to updates? <%= link_to 'This site has an RSS feed', writing_index_url(format: :xml), class: 'underline' %></div>
+    <% if @posts.empty? %>
+      <p>Coming soon... probably </p>
+    <% end %>
+    <% @posts.map do |post| %>
+      <% if post.path == the_bit_path %>
+        <%= render partial: 'writing/the_bit_preview', locals: { the_bit: post }  %>
+      <% else %>
+        <%= render partial: 'writing/regular_post_preview', locals: { post: }  %>
+      <% end %>
+    <% end %>
+  </div>
+<% end%>
