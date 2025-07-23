@@ -87,7 +87,7 @@ accessories:
   db:
     image: postgres:16
     host: 65.109.131.9
-    port: 5433
+    port: '5433:5432'
     env:
       clear:
         POSTGRES_USER: 'postgres'
