@@ -41,6 +41,8 @@ env:
     - POSTGRES_DATABASE_URL
     - POSTGRES_HOST
     - POSTGRES_PASSWORD
+    - ANALYTICS_PASSWORD
+    - ANALYTICS_USER
   # clear:
   #   # Set number of cores available to the application on each server (default: 1).
   #   WEB_CONCURRENCY: 2

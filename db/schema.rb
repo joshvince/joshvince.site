@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_16_180719) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_24_165037) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "active_analytics_browsers_per_days", force: :cascade do |t|
+    t.string "site", null: false
+    t.string "name", null: false
+    t.string "version", null: false
+    t.date "date", null: false
+    t.bigint "total", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date", "site", "name", "version"], name: "idx_on_date_site_name_version_eeccd0371c"
+  end
 
   create_table "active_analytics_views_per_days", force: :cascade do |t|
     t.string "site", null: false
@@ -54,5 +65,4 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_16_180719) do
     t.boolean "job"
     t.index ["slug"], name: "unique_slugs", unique: true
   end
-
 end
