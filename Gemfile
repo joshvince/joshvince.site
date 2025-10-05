@@ -42,6 +42,7 @@ gem "thruster", require: false
 gem "redcarpet"
 gem "active_analytics"
 gem "crawler_detect"
+gem "faraday"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
