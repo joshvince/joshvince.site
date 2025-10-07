@@ -1,14 +1,12 @@
 module FPL
   class Players
-    PlayerData = Data.define(:name, :team, :weight, :xg, :xa, :clean_sheets, :saves)
-
-    def self.fetch_players(manager_count: 50)
-      new(manager_count).call
+    def self.fetch_players(manager_count: 50, meta: Meta.new)
+      new(manager_count, meta).call
     end
 
-    def initialize(manager_count)
+    def initialize(manager_count, meta)
       @manager_count = manager_count
-      @meta = Meta.new
+      @meta = meta
     end
 
     def call
@@ -20,7 +18,7 @@ module FPL
     attr_reader :meta
 
     def current_gameweek
-      meta.get_current_gameweek
+      meta.get_current_gameweek["id"]
     end
 
     def manager_ids

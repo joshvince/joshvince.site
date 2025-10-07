@@ -28,6 +28,19 @@ module FPL
       end
     end
 
+    def to_h
+      {
+        name:,
+        team:,
+        player_type:,
+        weight:,
+        xg:,
+        xa:,
+        clean_sheets:,
+        saves:
+      }
+    end
+
     private
 
     attr_reader :fpl_player

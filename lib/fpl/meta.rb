@@ -5,7 +5,19 @@ module FPL
     end
 
     def get_current_gameweek
-      fpl_api_response["events"].find { |event| event["is_current"] }["id"]
+      fpl_api_response["events"].find { |event| event["is_current"] }
+    end
+
+    def gameweek_is_finished?
+      get_current_gameweek["finished"]
+    end
+
+    def next_gameweek
+      fpl_api_response["events"].find { |event| event["is_next"] }
+    end
+
+    def next_deadline
+      fpl_api_response["events"].find { |event| event["is_next"] }["deadline_time"]
     end
 
     def element_type_names
