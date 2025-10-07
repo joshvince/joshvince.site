@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_07_081333) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_07_115705) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -45,6 +45,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_07_081333) do
     t.date "published_on"
     t.string "subtitle"
     t.text "markdown_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fpl_gameweeks", force: :cascade do |t|
+    t.integer "gameweek"
+    t.datetime "deadline", precision: nil
+    t.jsonb "bets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

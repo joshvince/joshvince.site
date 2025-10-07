@@ -1,0 +1,2 @@
+class FPLGameweek < ApplicationRecord
+end
