@@ -43,6 +43,7 @@ gem "redcarpet"
 gem "active_analytics"
 gem "crawler_detect"
 gem "faraday"
+gem "solid_queue", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
