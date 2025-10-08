@@ -5,6 +5,13 @@ class FPLController < ApplicationController
 
   def index
     @page_title = "FPL Bet | Josh Vince"
-    @players = FPL::Players.fetch_players(manager_count: 50)
+    @gameweeks = FPLGameweek.all.pluck(:gameweek).sort
+  end
+
+  def show
+    @gameweek = FPLGameweek.find_by(gameweek: params[:gameweek])
+    @page_title = "FPL Bet | Gameweek #{@gameweek.gameweek}"
+
+    render "fpl/gameweek_bets", layout: false
   end
 end

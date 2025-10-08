@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "/jobs", to: "projects#jobs", as: "jobs"
   get "/side-projects", to: "projects#side_projects", as: "side_projects"
   get "/fpl-bet", to: "fpl#index", as: "fpl_bet"
+  get "/fpl-bet/gameweek/:gameweek", to: "fpl#show", as: "fpl_gameweek"
 
   mount ActiveAnalytics::Engine, at: "analytics"
 end

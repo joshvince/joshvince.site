@@ -1,16 +1,42 @@
 module FPL
   class Player
-    def initialize(fpl_player:, weight:, meta:)
+    def self.from_db_value(hash)
+      new(
+        fpl_player: hash.deep_stringify_keys,
+        team: hash["team"],
+        player_type: hash["player_type"],
+        weight: hash["weight"]
+      )
+    end
+
+    def self.from_api_value(api_hash:, weight:, meta:)
+      target_hash = {
+        "name" => api_hash["web_name"],
+        "xg" => api_hash["expected_goals_per_90"],
+        "xa" => api_hash["expected_assists_per_90"],
+        "clean_sheets" => api_hash["clean_sheets_per_90"],
+        "saves" => api_hash["saves_per_90"]
+      }
+
+      new(
+        fpl_player: target_hash,
+        team: meta.teams[api_hash["team"]],
+        player_type: meta.element_type_names[api_hash["element_type"]],
+        weight:
+      )
+    end
+
+    def initialize(fpl_player:, team:, player_type:, weight:)
       @fpl_player = fpl_player
 
-      @name = fpl_player["web_name"]
-      @team = meta.teams[fpl_player["team"]]
-      @player_type = meta.element_type_names[fpl_player["element_type"]]
+      @name = fpl_player["name"]
+      @team = team
+      @player_type = player_type
       @weight = weight
-      @xg = fpl_player["expected_goals_per_90"].to_f
-      @xa = fpl_player["expected_assists_per_90"].to_f
-      @clean_sheets = fpl_player["clean_sheets_per_90"].to_f
-      @saves = fpl_player["saves_per_90"].to_f
+      @xg = fpl_player["xg"].to_f
+      @xa = fpl_player["xa"].to_f
+      @clean_sheets = fpl_player["clean_sheets"].to_f
+      @saves = fpl_player["saves"].to_f
     end
 
     attr_reader :name, :team, :player_type, :weight, :xg, :xa, :clean_sheets, :saves

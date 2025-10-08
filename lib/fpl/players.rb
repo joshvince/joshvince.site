@@ -59,7 +59,7 @@ module FPL
     def convert_json_to_player_data(player_id, weight)
       fpl_player = meta.players.find { |player| player["id"] == player_id }
 
-      Player.new(fpl_player:, weight:, meta:)
+      Player.from_api_value(api_hash: fpl_player, weight:, meta:)
     end
   end
 end
