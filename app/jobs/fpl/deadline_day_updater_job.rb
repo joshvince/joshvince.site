@@ -13,9 +13,6 @@ module FPL
 
       @deadline = @meta.deadline_for_week_number(@deadline_week_number)
 
-      # This means the deadline has passed but the game was not yet been updated.
-      raise GameweekNotYetLiveError if @deadline < Time.zone.now
-
 
       @this_week = FPLGameweek.find_by(gameweek: @deadline_week_number)
       return if this_week_bets_already_in_db?
