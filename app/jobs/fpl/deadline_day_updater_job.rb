@@ -8,11 +8,16 @@ module FPL
 
     def perform
       @meta = Meta.new
-      @next_deadline = @meta.next_deadline.to_datetime
+      @deadline_week_number = @meta.today_is_deadline_day_for_week_number
+      return if @deadline_week_number.blank?
 
-      return unless @next_deadline.today?
+      @deadline = @meta.deadline_for_week_number(@deadline_week_number)
 
-      @this_week = FPLGameweek.find_by(gameweek: @meta.get_current_gameweek["id"])
+      # This means the deadline has passed but the game was not yet been updated.
+      raise GameweekNotYetLiveError if @deadline < Time.zone.now
+
+
+      @this_week = FPLGameweek.find_by(gameweek: @deadline_week_number)
       return if this_week_bets_already_in_db?
 
       update_bets!

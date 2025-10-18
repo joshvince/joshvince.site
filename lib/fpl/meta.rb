@@ -12,6 +12,15 @@ module FPL
       get_current_gameweek["finished"]
     end
 
+    def today_is_deadline_day_for_week_number
+      deadlines = fpl_api_response["events"].map { |event| [ event["id"], event["deadline_time"]&.to_datetime ] }
+      deadlines.find { |_, deadline| deadline.today? }&.first
+    end
+
+    def deadline_for_week_number(week_number)
+      fpl_api_response["events"].find { |event| event["id"] == week_number }["deadline_time"]&.to_datetime
+    end
+
     def next_gameweek
       fpl_api_response["events"].find { |event| event["is_next"] }
     end
