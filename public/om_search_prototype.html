@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OM Proof of Concept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-luxury {
+        font-family: 'Playfair Display', serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <!-- Header/Navigation -->
+    <header
+      class="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-baseline gap-2">
+            <span
+              class="font-luxury text-4xl font-semibold text-slate-900 tracking-tight"
+              >OM</span
+            >
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#"
+              class="text-slate-600 hover:text-slate-900 text-sm font-light tracking-wide transition-colors"
+              >Browse</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 hover:text-slate-900 text-sm font-light tracking-wide transition-colors"
+              >Sell</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 hover:text-slate-900 text-sm font-light tracking-wide transition-colors"
+              >About</a
+            >
+          </nav>
+          <div class="flex items-center space-x-5">
+            <button
+              class="text-slate-600 hover:text-slate-900 text-sm font-light transition-colors"
+            >
+              Sign In
+            </button>
+            <button
+              class="bg-slate-900 text-white px-5 py-2 text-sm font-light tracking-wide hover:bg-slate-800 transition-colors"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex gap-6">
+        <!-- Sidebar Filters -->
+        <aside class="w-64 flex-shrink-0">
+          <div
+            class="bg-white rounded-lg shadow-sm sticky top-24 flex flex-col max-h-[calc(100vh-8rem)]"
+          >
+            <h2
+              class="font-luxury text-xl font-semibold text-slate-900 p-5 pb-4 border-b border-slate-200"
+            >
+              Filters
+            </h2>
+
+            <!-- Scrollable Filter Content -->
+            <div class="flex-1 overflow-y-auto p-5">
+              <!-- Brand Filter -->
+              <div class="mb-6">
+                <label
+                  class="block text-xs font-light text-slate-600 mb-2 tracking-wide"
+                  >Brand</label
+                >
+                <select
+                  class="w-full border border-slate-300 rounded-sm px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 font-light"
+                >
+                  <option>All Brands</option>
+                  <option selected>Rolex</option>
+                  <option>Omega</option>
+                  <option>Patek Philippe</option>
+                  <option>Audemars Piguet</option>
+                  <option>Breitling</option>
+                </select>
+              </div>
+
+              <!-- Model Filter -->
+              <div class="mb-6">
+                <label
+                  class="block text-xs font-light text-slate-600 mb-2 tracking-wide"
+                  >Model</label
+                >
+                <select
+                  class="w-full border border-slate-300 rounded-sm px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 font-light"
+                >
+                  <option>All Models</option>
+                  <option>Datejust</option>
+                  <option>Datejust 36</option>
+                  <option>Datejust 41</option>
+                  <option>GMT-Master II</option>
+                  <option>Daytona</option>
+                  <option>Submariner</option>
+                </select>
+              </div>
+
+              <!-- Reference Filter -->
+              <div class="mb-6">
+                <label
+                  class="block text-xs font-light text-slate-600 mb-2 tracking-wide"
+                  >Reference</label
+                >
+                <select
+                  class="w-full border border-slate-300 rounded-sm px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 font-light"
+                >
+                  <option>All References</option>
+                  <option>126334</option>
+                  <option>126710BLNR</option>
+                  <option>126720VTNR</option>
+                  <option>116610LN</option>
+                  <option>116500LN</option>
+                  <option>126300</option>
+                </select>
+              </div>
+
+              <div class="border-t border-slate-200 pt-4 mt-4">
+                <!-- Condition Filter -->
+                <div class="mb-4">
+                  <label
+                    class="block text-xs font-light text-slate-600 mb-2 tracking-wide"
+                    >Condition</label
+                  >
+                  <div class="space-y-2">
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                      />
+                      <span class="ml-2 text-sm text-slate-700 font-light"
+                        >New/Unworn</span
+                      >
+                    </label>
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                        checked
+                      />
+                      <span class="ml-2 text-sm text-slate-700 font-light"
+                        >Used</span
+                      >
+                    </label>
+                  </div>
+                </div>
+
+                <!-- With Box Filter -->
+                <div class="mb-4">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                    />
+                    <span class="ml-2 text-sm text-slate-700 font-light"
+                      >With box</span
+                    >
+                  </label>
+                </div>
+
+                <!-- With Papers Filter -->
+                <div class="mb-4">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                    />
+                    <span class="ml-2 text-sm text-slate-700 font-light"
+                      >With papers</span
+                    >
+                  </label>
+                </div>
+
+                <!-- Location Filter -->
+                <div class="mb-4">
+                  <label
+                    class="block text-xs font-light text-slate-600 mb-2 tracking-wide"
+                    >Location</label
+                  >
+                  <select
+                    class="w-full border border-slate-300 rounded-sm px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 font-light"
+                  >
+                    <option>All Locations</option>
+                    <option>UK</option>
+                    <option>Europe</option>
+                    <option>USA</option>
+                    <option>Asia</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fixed Apply Button -->
+            <div class="p-5 pt-4 border-t border-slate-200 bg-white">
+              <button
+                class="w-full bg-slate-900 text-white px-4 py-2.5 text-sm font-light tracking-wide hover:bg-slate-800 transition-colors"
+              >
+                Apply Filters
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 min-w-0">
+          <!-- Search Summary & Controls -->
+          <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-600 text-sm font-light"
+                >10,211 listings</span
+              >
+            </div>
+            <div class="flex items-center gap-5">
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-slate-600 hover:text-slate-900 text-sm font-light transition-colors"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+                Save Search
+              </a>
+              <div class="flex items-center gap-2">
+                <span class="text-slate-600 text-sm font-light">Sort by</span>
+                <select
+                  class="border border-slate-300 rounded-sm px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 font-light"
+                >
+                  <option>Relevance</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Newest First</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Watch Listings Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Watch Card 1 - Maunder Watches -->
+            <a
+              href="/om_details_prototype.html"
+              class="bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100 block"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.aperture.watch/lots/39061/extralarge.jpg"
+                  alt="Rolex Datejust 41"
+                  class="w-full h-64 object-cover"
+                />
+                <div
+                  class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5"
+                >
+                  <div class="w-1.5 h-1.5 bg-white/80 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex-1">
+                    <h3
+                      class="font-luxury text-lg font-semibold text-slate-900 mb-1"
+                    >
+                      Rolex Datejust 41
+                    </h3>
+                    <p
+                      class="text-xs text-slate-500 mb-2 font-light tracking-wide"
+                    >
+                      Blue Dial 126334 CIRCA 2017+
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3 flex items-center gap-2">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Maunder+Watches&background=475569&color=fff&size=32"
+                    alt="Maunder Watches"
+                    class="w-6 h-6 rounded-full ring-1 ring-slate-200"
+                  />
+                  <span class="text-xs font-light text-slate-600 tracking-wide"
+                    >Maunder Watches</span
+                  >
+                </div>
+                <div class="mb-3">
+                  <span class="font-luxury text-xl font-semibold text-slate-900"
+                    >£4,950</span
+                  >
+                </div>
+                <div class="mb-4">
+                  <span
+                    class="inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-light tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100"
+                  >
+                    Good condition
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-1 text-xs text-slate-400 mb-4 font-light"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  London
+                </div>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-slate-50 text-slate-700 px-3 py-2.5 rounded-sm hover:bg-slate-100 text-xs font-light tracking-wide transition-colors border border-slate-200"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path>
+                  </svg>
+                  Save
+                </button>
+              </div>
+            </a>
+
+            <!-- Watch Card 2 -->
+            <div
+              class="bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.aperture.watch/cdn-cgi/image/width=800,quality=90/https://images.aperture.watch/lots/35529/b5e3b7cb-3a95-4b80-9198-b32100cf6b5e.jpg"
+                  alt="Rolex Datejust 41"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="bg-amber-600 text-white text-xs font-light tracking-wide px-2.5 py-1 rounded-sm"
+                    >Popular</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5"
+                >
+                  <div class="w-1.5 h-1.5 bg-white/80 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex-1">
+                    <h3
+                      class="font-luxury text-lg font-semibold text-slate-900 mb-1"
+                    >
+                      Rolex Datejust 41
+                    </h3>
+                    <p
+                      class="text-xs text-slate-500 mb-2 font-light tracking-wide"
+                    >
+                      126331
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3 flex items-center gap-2">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Luxury+Timepieces&background=475569&color=fff&size=32"
+                    alt="Luxury Timepieces Ltd"
+                    class="w-6 h-6 rounded-full ring-1 ring-slate-200"
+                  />
+                  <span class="text-xs font-light text-slate-600 tracking-wide"
+                    >Luxury Timepieces Ltd</span
+                  >
+                </div>
+                <div class="mb-3">
+                  <span class="font-luxury text-xl font-semibold text-slate-900"
+                    >£5,997</span
+                  >
+                </div>
+                <div class="mb-4">
+                  <span
+                    class="inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-light tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100"
+                  >
+                    As new
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-1 text-xs text-slate-400 mb-4 font-light"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  UK
+                </div>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-slate-50 text-slate-700 px-3 py-2.5 rounded-sm hover:bg-slate-100 text-xs font-light tracking-wide transition-colors border border-slate-200"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path>
+                  </svg>
+                  Save
+                </button>
+              </div>
+            </div>
+
+            <!-- Watch Card 2 -->
+            <div
+              class="bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.aperture.watch/lots/16715/extralarge.jpg"
+                  alt="Rolex GMT-Master II"
+                  class="w-full h-64 object-cover"
+                />
+                <div
+                  class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5"
+                >
+                  <div class="w-1.5 h-1.5 bg-white/80 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex-1">
+                    <h3
+                      class="font-luxury text-lg font-semibold text-slate-900 mb-1"
+                    >
+                      Rolex Vintage Explorer
+                    </h3>
+                    <p
+                      class="text-xs text-slate-500 mb-2 font-light tracking-wide"
+                    >
+                      1016
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3 flex items-center gap-2">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Horology+Experts&background=475569&color=fff&size=32"
+                    alt="Horology Experts"
+                    class="w-6 h-6 rounded-full ring-1 ring-slate-200"
+                  />
+                  <span class="text-xs font-light text-slate-600 tracking-wide"
+                    >Horology Experts</span
+                  >
+                </div>
+                <div class="mb-3">
+                  <span class="font-luxury text-xl font-semibold text-slate-900"
+                    >£11,000</span
+                  >
+                </div>
+                <div class="mb-4">
+                  <span
+                    class="inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-light tracking-wide bg-amber-50 text-amber-700 border border-amber-100"
+                  >
+                    Slight wear
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-1 text-xs text-slate-400 mb-4 font-light"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  UK
+                </div>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-slate-50 text-slate-700 px-3 py-2.5 rounded-sm hover:bg-slate-100 text-xs font-light tracking-wide transition-colors border border-slate-200"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path>
+                  </svg>
+                  Save
+                </button>
+              </div>
+            </div>
+
+            <!-- Watch Card 3 -->
+            <div
+              class="bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.aperture.watch/lots/40525/3e2f26f5-db39-469a-9c4c-b37d00acdeea.jpg"
+                  alt="Rolex Datejust 36"
+                  class="w-full h-64 object-cover"
+                />
+                <div
+                  class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5"
+                >
+                  <div class="w-1.5 h-1.5 bg-white/80 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                  <div class="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex-1">
+                    <h3
+                      class="font-luxury text-lg font-semibold text-slate-900 mb-1"
+                    >
+                      Rolex Oyster Perpetual Date
+                    </h3>
+                    <p
+                      class="text-xs text-slate-500 mb-2 font-light tracking-wide"
+                    >
+                      15000
+                    </p>
+                  </div>
+                </div>
+                <div class="mb-3 flex items-center gap-2">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Prestige+Watches&background=475569&color=fff&size=32"
+                    alt="Prestige Watches"
+                    class="w-6 h-6 rounded-full ring-1 ring-slate-200"
+                  />
+                  <span class="text-xs font-light text-slate-600 tracking-wide"
+                    >Prestige Watches</span
+                  >
+                </div>
+                <div class="mb-3">
+                  <span class="font-luxury text-xl font-semibold text-slate-900"
+                    >£1,349</span
+                  >
+                </div>
+                <div class="mb-4">
+                  <span
+                    class="inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-light tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100"
+                  >
+                    As new
+                  </span>
+                </div>
+                <div
+                  class="flex items-center gap-1 text-xs text-slate-400 mb-4 font-light"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  UK
+                </div>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-slate-50 text-slate-700 px-3 py-2.5 rounded-sm hover:bg-slate-100 text-xs font-light tracking-wide transition-colors border border-slate-200"
+                >
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path>
+                  </svg>
+                  Save
+                </button>
+              </div>
+            </div>
+
+            <!-- Watch Card 4 -->
+          </div>
+
+          <!-- Load More / Pagination -->
+          <div class="mt-12 flex justify-center">
+            <button
+              class="bg-white border border-slate-300 text-slate-700 px-8 py-2.5 rounded-sm hover:bg-slate-50 text-sm font-light tracking-wide transition-colors"
+            >
+              Load More
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
