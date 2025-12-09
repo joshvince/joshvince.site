@@ -1,20 +1,23 @@
-<div class="hidden md:flex flex-col object-top fixed w-64 max-w-sm ml-12">
-  <%= link_to root_path, class: "text-8xl font-black pb-8 gradient" do %>
-    <div>JO</div>
-    <div>SH</div>
+<div class="hidden md:flex md:fixed md:flex-col md:ml-4">
+  <%= link_to root_path, class: "text-7xl font-black gradient" do %>
+    <div class="">JOSH</div>
   <% end %>
-  <div class="text-gray-900 mb-2">
-    Josh Vince
+  <div class="flex justify-between">
+    <div class="flex flex-col object-top ml-1">
+      <%= sidebar_link "Writing", writing_index_path %>
+      <%= sidebar_link "Projects", side_projects_path %>
+      <%= sidebar_link "Jobs", jobs_path %>
+      <%= sidebar_link "Me", about_path %>
+      <%= sidebar_link "Contact", contact_path %>
+      <%= link_to writing_index_url(format: :xml), class: 'mb-1 hover:underline flex' do %>
+        <div class="mr-2">RSS</div>
+        <%= image_tag 'rss.svg', class: 'max-h-6' %>
+      <% end %>
+      <%= sidebar_link "Github 🖇️", "https://github.com/joshvince", target: :_blank %>
+      <%= sidebar_link "LinkedIn 🖇️", "https://www.linkedin.com/in/joshvince/", target: :_blank %>
+    </div>
+    <%= link_to root_path, class: "text-7xl font-black yellow-gradient [writing-mode:vertical-rl] [text-orientation:mixed] flex-shrink-0 ml-4" do %>
+      <div class="whitespace-nowrap -mr-2">VINCE</div>
+    <% end %>
   </div>
-  <%= sidebar_link "Writing", writing_index_path %>
-  <%= sidebar_link "Projects", side_projects_path %>
-  <%= sidebar_link "Jobs", jobs_path %>
-  <%= sidebar_link "Me", about_path %>
-  <%= sidebar_link "Contact", contact_path %>
-  <%= link_to writing_index_url(format: :xml), class: 'mb-1 hover:underline flex' do %>
-    <div class="mr-2">RSS Feed </div>
-    <%= image_tag 'rss.svg', class: 'max-h-6' %>
-  <% end %>
-  <%= sidebar_link "Github 🖇️", "https://github.com/joshvince", target: :_blank %>
-  <%= sidebar_link "LinkedIn 🖇️", "https://www.linkedin.com/in/joshvince/", target: :_blank %>
 </div>
