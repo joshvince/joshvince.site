@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "junk_food_#{junk_food.id}" do %>
+  <div class="space-y-8">
+    <div class="text-center">
+      <p class="font-junk text-8xl md:text-9xl leading-none mb-1"><%= scorer.display_score %></p>
+      <p class="text-sm uppercase tracking-widest font-semibold opacity-50">Junk food score</p>
+    </div>
+
+    <div class="w-full bg-white border-3 border-bauhaus-black overflow-hidden">
+      <div
+        class="junk-food-progress-bar <%= if scorer.percentage >= 60 then 'bg-bauhaus-red' elsif scorer.percentage >= 40 then 'bg-bauhaus-orange' else 'bg-bauhaus-blue' end %>"
+        style="width: <%= [scorer.percentage, 2].max %>%"
+      ></div>
+    </div>
+
+    <p class="font-junk text-3xl text-center">
+      <% if scorer.percentage >= 60 %>
+        Yep, that's junk food.
+      <% elsif scorer.percentage >= 40 %>
+        A bit junky, but not the worst.
+      <% else %>
+        Pretty wholesome, actually.
+      <% end %>
+    </p>
+
+    <div class="pt-2">
+      <%= link_to junk_food_path,
+            data: { turbo_frame: "_top" },
+            class: "bauhaus-btn-inverted block w-full px-6 py-4 bg-bauhaus-black text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black text-center" do %>
+        Rate another
+      <% end %>
+    </div>
+  </div>
+<% end %>

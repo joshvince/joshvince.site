@@ -1,0 +1,99 @@
+:root {
+  --bauhaus-red: #8B2500;
+  --bauhaus-orange: #C4652A;
+  --bauhaus-blue: #2B4162;
+  --bauhaus-yellow: #D4A843;
+  --bauhaus-black: #2A2A28;
+  --bauhaus-cream: #EDE8DF;
+}
+
+.font-junk {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-junk-body {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.bg-bauhaus-cream { background-color: var(--bauhaus-cream); }
+.bg-bauhaus-red { background-color: var(--bauhaus-red); }
+.bg-bauhaus-orange { background-color: var(--bauhaus-orange); }
+.bg-bauhaus-blue { background-color: var(--bauhaus-blue); }
+.bg-bauhaus-yellow { background-color: var(--bauhaus-yellow); }
+.bg-bauhaus-black { background-color: var(--bauhaus-black); }
+
+.text-bauhaus-red { color: var(--bauhaus-red); }
+.text-bauhaus-orange { color: var(--bauhaus-orange); }
+.text-bauhaus-blue { color: var(--bauhaus-blue); }
+.text-bauhaus-yellow { color: var(--bauhaus-yellow); }
+.text-bauhaus-black { color: var(--bauhaus-black); }
+
+.border-bauhaus-black { border-color: var(--bauhaus-black); }
+
+.junk-food-container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.junk-food-progress-bar {
+  height: 1.25rem;
+  transition: width 0.5s ease-in-out;
+}
+
+.bauhaus-btn {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.bauhaus-btn:hover {
+  background-color: var(--bauhaus-black);
+  color: var(--bauhaus-cream);
+}
+
+.bauhaus-btn-inverted:hover {
+  background-color: var(--bauhaus-cream);
+  color: var(--bauhaus-black);
+}
+
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1.25rem;
+}
+
+.dot-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: white;
+}
+
+.dot-label {
+  font-size: 0.65rem;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  opacity: 0.6;
+}

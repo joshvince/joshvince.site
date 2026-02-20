@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Junk Food | <%= @junk_food.name %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "junk_food/junk_food", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-bauhaus-cream text-bauhaus-black font-junk-body">
+    <div class="junk-food-container px-6">
+      <div class="w-full max-w-lg">
+        <h1 class="font-junk text-4xl md:text-5xl leading-none mb-1"><%= @junk_food.name %></h1>
+        <div class="w-10 h-1 bg-bauhaus-yellow mb-8"></div>
+
+        <%= turbo_frame_tag "junk_food_#{@junk_food.id}" do %>
+          <% if @junk_food.complete? %>
+            <%= render partial: "score", locals: { junk_food: @junk_food, scorer: @scorer } %>
+          <% else %>
+            <%= render partial: "question", locals: { junk_food: @junk_food, question: @question } %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

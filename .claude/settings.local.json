@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs:*)",
+      "Bash(bin/rails db:migrate:*)",
+      "Bash(bin/rails routes:*)",
+      "Bash(bin/dev)",
+      "Bash(curl:*)"
+    ]
+  }
+}

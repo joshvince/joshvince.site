@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 
   def record_page_view
     valid_request_checks = [
-      response.content_type,
-      response.content_type.start_with?("text/html"),
+      response.content_type.present?,
+      response.content_type&.start_with?("text/html"),
       !request.is_crawler?,
       request.host.match?(/joshvince.site/)
     ]
