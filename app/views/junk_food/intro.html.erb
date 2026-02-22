@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Junk Food | Josh Vince</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "junk_food/junk_food", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "junk_food_intro" %>
+  </head>
+  <body class="bg-bauhaus-cream text-bauhaus-black">
+    <div class="intro-container">
+      <div id="emoji-canvas" class="emoji-canvas"></div>
+
+      <div class="intro-text px-6">
+        <p class="font-junk text-2xl">The</p>
+        <h1 class="font-junk text-7xl md:text-9xl leading-none mb-4">Junk Food<br>Firehose</h1>
+        <button id="open-wide" class="is-invisible bauhaus-btn mt-6 px-10 py-3 bg-bauhaus-red text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black">Open wide</button>
+      </div>
+    </div>
+
+    <div id="intro-content" class="is-hidden is-invisible font-junk-body px-6 py-16 max-w-2xl mx-auto space-y-6">
+      <p class="text-lg">
+        Many modern foods are harmful to us if we consume them in extreme quantities. Most people exercise some kind of moderation
+        with the fuel they put into their bodies.
+        Statistically, you're not a chain-smoker or a functioning alcoholic or someone who consumes kilos of chocolate every day.
+        Cigarettes and alcohol and chocolate bars come with warning labels.
+        <br/><br/>
+        But content comes with no warnings. Most of us pretty much constantly consume content throughout our
+        waking hours, drinking directly from a firehose that squirts unmoderated streams of it from the internet to our pocket
+        straight into our brains.
+      </p>
+      <p class="text-lg">
+        Complete abstention is only for a tiny fraction. The rest of us have to get by with being thoughtful
+        with what we consume.
+        <br/><br/>
+        Our information diet deserves warning labels as well.
+      </p>
+      <%= form_with url: junk_food_path, method: :post, class: "w-full flex flex-col justify-center space-y-5" do |f| %>
+        <label for="name" class="block text-sm font-semibold uppercase tracking-wider mb-2">What was the last piece of content you consumed?</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="eg: an article about Epstein"
+          minLength="3"
+          maxLength="35"
+          autocomplete="off"
+          class="w-full px-4 py-3 border-3 border-bauhaus-black text-lg bg-white focus:outline-none focus:border-bauhaus-blue"
+        />
+        <button
+          type="submit"
+          class="block bauhaus-btn mt-6 px-10 py-3 bg-bauhaus-red text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black"
+        >
+          Make a label
+        </button>
+      <% end %>
+    </div>
+  </body>
+</html>

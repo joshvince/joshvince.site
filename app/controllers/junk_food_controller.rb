@@ -1,6 +1,9 @@
 class JunkFoodController < ApplicationController
   layout false
 
+  def intro
+  end
+
   def new
     @recent_foods = JunkFood.order(created_at: :desc).limit(50).select(&:complete?).first(20)
   end

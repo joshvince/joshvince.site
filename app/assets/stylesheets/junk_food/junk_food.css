@@ -46,12 +46,13 @@
 }
 
 .bauhaus-btn {
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.30s ease, color 0.30s ease;
+  cursor: pointer;
 }
 
 .bauhaus-btn:hover {
-  background-color: var(--bauhaus-black);
-  color: var(--bauhaus-cream);
+  background-color: var(--bauhaus-blue);
+  color: white;
 }
 
 .bauhaus-btn-inverted:hover {
@@ -96,4 +97,63 @@
   letter-spacing: 0.04em;
   font-weight: 600;
   opacity: 0.6;
+}
+
+/* Intro page */
+
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.emoji-particle {
+  position: absolute;
+  line-height: 1;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+.emoji-sm { font-size: 20px; }
+.emoji-md { font-size: 28px; }
+.emoji-lg { font-size: 36px; }
+.emoji-xl { font-size: 44px; }
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#open-wide {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#open-wide.is-invisible {
+  opacity: 0;
+}
+
+#intro-content {
+  transition: opacity 2s ease;
+}
+
+#intro-content.is-hidden {
+  display: none;
+}
+
+#intro-content.is-invisible {
+  opacity: 0;
 }
