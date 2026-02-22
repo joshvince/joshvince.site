@@ -13,7 +13,7 @@ module JunkFoodHelper
     case level
     when :high then "var(--bauhaus-red)"
     when :medium then "var(--bauhaus-orange)"
-    else "var(--bauhaus-blue)"
+    else "var(--bauhaus-green)"
     end
   end
 end
