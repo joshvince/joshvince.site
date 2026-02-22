@@ -3,17 +3,17 @@ module JunkFoodHelper
     junk_food.score_for(category)
   end
 
-  def category_color_for(category, junk_food)
+  def category_color_class_for(category, junk_food)
     answers = junk_food.answers_for(category)
-    return "var(--bauhaus-cream)" if answers.empty?
+    return "bg-bauhaus-blue" if answers.empty?
 
     score = answers.sum
     level = JunkFoodCategorisation.threshold_level(category, score)
 
     case level
-    when :high then "var(--bauhaus-red)"
-    when :medium then "var(--bauhaus-orange)"
-    else "var(--bauhaus-green)"
+    when :high then "bg-bauhaus-red"
+    when :medium then "bg-bauhaus-orange"
+    else "bg-bauhaus-green"
     end
   end
 end

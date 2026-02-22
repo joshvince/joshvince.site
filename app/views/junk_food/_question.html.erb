@@ -1,7 +1,6 @@
 <%= turbo_frame_tag "junk_food_#{junk_food.id}" do %>
-  <div class="space-y-6">
-    <%= render partial: "pie_label", locals: { junk_food: junk_food } %>
-
+  <div class="space-y-6"
+       data-circle-colors="<%= JunkFoodCategorisation::CATEGORIES.map { |cat| category_color_class_for(cat, junk_food) }.join(',') %>">
     <p class="font-junk text-2xl md:text-3xl leading-tight"><%= question[:text] %></p>
 
     <div class="space-y-3">

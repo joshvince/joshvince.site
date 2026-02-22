@@ -1,4 +1,6 @@
 class JunkFood < ApplicationRecord
+  validates :name, presence: true, length: { minimum: 3, maximum: 35 }
+
   def record_answer(category, score)
     current = answers || {}
     arr = current.fetch(category.to_s, [])

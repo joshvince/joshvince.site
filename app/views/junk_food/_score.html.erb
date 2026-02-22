@@ -1,30 +1,48 @@
-<%= turbo_frame_tag "junk_food_#{junk_food.id}" do %>
-  <div class="space-y-8">
-    <%= render partial: "pie_label", locals: { junk_food: junk_food } %>
+<%= turbo_frame_tag "junk_food_#{junk_food.id}", refresh: "morph" do %>
+  <% all_cats = JunkFoodCategorisation.categories.reverse.map do |cat|
+    score = junk_food.score_for(cat)
+    level = JunkFoodCategorisation.threshold_level(cat, score)
+    color = case level
+            when :high then "bg-bauhaus-red"
+            when :medium then "bg-bauhaus-orange"
+            else "bg-bauhaus-green"
+            end
+    { category: cat, level: level, name: JunkFoodCategorisation::DISPLAY_NAMES[cat], color: color, advisory_text: JunkFoodCategorisation.advisory_text_for(cat, level) }
+  end %>
+  <% advisories = all_cats.reverse %>
 
-    <div class="text-center">
-      <% JunkFoodCategorisation.categories.each do |cat| %>
-        <% score = junk_food.score_for(cat) %>
-        <% max = JunkFoodCategorisation.max_score_for(cat) %>
-        <% level = JunkFoodCategorisation.threshold_level(cat, score) %>
-        <p class="font-junk text-3xl leading-tight">
-          <%= cat.to_s.humanize %>: <%= score %>/<%= max %>
-          <% if level == :high %>
-            — Yep, that's junk food.
-          <% elsif level == :medium %>
-            — A bit junky, but not the worst.
-          <% else %>
-            — Pretty wholesome, actually.
-          <% end %>
-        </p>
+  <div class="space-y-8"
+       data-circle-colors="<%= JunkFoodCategorisation::CATEGORIES.map { |cat| category_color_class_for(cat, junk_food) }.join(',') %>">
+    <div class="advisory-rings-container" style="--ring-count: <%= all_cats.size %>;">
+      <% all_cats.each_with_index do |cat, i| %>
+        <div class="advisory-ring <%= cat[:color] %>"
+             style="--ring-index: <%= i %>;"></div>
       <% end %>
     </div>
+
+    <% if advisories.any? %>
+      <div>
+        <div class="advisory-list mt-8">
+          <% advisories.each do |adv| %>
+            <div class="advisory-item">
+              <div class="advisory-legend-dot <%= adv[:color] %>"></div>
+              <p class="advisory-text"><%= adv[:advisory_text] %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="text-center py-4">
+        <p class="font-junk text-3xl">Clean bill of health</p>
+        <p class="text-sm uppercase tracking-wider opacity-50 mt-1">No advisories to report</p>
+      </div>
+    <% end %>
 
     <div class="pt-2">
       <%= link_to junk_food_path,
             data: { turbo_frame: "_top" },
-            class: "bauhaus-btn-inverted block w-full px-6 py-4 bg-bauhaus-black text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black text-center" do %>
-        Rate another
+            class: "bauhaus-btn block w-full px-6 py-4 bg-bauhaus-red text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black text-center" do %>
+        Make another label
       <% end %>
     </div>
   </div>

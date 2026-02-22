@@ -23,6 +23,7 @@
 .bg-bauhaus-orange { background-color: var(--bauhaus-orange); }
 .bg-bauhaus-blue { background-color: var(--bauhaus-blue); }
 .bg-bauhaus-yellow { background-color: var(--bauhaus-yellow); }
+.bg-bauhaus-green { background-color: var(--bauhaus-green); }
 .bg-bauhaus-black { background-color: var(--bauhaus-black); }
 
 .text-bauhaus-red { color: var(--bauhaus-red); }
@@ -43,7 +44,7 @@
 
 .junk-food-container--quiz {
   justify-content: flex-start;
-  padding-top: 12vh;
+  padding-top: 6vh;
 }
 
 .junk-food-progress-bar {
@@ -126,9 +127,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 3px solid var(--bauhaus-black);
-  background-color: var(--cat-color, var(--bauhaus-cream));
-  transition: background-color 0.4s ease;
+  transition: background-color 1s ease;
 }
 
 .category-circle-label {
@@ -209,4 +208,69 @@
 
 #intro-content.is-invisible {
   opacity: 0;
+}
+
+/* Health advisories — concentric rings */
+
+.advisory-rings-container {
+  --ring-thickness: 30px;
+  --ring-size: calc(var(--ring-count) * var(--ring-thickness) * 2);
+  position: relative;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  margin: 0 auto;
+}
+
+.advisory-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --diameter: calc((var(--ring-count) - var(--ring-index)) * var(--ring-thickness) * 2);
+  width: var(--diameter);
+  height: var(--diameter);
+  z-index: var(--ring-index);
+}
+
+/* Advisory legend list */
+
+.advisory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.advisory-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.advisory-legend-dot {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+}
+
+.advisory-name {
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.advisory-level {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+}
+
+.advisory-text {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+  line-height: 1.4;
 }
