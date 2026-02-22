@@ -2,13 +2,22 @@ class JunkFoodController < ApplicationController
   layout false
 
   def intro
+    return redirect_to junk_food_path if cookies[:junk_food_intro_seen]
+  end
+
+  def reset_intro
+    cookies.delete(:junk_food_intro_seen)
+    redirect_to junk_food_intro_path
   end
 
   def new
+    return redirect_to junk_food_intro_path unless cookies[:junk_food_intro_seen]
+
     @recent_foods = JunkFood.order(created_at: :desc).limit(50).select(&:complete?).first(20)
   end
 
   def create
+    cookies.permanent[:junk_food_intro_seen] = "1"
     junk_food = JunkFood.create!(name: params[:name])
     redirect_to junk_food_show_path(junk_food)
   end

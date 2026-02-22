@@ -140,6 +140,18 @@
   opacity: 0.6;
 }
 
+/* Main page hero */
+
+.junk-food-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
 /* Intro page */
 
 .intro-container {

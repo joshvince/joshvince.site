@@ -14,61 +14,65 @@
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "junk_food/junk_food", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "emoji_spray" %>
+    <%= javascript_include_tag "junk_food_main" %>
   </head>
   <body class="bg-bauhaus-cream text-bauhaus-black font-junk-body">
-    <div class="junk-food-container px-6 py-16">
-      <div class="w-full max-w-lg">
-        <h1 class="font-junk text-7xl md:text-8xl leading-none mb-2">Junk Food</h1>
-        <div class="w-16 h-1.5 bg-bauhaus-red mb-6"></div>
-        <p class="text-lg mb-10">
-          Is the content you just consumed junk food for your brain? Name it and find out.
-        </p>
+    <div class="junk-food-hero">
+      <div id="emoji-canvas" class="emoji-canvas"></div>
+      <div class="intro-text">
+        <p class="font-junk text-2xl">The</p>
+        <h1 class="font-junk text-7xl md:text-9xl leading-none">Junk Food<br>Firehose</h1>
+      </div>
+    </div>
 
-        <%= form_with url: junk_food_path, method: :post, class: "space-y-5" do |f| %>
-          <div>
-            <label for="name" class="block text-sm font-semibold uppercase tracking-wider mb-2">What did you just read / watch / listen to?</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              placeholder="e.g. A Twitter thread about AI"
-              class="w-full px-4 py-3 border-3 border-bauhaus-black text-lg bg-white focus:outline-none focus:border-bauhaus-blue"
-            />
-          </div>
+    <div class="px-6 py-10 max-w-lg mx-auto">
+      <%= form_with url: junk_food_path, method: :post, class: "w-full flex flex-col justify-center space-y-5" do |f| %>
+        <label for="name" class="block text-sm font-semibold uppercase tracking-wider mb-2">What was the last piece of content you consumed?</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="eg: an article about Epstein"
+          minLength="3"
+          maxLength="35"
+          autocomplete="off"
+          class="w-full px-4 py-3 border-3 border-bauhaus-black text-lg bg-white focus:outline-none focus:border-bauhaus-blue"
+        />
+        <button
+          type="submit"
+          class="block bauhaus-btn mt-6 px-10 py-3 bg-bauhaus-red text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black"
+        >
+          Make a label
+        </button>
+      <% end %>
 
-          <button
-            type="submit"
-            class="bauhaus-btn w-full px-6 py-4 bg-bauhaus-blue text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black"
-          >
-            Rate it
-          </button>
-        <% end %>
-
-        <% if @recent_foods.any? %>
-          <div class="mt-16">
-            <h2 class="font-junk text-2xl mb-6">Recent ratings</h2>
-            <div class="dot-grid">
-              <% @recent_foods.each do |food| %>
-                <% first_cat = JunkFoodCategorisation.categories.first %>
-                <% level = JunkFoodCategorisation.threshold_level(first_cat, food.score_for(first_cat)) %>
-                <% dot_color = case level
-                               when :high then "bg-bauhaus-red"
-                               when :medium then "bg-bauhaus-orange"
-                               else "bg-bauhaus-blue"
-                               end %>
-                <%= link_to junk_food_show_path(food), class: "dot-item" do %>
-                  <div class="dot <%= dot_color %>"><%= food.score_for(first_cat) %>/<%= JunkFoodCategorisation.max_score_for(first_cat) %></div>
-                  <span class="dot-label"><%= food.name %></span>
-                <% end %>
+      <% if @recent_foods.any? %>
+        <div class="mt-16">
+          <h2 class="font-junk text-2xl mb-6">Recent ratings</h2>
+          <div class="dot-grid">
+            <% @recent_foods.each do |food| %>
+              <% first_cat = JunkFoodCategorisation.categories.first %>
+              <% level = JunkFoodCategorisation.threshold_level(first_cat, food.score_for(first_cat)) %>
+              <% dot_color = case level
+                             when :high then "bg-bauhaus-red"
+                             when :medium then "bg-bauhaus-orange"
+                             else "bg-bauhaus-blue"
+                             end %>
+              <%= link_to junk_food_show_path(food), class: "dot-item" do %>
+                <div class="dot <%= dot_color %>"><%= food.score_for(first_cat) %>/<%= JunkFoodCategorisation.max_score_for(first_cat) %></div>
+                <span class="dot-label"><%= food.name %></span>
               <% end %>
-            </div>
+            <% end %>
           </div>
-        <% end %>
-
-        <div class="mt-12 text-center">
-          <%= link_to "Back to site", root_path, class: "text-sm uppercase tracking-wider opacity-40 hover:opacity-100" %>
         </div>
+      <% end %>
+
+      <div class="mt-12 text-center space-y-3">
+        <%= link_to "What is this?", junk_food_reset_intro_path, class: "text-sm uppercase tracking-wider opacity-40 hover:opacity-100", data: { turbo_prefetch: 'false' } %>
+        <br>
+        <%= link_to "Back to site", root_path, class: "text-sm uppercase tracking-wider opacity-40 hover:opacity-100" %>
       </div>
     </div>
   </body>
