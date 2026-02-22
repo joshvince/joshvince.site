@@ -15,21 +15,36 @@ class JunkFoodController < ApplicationController
 
   def show
     @junk_food = JunkFood.find(params[:id])
-    @question = @junk_food.current_question
-    @scorer = JunkFoodScorer.new(@junk_food) if @junk_food.complete?
+
+    unless @junk_food.complete?
+      @current_category = @junk_food.current_category
+      @current_step = @junk_food.current_step
+      @question = JunkFoodCategorisation.question_at(@current_category, @current_step)
+    end
   end
 
   def update
     @junk_food = JunkFood.find(params[:id])
-    @junk_food.record_answer(params[:question_key], params[:answer_key])
 
-    @question = @junk_food.current_question
-    @scorer = JunkFoodScorer.new(@junk_food) if @junk_food.complete?
+    category = params[:current_category].to_sym
+    step = params[:category_step].to_i
+    choice_index = params[:choice_index].to_i
+
+    score = JunkFoodCategorisation.question_at(category, step)[:choices][choice_index][:score]
+    @junk_food.record_answer(category, score)
 
     if @junk_food.complete?
-      render partial: "score", locals: { junk_food: @junk_food, scorer: @scorer }
+      render partial: "score", locals: { junk_food: @junk_food }
     else
-      render partial: "question", locals: { junk_food: @junk_food, question: @question }
+      @current_category = @junk_food.current_category
+      @current_step = @junk_food.current_step
+      question = JunkFoodCategorisation.question_at(@current_category, @current_step)
+      render partial: "question", locals: {
+        junk_food: @junk_food,
+        question: question,
+        current_category: @current_category,
+        current_step: @current_step
+      }
     end
   end
 end

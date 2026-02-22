@@ -99,6 +99,40 @@
   opacity: 0.6;
 }
 
+/* Category circles */
+
+.category-circles {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 0 auto 2rem;
+}
+
+.category-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.category-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--bauhaus-black);
+  background-color: var(--cat-color, var(--bauhaus-cream));
+  transition: background-color 0.4s ease;
+}
+
+.category-circle-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bauhaus-black);
+  opacity: 0.6;
+}
+
 /* Intro page */
 
 .intro-container {

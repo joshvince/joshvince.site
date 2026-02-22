@@ -23,9 +23,9 @@
 
         <%= turbo_frame_tag "junk_food_#{@junk_food.id}" do %>
           <% if @junk_food.complete? %>
-            <%= render partial: "score", locals: { junk_food: @junk_food, scorer: @scorer } %>
+            <%= render partial: "score", locals: { junk_food: @junk_food } %>
           <% else %>
-            <%= render partial: "question", locals: { junk_food: @junk_food, question: @question } %>
+            <%= render partial: "question", locals: { junk_food: @junk_food, question: @question, current_category: @current_category, current_step: @current_step } %>
           <% end %>
         <% end %>
       </div>

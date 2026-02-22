@@ -1,17 +1,34 @@
 class JunkFood < ApplicationRecord
-  def current_question_index
-    (answers || {}).size
+  def record_answer(category, score)
+    current = answers || {}
+    arr = current.fetch(category.to_s, [])
+    arr << score
+    update!(answers: current.merge(category.to_s => arr))
   end
 
-  def current_question
-    JunkFoodQuestionMap.question_at(current_question_index)
+  def score_for(category)
+    answers_for(category).sum
+  end
+
+  def answers_for(category)
+    (answers || {}).fetch(category.to_s, [])
   end
 
   def complete?
-    current_question_index >= JunkFoodQuestionMap.count
+    JunkFoodCategorisation.categories.all? do |cat|
+      answers_for(cat).size >= JunkFoodCategorisation.question_count(cat)
+    end
   end
 
-  def record_answer(question_key, answer_key)
-    update!(answers: (answers || {}).merge(question_key => answer_key))
+  def current_category
+    JunkFoodCategorisation.categories.find do |cat|
+      answers_for(cat).size < JunkFoodCategorisation.question_count(cat)
+    end
+  end
+
+  def current_step
+    cat = current_category
+    return 0 unless cat
+    answers_for(cat).size
   end
 end

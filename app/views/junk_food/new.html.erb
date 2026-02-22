@@ -50,16 +50,15 @@
             <h2 class="font-junk text-2xl mb-6">Recent ratings</h2>
             <div class="dot-grid">
               <% @recent_foods.each do |food| %>
-                <% scorer = JunkFoodScorer.new(food) %>
-                <% dot_color = if scorer.percentage >= 60
-                                 "bg-bauhaus-red"
-                               elsif scorer.percentage >= 40
-                                 "bg-bauhaus-orange"
-                               else
-                                 "bg-bauhaus-blue"
+                <% first_cat = JunkFoodCategorisation.categories.first %>
+                <% level = JunkFoodCategorisation.threshold_level(first_cat, food.score_for(first_cat)) %>
+                <% dot_color = case level
+                               when :high then "bg-bauhaus-red"
+                               when :medium then "bg-bauhaus-orange"
+                               else "bg-bauhaus-blue"
                                end %>
                 <%= link_to junk_food_show_path(food), class: "dot-item" do %>
-                  <div class="dot <%= dot_color %>"><%= scorer.display_score %></div>
+                  <div class="dot <%= dot_color %>"><%= food.score_for(first_cat) %>/<%= JunkFoodCategorisation.max_score_for(first_cat) %></div>
                   <span class="dot-label"><%= food.name %></span>
                 <% end %>
               <% end %>

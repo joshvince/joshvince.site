@@ -1,14 +1,16 @@
 <%= turbo_frame_tag "junk_food_#{junk_food.id}" do %>
   <div class="space-y-6">
+    <%= render partial: "pie_label", locals: { junk_food: junk_food } %>
+
     <p class="font-junk text-2xl md:text-3xl leading-tight"><%= question[:text] %></p>
 
     <div class="space-y-3">
-      <% question[:options].each do |option| %>
+      <% question[:choices].each_with_index do |choice, index| %>
         <%= button_to junk_food_update_path(junk_food),
               method: :patch,
-              params: { question_key: question[:key], answer_key: option[:key] },
+              params: { current_category: current_category, category_step: current_step, choice_index: index },
               class: "bauhaus-btn w-full px-6 py-4 bg-white text-bauhaus-black text-lg font-semibold border-3 border-bauhaus-black text-left" do %>
-          <%= option[:text] %>
+          <%= choice[:label] %>
         <% end %>
       <% end %>
     </div>

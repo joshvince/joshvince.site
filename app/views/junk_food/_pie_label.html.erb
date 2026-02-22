@@ -1,0 +1,8 @@
+<div class="category-circles">
+  <% JunkFoodCategorisation::CATEGORIES.each do |cat| %>
+    <div class="category-circle-item">
+      <div class="category-circle" style="--cat-color: <%= category_color_for(cat, junk_food) %>;"></div>
+      <span class="category-circle-label font-junk-body"><%= JunkFoodCategorisation::DISPLAY_NAMES[cat] %></span>
+    </div>
+  <% end %>
+</div>

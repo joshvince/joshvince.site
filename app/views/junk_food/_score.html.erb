@@ -1,26 +1,24 @@
 <%= turbo_frame_tag "junk_food_#{junk_food.id}" do %>
   <div class="space-y-8">
+    <%= render partial: "pie_label", locals: { junk_food: junk_food } %>
+
     <div class="text-center">
-      <p class="font-junk text-8xl md:text-9xl leading-none mb-1"><%= scorer.display_score %></p>
-      <p class="text-sm uppercase tracking-widest font-semibold opacity-50">Junk food score</p>
-    </div>
-
-    <div class="w-full bg-white border-3 border-bauhaus-black overflow-hidden">
-      <div
-        class="junk-food-progress-bar <%= if scorer.percentage >= 60 then 'bg-bauhaus-red' elsif scorer.percentage >= 40 then 'bg-bauhaus-orange' else 'bg-bauhaus-blue' end %>"
-        style="width: <%= [scorer.percentage, 2].max %>%"
-      ></div>
-    </div>
-
-    <p class="font-junk text-3xl text-center">
-      <% if scorer.percentage >= 60 %>
-        Yep, that's junk food.
-      <% elsif scorer.percentage >= 40 %>
-        A bit junky, but not the worst.
-      <% else %>
-        Pretty wholesome, actually.
+      <% JunkFoodCategorisation.categories.each do |cat| %>
+        <% score = junk_food.score_for(cat) %>
+        <% max = JunkFoodCategorisation.max_score_for(cat) %>
+        <% level = JunkFoodCategorisation.threshold_level(cat, score) %>
+        <p class="font-junk text-3xl leading-tight">
+          <%= cat.to_s.humanize %>: <%= score %>/<%= max %>
+          <% if level == :high %>
+            — Yep, that's junk food.
+          <% elsif level == :medium %>
+            — A bit junky, but not the worst.
+          <% else %>
+            — Pretty wholesome, actually.
+          <% end %>
+        </p>
       <% end %>
-    </p>
+    </div>
 
     <div class="pt-2">
       <%= link_to junk_food_path,
