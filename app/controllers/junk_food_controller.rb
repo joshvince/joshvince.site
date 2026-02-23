@@ -13,7 +13,7 @@ class JunkFoodController < ApplicationController
   def new
     return redirect_to junk_food_intro_path unless cookies[:junk_food_intro_seen]
 
-    @recent_foods = JunkFood.order(created_at: :desc).limit(50).select(&:complete?).first(20)
+    @recent_foods = JunkFood.order(created_at: :desc).limit(50).select(&:complete?).first(10)
   end
 
   def create

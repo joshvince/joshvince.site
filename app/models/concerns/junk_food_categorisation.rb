@@ -3,7 +3,7 @@ module JunkFoodCategorisation
 
   DISPLAY_NAMES = {
     addictiveness: "Addictive",
-    griftiness: "Grift",
+    griftiness: "Griftish",
     emotiveness: "Emotive",
     recursiveness: "Recursive",
     americaness: "American"
