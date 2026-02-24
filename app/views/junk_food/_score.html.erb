@@ -12,6 +12,7 @@
   <% advisories = all_cats.reverse %>
 
   <div class="space-y-8"
+       data-quiz-complete
        data-circle-colors="<%= JunkFoodCategorisation::CATEGORIES.map { |cat| category_color_class_for(cat, junk_food) }.join(',') %>">
     <div class="advisory-rings-container" style="--ring-count: <%= all_cats.size %>;">
       <% all_cats.each_with_index do |cat, i| %>
@@ -33,9 +34,12 @@
           </div>
         <% end %>
       </div>
+      <div class="w-full flex justify-center ">
+        <div class="text-sm uppercase tracking-wider mt-1 pb-2 border-b-4 border-[#D4A843]">Consume this content with caution</div>
+      </div>
     <% else %>
       <div class="text-center py-4 mt-12">
-        <p class="font-junk text-3xl">This content seems remarkably healthy.</p>
+        <p class="font-junk text-3xl">This content seems pretty healthy.</p>
         <p class="text-sm uppercase tracking-wider opacity-50 mt-1">Consume more of it</p>
       </div>
     <% end %>

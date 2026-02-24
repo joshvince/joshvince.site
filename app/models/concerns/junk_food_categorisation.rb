@@ -19,7 +19,7 @@ module JunkFoodCategorisation
 
   ADVISORY_TEXTS = {
     addictiveness: "chance of addictive content or delivery mechanism.",
-    griftiness: "likelihood the creator is a grifer trying to manipulate you to buy something.",
+    griftiness: "likelihood the creator could be a grifter trying to manipulate you to buy something.",
     emotiveness: "chance the content is monetised based on you reacting negatively.",
     recursiveness: "chance this content will be or already has been automated by AI.",
     americaness: "levels of American Carnage detected."

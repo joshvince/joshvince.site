@@ -227,12 +227,16 @@
 /* Health advisories — concentric rings */
 
 .advisory-rings-container {
-  --ring-thickness: 30px;
+  --ring-thickness: 20px;
   --ring-size: calc(var(--ring-count) * var(--ring-thickness) * 2);
   position: relative;
   width: var(--ring-size);
   height: var(--ring-size);
   margin: 0 auto;
+
+  @media (min-width: 456px) {
+    --ring-thickness: 30px;
+  }
 }
 
 .advisory-ring {
@@ -315,6 +319,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+  width: 80px;
   flex-shrink: 0;
   text-decoration: none;
   color: inherit;

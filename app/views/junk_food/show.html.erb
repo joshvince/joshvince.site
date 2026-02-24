@@ -32,7 +32,9 @@
         <h1 class="font-junk text-4xl md:text-5xl leading-none mb-1"><%= @junk_food.name %></h1>
         <div class="w-10 h-1 bg-bauhaus-yellow mb-8"></div>
 
-        <%= render partial: "pie_label", locals: { junk_food: @junk_food } %>
+        <% unless @junk_food.complete? %>
+          <%= render partial: "pie_label", locals: { junk_food: @junk_food } %>
+        <% end %>
 
         <%= turbo_frame_tag "junk_food_#{@junk_food.id}" do %>
           <% if @junk_food.complete? %>

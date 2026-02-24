@@ -4,6 +4,12 @@ document.addEventListener('turbo:frame-render', function () {
   var source = document.querySelector('[data-circle-colors]');
   if (!source) return;
 
+  if (source.hasAttribute('data-quiz-complete')) {
+    var categoryCircles = document.querySelector('.category-circles');
+    if (categoryCircles) categoryCircles.remove();
+    return;
+  }
+
   var newColors = source.dataset.circleColors.split(',');
   var circles = document.querySelectorAll('.category-circle');
 
