@@ -3,7 +3,7 @@ module JunkFoodCategorisation
 
   DISPLAY_NAMES = {
     addictiveness: "Addictive",
-    griftiness: "Griftish",
+    griftiness: "Grift",
     emotiveness: "Emotive",
     recursiveness: "Recursive",
     americaness: "American"
@@ -13,36 +13,16 @@ module JunkFoodCategorisation
     addictiveness: { high: 7, medium: 3, low: 0 },
     griftiness: { high: 9, medium: 5, low: 0 },
     emotiveness: { high: 9, medium: 5, low: 0 },
-    recursiveness: { high: 7, medium: 6, low: 0 },
+    recursiveness: { high: 9, medium: 8, low: 0 },
     americaness: { high: 10, medium: 9, low: 0 }
   }.freeze
 
   ADVISORY_TEXTS = {
-    addictiveness: {
-      low:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      medium: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      high:   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    griftiness: {
-      low:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      medium: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      high:   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    emotiveness: {
-      low:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      medium: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      high:   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    recursiveness: {
-      low:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      medium: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      high:   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    americaness: {
-      low:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      medium: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      high:   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    }
+    addictiveness: "chance of addictive content or delivery mechanism.",
+    griftiness: "likelihood the creator is a grifer trying to manipulate you to buy something.",
+    emotiveness: "chance the content is monetised based on you reacting negatively.",
+    recursiveness: "chance this content will be or already has been automated by AI.",
+    americaness: "levels of American Carnage detected."
   }.freeze
 
   QUESTIONS = {
@@ -125,6 +105,13 @@ module JunkFoodCategorisation
       }
     ],
     recursiveness: [
+      {
+        text: "Is this fiction or non-fiction?",
+        choices: [
+          { label: "Fiction", score: 0 },
+          { label: "Non-fiction", score: 3 }
+        ]
+      },
       {
         text: "Is this content commenting, reviewing or criticising something else?",
         choices: [
@@ -209,7 +196,7 @@ module JunkFoodCategorisation
     end
   end
 
-  def self.advisory_text_for(category, level)
-    ADVISORY_TEXTS.fetch(category).fetch(level)
+  def self.advisory_text_for(category)
+    ADVISORY_TEXTS.fetch(category)
   end
 end

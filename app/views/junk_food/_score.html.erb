@@ -7,7 +7,7 @@
             when :medium then "bg-bauhaus-orange"
             else "bg-bauhaus-green"
             end
-    { category: cat, level: level, name: JunkFoodCategorisation::DISPLAY_NAMES[cat], color: color, advisory_text: JunkFoodCategorisation.advisory_text_for(cat, level) }
+    { category: cat, level: level, name: JunkFoodCategorisation::DISPLAY_NAMES[cat], color: color, advisory_text: JunkFoodCategorisation.advisory_text_for(cat) }
   end %>
   <% advisories = all_cats.reverse %>
 
@@ -20,21 +20,23 @@
       <% end %>
     </div>
 
-    <% if advisories.any? %>
-      <div>
-        <div class="advisory-list mt-8">
-          <% advisories.each do |adv| %>
-            <div class="advisory-item">
-              <div class="advisory-legend-dot <%= adv[:color] %>"></div>
-              <p class="advisory-text"><%= adv[:advisory_text] %></p>
+    <% warnings = advisories.select { |adv| adv[:level] != :low } %>
+    <% if warnings.any? %>
+      <div class="advisory-list mt-12">
+        <% warnings.each do |adv| %>
+          <div class="advisory-item">
+            <div class="advisory-legend-dot <%= adv[:color] %>"></div>
+            <div>
+              <span class="advisory-bullet-label"><%= "#{adv[:level]}" %></span>
+              <span><%= adv[:advisory_text] %></span>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     <% else %>
-      <div class="text-center py-4">
-        <p class="font-junk text-3xl">Clean bill of health</p>
-        <p class="text-sm uppercase tracking-wider opacity-50 mt-1">No advisories to report</p>
+      <div class="text-center py-4 mt-12">
+        <p class="font-junk text-3xl">This content seems remarkably healthy.</p>
+        <p class="text-sm uppercase tracking-wider opacity-50 mt-1">Consume more of it</p>
       </div>
     <% end %>
 
