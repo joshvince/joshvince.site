@@ -19,10 +19,19 @@
         <div class="advisory-ring <%= cat[:color] %>"
              style="--ring-index: <%= i %>;"></div>
       <% end %>
+      <div class="advisory-rings-popover">
+        <% advisories.each do |cat| %>
+          <div class="advisory-popover-row">
+            <div class="advisory-legend-dot <%= cat[:color] %>"></div>
+            <span class="advisory-popover-label"><%= cat[:name] %></span>
+            <span class="advisory-popover-level"><%= cat[:level] %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <% warnings = advisories.select { |adv| adv[:level] != :low } %>
-    <% if warnings.any? %>
+    <% if warnings.count > 3 %>
       <div class="advisory-list mt-12">
         <% warnings.each do |adv| %>
           <div class="advisory-item">

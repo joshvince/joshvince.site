@@ -31,6 +31,9 @@
     <div class="px-6 py-10 max-w-lg mx-auto">
       <%= form_with url: junk_food_path, method: :post, class: "w-full flex flex-col justify-center space-y-5" do |f| %>
         <label for="name" class="block text-sm font-semibold uppercase tracking-wider mb-2">What was the last piece of content you consumed?</label>
+        <% if @error %>
+          <p class="text-bauhaus-red text-sm font-semibold"><%= @error %></p>
+        <% end %>
         <input
           type="text"
           name="name"

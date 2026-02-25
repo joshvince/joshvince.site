@@ -252,6 +252,46 @@
   border: 2px solid var(--bauhaus-black);
 }
 
+.advisory-rings-popover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: calc(var(--ring-count) + 1);
+  background: var(--bauhaus-cream);
+  border: 8px solid var(--bauhaus-black);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.advisory-rings-container:hover .advisory-rings-popover {
+  opacity: 1;
+}
+
+.advisory-popover-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.advisory-popover-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.advisory-popover-level {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
+
 /* Advisory legend list */
 
 .advisory-list {

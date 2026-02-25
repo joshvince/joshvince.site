@@ -18,8 +18,15 @@ class JunkFoodController < ApplicationController
 
   def create
     cookies.permanent[:junk_food_intro_seen] = "1"
-    junk_food = JunkFood.create!(name: params[:name])
-    redirect_to junk_food_show_path(junk_food)
+    junk_food = JunkFood.new(name: params[:name])
+
+    if junk_food.save
+      redirect_to junk_food_show_path(junk_food)
+    else
+      @error = junk_food.errors[:name].first
+      @recent_foods = JunkFood.order(created_at: :desc).limit(50).select(&:complete?).first(10)
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
