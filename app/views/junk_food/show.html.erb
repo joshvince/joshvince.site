@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Junk Food | <%= @junk_food.name %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "junk_food/junk_food", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_import_module_tag "junk_food_quiz" %>
+  </head>
+  <body class="bg-bauhaus-cream text-bauhaus-black font-junk-body pb-24">
+    <nav class="junk-food-nav px-6 pt-5">
+      <%= link_to junk_food_path, class: "junk-food-nav-link", data: { turbo_frame: "_top" } do %>
+        <div class="nav-rings" aria-hidden="true">
+          <div class="nav-ring nav-ring--outer bg-bauhaus-red"></div>
+          <div class="nav-ring nav-ring--mid bg-bauhaus-orange"></div>
+          <div class="nav-ring nav-ring--inner bg-bauhaus-yellow"></div>
+        </div>
+        <span class="nav-label font-junk">Junk Food Firehose</span>
+      <% end %>
+    </nav>
+    <div class="junk-food-container junk-food-container--quiz px-6">
+      <div class="w-full max-w-lg py-8 px-4 border-3 border-black">
+        <h1 class="font-junk text-4xl md:text-5xl leading-none mb-1"><%= @junk_food.name %></h1>
+        <div class="w-10 h-1 bg-bauhaus-yellow mb-8"></div>
+
+        <% unless @junk_food.complete? %>
+          <%= render partial: "pie_label", locals: { junk_food: @junk_food } %>
+        <% end %>
+
+        <%= turbo_frame_tag "junk_food_#{@junk_food.id}" do %>
+          <% if @junk_food.complete? %>
+            <%= render partial: "score", locals: { junk_food: @junk_food } %>
+          <% else %>
+            <%= render partial: "question", locals: { junk_food: @junk_food, question: @question, current_category: @current_category, current_step: @current_step } %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

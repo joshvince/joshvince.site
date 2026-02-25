@@ -1,0 +1,434 @@
+:root {
+  --bauhaus-red: #8B2500;
+  --bauhaus-orange: #C4652A;
+  --bauhaus-blue: #2B4162;
+  --bauhaus-yellow: #D4A843;
+  --bauhaus-black: #2A2A28;
+  --bauhaus-cream: #EDE8DF;
+  --bauhaus-green: #377254;
+}
+
+.font-junk {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-junk-body {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.bg-bauhaus-cream { background-color: var(--bauhaus-cream); }
+.bg-bauhaus-red { background-color: var(--bauhaus-red); }
+.bg-bauhaus-orange { background-color: var(--bauhaus-orange); }
+.bg-bauhaus-blue { background-color: var(--bauhaus-blue); }
+.bg-bauhaus-yellow { background-color: var(--bauhaus-yellow); }
+.bg-bauhaus-green { background-color: var(--bauhaus-green); }
+.bg-bauhaus-black { background-color: var(--bauhaus-black); }
+
+.text-bauhaus-red { color: var(--bauhaus-red); }
+.text-bauhaus-orange { color: var(--bauhaus-orange); }
+.text-bauhaus-blue { color: var(--bauhaus-blue); }
+.text-bauhaus-yellow { color: var(--bauhaus-yellow); }
+.text-bauhaus-black { color: var(--bauhaus-black); }
+
+.border-bauhaus-black { border-color: var(--bauhaus-black); }
+
+.junk-food-container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.junk-food-container--quiz {
+  justify-content: flex-start;
+  padding-top: 6vh;
+}
+
+.junk-food-progress-bar {
+  height: 1.25rem;
+  transition: width 0.5s ease-in-out;
+}
+
+.bauhaus-btn {
+  transition: background-color 0.30s ease, color 0.30s ease;
+  cursor: pointer;
+}
+
+.bauhaus-btn:hover {
+  background-color: var(--bauhaus-blue);
+  color: white;
+}
+
+.bauhaus-btn-inverted:hover {
+  background-color: var(--bauhaus-cream);
+  color: var(--bauhaus-black);
+}
+
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1.25rem;
+}
+
+.dot-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: white;
+}
+
+.dot-label {
+  font-size: 0.65rem;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* Category circles */
+
+.category-circles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 auto 2rem;
+}
+
+.category-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.category-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--bauhaus-black);
+  transition: background-color 1s ease;
+
+  @media (min-width: 456px) {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.category-circle-label {
+  font-size: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--bauhaus-black);
+  opacity: 0.6;
+
+  @media (min-width: 456px) {
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Main page hero */
+
+.junk-food-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+/* Intro page */
+
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.emoji-particle {
+  position: absolute;
+  line-height: 1;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+.emoji-sm { font-size: 20px; }
+.emoji-md { font-size: 28px; }
+.emoji-lg { font-size: 36px; }
+.emoji-xl { font-size: 44px; }
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#open-wide {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#open-wide.is-invisible {
+  opacity: 0;
+}
+
+#intro-content {
+  transition: opacity 2s ease;
+}
+
+#intro-content.is-hidden {
+  display: none;
+}
+
+#intro-content.is-invisible {
+  opacity: 0;
+}
+
+/* Health advisories — concentric rings */
+
+.advisory-rings-container {
+  --ring-thickness: 20px;
+  --ring-size: calc(var(--ring-count) * var(--ring-thickness) * 2);
+  position: relative;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  margin: 0 auto;
+
+  @media (min-width: 456px) {
+    --ring-thickness: 30px;
+  }
+}
+
+.advisory-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --diameter: calc((var(--ring-count) - var(--ring-index)) * var(--ring-thickness) * 2);
+  width: var(--diameter);
+  height: var(--diameter);
+  z-index: var(--ring-index);
+  border: 2px solid var(--bauhaus-black);
+}
+
+.advisory-rings-popover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: calc(var(--ring-count) + 1);
+  background: var(--bauhaus-cream);
+  border: 8px solid var(--bauhaus-black);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.advisory-rings-container:hover .advisory-rings-popover {
+  opacity: 1;
+}
+
+.advisory-popover-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.advisory-popover-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.advisory-popover-level {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
+
+/* Advisory legend list */
+
+.advisory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.advisory-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.advisory-legend-dot {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--bauhaus-black);
+}
+
+.advisory-name {
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.advisory-level {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+}
+
+.advisory-text {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.advisory-bullet-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Recent ratings row — concentric rings that grow across the row */
+
+.recent-rings-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.recent-rings-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 80px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recent-rings-set {
+  --ring-thickness: 7px;
+  --ring-size: calc(var(--ring-count) * var(--ring-thickness) * 2);
+  position: relative;
+  width: var(--ring-size);
+  height: var(--ring-size);
+}
+
+/* Nav bar with concentric circle */
+
+.junk-food-nav {
+  width: 100%;
+  max-width: 32rem;
+  padding-left: 2rem;
+}
+
+.junk-food-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.junk-food-nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-rings {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.nav-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-ring--outer {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-ring--mid {
+  width: 18px;
+  height: 18px;
+  z-index: 1;
+}
+
+.nav-ring--inner {
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}

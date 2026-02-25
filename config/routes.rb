@@ -22,6 +22,13 @@ Rails.application.routes.draw do
   get "/projects/:slug", to: "projects#show", as: "project"
   get "/jobs", to: "projects#jobs", as: "jobs"
   get "/side-projects", to: "projects#side_projects", as: "side_projects"
+  get  "/junk-food",             to: "junk_food#new",          as: "junk_food"
+  get  "/junk-food/intro",       to: "junk_food#intro",        as: "junk_food_intro"
+  get  "/junk-food/reset-intro", to: "junk_food#reset_intro",  as: "junk_food_reset_intro"
+  post "/junk-food",             to: "junk_food#create"
+  get  "/junk-food/:id",         to: "junk_food#show",         as: "junk_food_show"
+  patch "/junk-food/:id",        to: "junk_food#update",       as: "junk_food_update"
+
   get "/fpl-bet", to: "fpl#index", as: "fpl_bet"
   get "/fpl-bet/gameweek/:gameweek", to: "fpl#show", as: "fpl_gameweek"
 

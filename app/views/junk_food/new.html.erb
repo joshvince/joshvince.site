@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Junk Food | Josh Vince</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon-32x32.png") %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "junk_food/junk_food", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "emoji_spray" %>
+    <%= javascript_include_tag "junk_food_main" %>
+  </head>
+  <body class="bg-bauhaus-cream text-bauhaus-black font-junk-body">
+    <div class="junk-food-hero flex flex-col">
+      <div id="emoji-canvas" class="emoji-canvas"></div>
+      <div class="intro-text mb-8">
+        <p class="font-junk text-2xl">The</p>
+        <h1 class="font-junk text-7xl md:text-9xl leading-none">Junk Food<br>Firehose</h1>
+      </div>
+
+      <%= link_to "What is this?", junk_food_reset_intro_path, class: "text-sm uppercase tracking-wider opacity-40 hover:opacity-100", data: { turbo_prefetch: 'false' } %>
+    </div>
+
+    <div class="px-6 py-10 max-w-lg mx-auto">
+      <%= form_with url: junk_food_path, method: :post, class: "w-full flex flex-col justify-center space-y-5" do |f| %>
+        <label for="name" class="block text-sm font-semibold uppercase tracking-wider mb-2">What was the last piece of content you consumed?</label>
+        <% if @error %>
+          <p class="text-bauhaus-red text-sm font-semibold"><%= @error %></p>
+        <% end %>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="eg: an article about Epstein"
+          minLength="3"
+          maxLength="35"
+          autocomplete="off"
+          class="w-full px-4 py-3 border-3 border-bauhaus-black text-lg bg-white focus:outline-none focus:border-bauhaus-blue"
+        />
+        <button
+          type="submit"
+          class="block bauhaus-btn mt-6 px-10 py-3 bg-bauhaus-red text-white text-lg font-bold uppercase tracking-wider border-3 border-bauhaus-black"
+        >
+          Make a label
+        </button>
+      <% end %>
+
+      <% if @recent_foods.any? %>
+        <div class="mt-16">
+          <h2 class="font-junk text-2xl mb-6">Recent labels</h2>
+          <div class="recent-rings-row">
+            <% @recent_foods.each_with_index do |food, idx| %>
+              <% cats = JunkFoodCategorisation.categories.reverse.map do |cat|
+                score = food.score_for(cat)
+                level = JunkFoodCategorisation.threshold_level(cat, score)
+                color = case level
+                        when :high then "bg-bauhaus-red"
+                        when :medium then "bg-bauhaus-orange"
+                        else "bg-bauhaus-green"
+                        end
+                { color: color }
+              end %>
+              <%= link_to junk_food_show_path(food), class: "recent-rings-item" do %>
+                <div class="recent-rings-set" style="--ring-count: <%= cats.size %>;">
+                  <% cats.each_with_index do |cat, i| %>
+                    <div class="advisory-ring <%= cat[:color] %>" style="--ring-index: <%= i %>;"></div>
+                  <% end %>
+                </div>
+                <span class="dot-label"><%= food.name %></span>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="mt-12 text-center space-y-3">
+        <%= link_to "Made by Josh", root_path, class: "text-sm uppercase tracking-wider opacity-40 hover:opacity-100" %>
+      </div>
+    </div>
+  </body>
+</html>
