@@ -1,0 +1,7 @@
+<%= link_to project.standalone_url do %>
+  <div class="flex flex-col rounded-md shadow-lg hover:shadow-xl transition-all p-6 mb-14 the-bit-color-palette">
+    <h2 class="font-bold text-2xl mb-3"><%= project.name %></h2>
+    <p class="text-sm mb-4"><%= format_published_date(project.published_on) %></p>
+    <p><%= project.subtitle %></p>
+  </div>
+<% end %>

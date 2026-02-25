@@ -1,31 +1,41 @@
 namespace :projects do
   desc "Create projects"
   task create: :environment do |_args|
+    junk_food_firehose = {
+      slug: "junk-food",
+      name: "The Junk Food Firehose",
+      job: false,
+      standalone: true,
+      standalone_url: "/junk-food",
+      published_on: Date.new(2026, 2, 25),
+      subtitle: "Get a nutritional label for the last piece of content you consumed."
+    }
+
     isocra = {
       slug: "isocra",
       name: "ISOCRA",
       job: false,
-      subtitle: "side project in 2025",
-      tagline: "Website for the International Society of Carb Rankers.",
-      description: [
-        {
-          heading: "Answering deeply important questions",
-          text: "Since the dawn of time, people have been ranking carbs (or, at least, me and my friends have)."
-        },
-        {
-          heading: "Dumb and Quick",
-          text: "I had fun building this over a couple of evenings. It's not fantastic code but I think it's funny."
-        }
-      ].to_json,
-      link_1_name: "You can rate the carbs here",
-      link_1: "https://isocra.org",
-      link_2_name: "Check out the repo",
-      link_2: "https://github.com/joshvince/carb"
+      standalone: true,
+      standalone_url: "https://isocra.org",
+      published_on: Date.new(2025, 7, 18),
+      subtitle: "A website for the International Society of Carb Rankers."
     }
+
+    the_bit = {
+      slug: "the-bit",
+      name: "The Bit",
+      job: false,
+      standalone: true,
+      standalone_url: "/the-bit",
+      published_on: Date.new(2024, 1, 15),
+      subtitle: "A short story made for the web"
+    }
+
     vincetagram = {
       slug: "vincetagram",
       name: "Vincetagram",
       job: false,
+      published_on: Date.new(2023, 9, 3),
       subtitle: "side project in 2023",
       tagline: "A private social media site for sharing pictures.",
       description: [
@@ -51,6 +61,7 @@ namespace :projects do
       slug: "dog-days",
       name: "Dog Days",
       job: false,
+      published_on: Date.new(2023, 8, 3),
       subtitle: "side project in 2023",
       tagline: "Tracking how often my dog scratched his face",
       description: [
@@ -77,6 +88,7 @@ namespace :projects do
       slug: "carwow",
       name: "Carwow",
       job: true,
+      published_on: Date.new(2022, 1, 1),
       subtitle: "worked here from 2022 to now",
       tagline: "The easy way to change cars online",
       description: [
@@ -97,6 +109,7 @@ namespace :projects do
       slug: "zencargo",
       name: "Zencargo",
       job: true,
+      published_on: Date.new(2018, 3, 1),
       subtitle: "worked here from 2018 to 2022",
       tagline: "Supply chain optimisation for modern businesses",
       description: [
@@ -121,6 +134,7 @@ namespace :projects do
       slug: "howmanymeetingswereyouin",
       name: "2020 in meetings",
       job: false,
+      published_on: Date.new(2021, 1, 1),
       subtitle: "side project in 2021",
       tagline: "Analyse how much time you spent in meetings in 2020",
       description: [
@@ -145,6 +159,7 @@ namespace :projects do
       slug: "wedding-site",
       name: "Wedding site",
       job: false,
+      published_on: Date.new(2019, 1, 1),
       subtitle: "side project in 2019",
       tagline: "The guest list and invitations for my wedding",
       description: [
@@ -171,6 +186,7 @@ namespace :projects do
       slug: "bowie-ipsum",
       name: "Bowie Ipsum",
       job: false,
+      published_on: Date.new(2018, 6, 1),
       subtitle: "side project in 2018",
       tagline: "David Bowie themed lorem ipsum",
       description: [
@@ -195,6 +211,7 @@ namespace :projects do
       slug: "choobio",
       name: "Choobio",
       job: false,
+      published_on: Date.new(2018, 1, 1),
       subtitle: "side project in 2018",
       tagline: "Progressive Web App showing live arrivals boards for the Tube",
       description: [
@@ -225,6 +242,7 @@ namespace :projects do
       slug: "trx",
       name: "TRX",
       job: true,
+      published_on: Date.new(2015, 1, 1),
       subtitle: "worked here from 2015 to 2018",
       tagline: "An innovative app for the buying and selling of TV rights around the world",
       description: [
@@ -249,6 +267,7 @@ namespace :projects do
       slug: "peacock",
       name: "Peacock",
       job: false,
+      published_on: Date.new(2009, 1, 1),
       subtitle: "created this short film in 2009",
       tagline: "Short film about a egomaniacal film director",
       description: [
@@ -269,6 +288,7 @@ namespace :projects do
       slug: "killing-bill-gates",
       name: "Killing Bill Gates",
       job: false,
+      published_on: Date.new(2011, 8, 1),
       subtitle: "directed this play in 2011",
       tagline: "Play about well-intentioned idiots trying to unlock Gates' fortune",
       description: [
@@ -285,7 +305,7 @@ namespace :projects do
       link_1: "https://threeweeksedinburgh.com/article/ed2011-theatre-review-killing-bill-gates-free-mechanical-tiger-productions/"
     }
 
-    projects = [ isocra, vincetagram, dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
+    projects = [ junk_food_firehose, isocra, the_bit, vincetagram, dog_days, carwow, zencargo, howmanymeetings, wedding, bowie, choobio, trx, killing_bill_gates, peacock ]
 
     ActiveRecord::Base.transaction do
       projects.each_with_index do |project, index|

@@ -12,6 +12,10 @@ class Project < ApplicationRecord
     !!job
   end
 
+  def standalone?
+    !!standalone
+  end
+
   def description_paragraphs
     JSON.parse(description).map { |para| Paragraph.new(para) }
   end

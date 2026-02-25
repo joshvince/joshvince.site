@@ -1,0 +1,7 @@
+<%= link_to project_path(project.slug) do %>
+  <div class="flex flex-col rounded-md shadow-lg hover:shadow-xl transition-all bg-white p-6 mb-14">
+    <h2 class="text-gray-800 font-black text-2xl mb-3"><%= project.name %></h2>
+    <p class="uppercase text-sm text-gray-500 mb-4"><%= project.subtitle %></p>
+    <p class="text-gray-800"><%= project.tagline %></p>
+  </div>
+<% end %>

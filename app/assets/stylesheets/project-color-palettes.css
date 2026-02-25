@@ -3,3 +3,77 @@
   color: #eff6ff;
   font-family: 'Crete Round', serif;
 }
+
+.isocra-color-palette {
+  background: linear-gradient(to bottom right, rgba(254, 240, 138, 0.3), rgba(254, 249, 195, 0.3));
+  border: 1px solid rgba(180, 83, 9, 0.15);
+  border-radius: 0.375rem;
+}
+
+.isocra-color-palette:hover {
+  box-shadow: 0 10px 15px -3px rgba(120, 53, 15, 0.1), 0 4px 6px -4px rgba(120, 53, 15, 0.1);
+}
+
+.isocra-color-palette .isocra-tile-title {
+  font-family: serif;
+}
+
+.isocra-color-palette .isocra-tile-emojis {
+  letter-spacing: 0.15em;
+}
+
+.junk-food-color-palette {
+  background-color: #EDE8DF;
+  color: #2A2A28;
+  border: 3px solid #2A2A28;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.junk-food-color-palette:hover {
+  box-shadow: 6px 6px 0 #2A2A28;
+}
+
+.junk-food-color-palette .junk-food-tile-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.junk-food-color-palette .junk-food-tile-rings {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.junk-food-color-palette .junk-food-tile-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.junk-food-color-palette .junk-food-tile-ring--outer {
+  width: 40px;
+  height: 40px;
+  background-color: #8B2500;
+}
+
+.junk-food-color-palette .junk-food-tile-ring--mid {
+  width: 26px;
+  height: 26px;
+  background-color: #C4652A;
+  z-index: 1;
+}
+
+.junk-food-color-palette .junk-food-tile-ring--inner {
+  width: 14px;
+  height: 14px;
+  background-color: #D4A843;
+  z-index: 2;
+}

@@ -1,0 +1,7 @@
+<%= link_to project.standalone_url do %>
+  <div class="flex flex-col p-6 mb-14 transition-all isocra-color-palette">
+    <h2 class="isocra-tile-title text-amber-900 font-black text-2xl mb-2"><%= project.name %></h2>
+    <p class="uppercase text-sm text-amber-600 font-bold mb-4"><%= format_published_date(project.published_on) %></p>
+    <p class="text-amber-950"><%= project.subtitle %></p>
+  </div>
+<% end %>

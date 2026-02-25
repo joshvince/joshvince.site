@@ -45,6 +45,10 @@ namespace :blog_posts do
 
     blog_post.published_on = user_date
 
+    puts "\nHighlight this post on the homepage? [y/n]"
+    user_highlight = STDIN.gets.chomp.downcase
+    blog_post.highlight = (user_highlight == "y")
+
     puts "\nHere's what is going to be saved"
     puts "\n#{blog_post.attributes}\n===========================\n\n"
     puts "Do you want to save? [y/n]"

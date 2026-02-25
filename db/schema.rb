@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_12_000000) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_25_000001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -47,6 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_12_000000) do
     t.text "markdown_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "highlight", default: false, null: false
   end
 
   create_table "fpl_gameweeks", force: :cascade do |t|
@@ -80,6 +81,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_12_000000) do
     t.string "tagline"
     t.integer "index"
     t.boolean "job"
+    t.boolean "standalone", default: false, null: false
+    t.string "standalone_url"
+    t.date "published_on"
     t.index ["slug"], name: "unique_slugs", unique: true
   end
 

@@ -1,0 +1,9 @@
+<%= link_to project.standalone_url do %>
+  <div class="flex items-start gap-5 p-6 mb-14 transition-all junk-food-color-palette">
+    <div class="flex flex-col">
+      <h2 class="junk-food-tile-title text-3xl leading-none mb-2"><%= project.name %></h2>
+      <p class="text-sm opacity-60 uppercase tracking-wider mb-3"><%= format_published_date(project.published_on) %></p>
+      <p><%= project.subtitle %></p>
+    </div>
+  </div>
+<% end %>
