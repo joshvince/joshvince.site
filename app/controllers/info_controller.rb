@@ -3,9 +3,9 @@
 class InfoController < ApplicationController
   def home
     @page_title = "Josh Vince"
-    projects = Project.all.to_a
+    projects = Project.where(standalone: true).to_a
     blog_posts = BlogPost.where(highlight: true).to_a
-    @feed_items = (projects + blog_posts).sort_by(&:published_on).reverse
+    @feed_items = (projects + blog_posts).sort_by { |item| item.published_on || Date.new(2000, 1, 1) }.reverse
   end
 
   def me
