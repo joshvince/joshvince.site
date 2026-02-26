@@ -31,7 +31,7 @@
     </div>
 
     <% warnings = advisories.select { |adv| adv[:level] != :low } %>
-    <% if warnings.count > 3 %>
+    <% if warnings.count > 1 %>
       <div class="advisory-list mt-12">
         <% warnings.each do |adv| %>
           <div class="advisory-item">
